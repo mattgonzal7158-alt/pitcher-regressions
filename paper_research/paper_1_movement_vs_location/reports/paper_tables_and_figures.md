@@ -1,0 +1,180 @@
+# Paper Tables and Figures
+
+## Table 1. Descriptive Statistics
+
+| variable | count | mean | std | min | 25% | 50% | 75% | max |
+|---|---|---|---|---|---|---|---|---|
+| pitch_count | 988.0000 | 63.6174 | 37.0446 | 25.0000 | 38.0000 | 52.0000 | 79.0000 | 384.0000 |
+| batted_ball_count | 988.0000 | 36.1518 | 23.9800 | 10.0000 | 19.0000 | 29.0000 | 45.0000 | 163.0000 |
+| xwoba_frontier | 988.0000 | 0.2428 | 0.0590 | 0.0591 | 0.2049 | 0.2419 | 0.2814 | 0.4529 |
+| woba_value | 988.0000 | 0.0933 | 0.0469 | 0.0000 | 0.0612 | 0.0891 | 0.1210 | 0.3029 |
+| whiff_pct | 988.0000 | 0.2355 | 0.1292 | 0.0000 | 0.1364 | 0.2174 | 0.3182 | 0.6957 |
+| hardhit_pct | 988.0000 | 0.1811 | 0.1163 | 0.0000 | 0.1000 | 0.1667 | 0.2500 | 0.6667 |
+| movement_quality_20_80 | 988.0000 | 49.1423 | 17.3036 | 20.1056 | 34.1549 | 48.6796 | 64.0757 | 80.0000 |
+| location_score_20_80 | 988.0000 | 49.6365 | 9.8722 | 20.0000 | 42.9358 | 48.8345 | 55.6801 | 80.0000 |
+
+## Table 2. Correlation Matrix
+
+| variable | pitch_count | batted_ball_count | xwoba_frontier | woba_value | whiff_pct | hardhit_pct | movement_quality_20_80 | location_score_20_80 |
+|---|---|---|---|---|---|---|---|---|
+| pitch_count | 1.0000 | 0.8279 | -0.0246 | -0.0394 | -0.0898 | -0.0214 | -0.0904 | 0.0508 |
+| batted_ball_count | 0.8279 | 1.0000 | 0.0601 | 0.0898 | -0.2857 | 0.0687 | -0.2244 | -0.0381 |
+| xwoba_frontier | -0.0246 | 0.0601 | 1.0000 | 0.4360 | -0.1666 | 0.6626 | -0.0661 | -0.2368 |
+| woba_value | -0.0394 | 0.0898 | 0.4360 | 1.0000 | -0.3452 | 0.3897 | -0.2105 | -0.1533 |
+| whiff_pct | -0.0898 | -0.2857 | -0.1666 | -0.3452 | 1.0000 | -0.1581 | 0.3138 | 0.1446 |
+| hardhit_pct | -0.0214 | 0.0687 | 0.6626 | 0.3897 | -0.1581 | 1.0000 | -0.0433 | -0.1690 |
+| movement_quality_20_80 | -0.0904 | -0.2244 | -0.0661 | -0.2105 | 0.3138 | -0.0433 | 1.0000 | 0.0031 |
+| location_score_20_80 | 0.0508 | -0.0381 | -0.2368 | -0.1533 | 0.1446 | -0.1690 | 0.0031 | 1.0000 |
+
+## Table 3. Main Regression Table
+
+| dependent | model | formula | term | coefficient | robust_se | t_stat | p_value | p_stars | ci_lower | ci_upper | r_squared | adj_r_squared | aic | bic | sample_size |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| xwoba_frontier | Model 1 | xwoba_frontier ~ movement_quality_20_80 | movement_quality_20_80 | -0.0002 | 0.0001 | -1.9956 | 0.0463 | * | -0.0004 | -0.0000 | 0.0044 | 0.0034 | -5595.4811 | -5585.6898 | 988 |
+| xwoba_frontier | Model 2 | xwoba_frontier ~ location_score_20_80 | location_score_20_80 | -0.0014 | 0.0002 | -7.5661 | 0.0000 | *** | -0.0018 | -0.0010 | 0.0561 | 0.0551 | -5648.1692 | -5638.3778 | 988 |
+| xwoba_frontier | Model 3 | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 | movement_quality_20_80 | -0.0002 | 0.0001 | -2.0625 | 0.0394 | * | -0.0004 | -0.0000 | 0.0604 | 0.0584 | -5650.6564 | -5635.9694 | 988 |
+| xwoba_frontier | Model 3 | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 | location_score_20_80 | -0.0014 | 0.0002 | -7.5347 | 0.0000 | *** | -0.0018 | -0.0010 | 0.0604 | 0.0584 | -5650.6564 | -5635.9694 | 988 |
+| xwoba_frontier | Model 4 | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0003 | 0.0002 | -1.4840 | 0.1381 |  | -0.0007 | 0.0001 | 0.0849 | 0.0765 | -5662.8515 | -5613.8947 | 988 |
+| xwoba_frontier | Model 4 | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.0013 | 0.0002 | -6.8713 | 0.0000 | *** | -0.0017 | -0.0010 | 0.0849 | 0.0765 | -5662.8515 | -5613.8947 | 988 |
+| xwoba_frontier | Model 5 | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0003 | 0.0002 | -1.6219 | 0.1051 |  | -0.0007 | 0.0001 | 0.0962 | 0.0861 | -5671.1250 | -5612.3768 | 988 |
+| xwoba_frontier | Model 5 | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.0012 | 0.0002 | -6.2953 | 0.0000 | *** | -0.0016 | -0.0009 | 0.0962 | 0.0861 | -5671.1250 | -5612.3768 | 988 |
+| woba_value | Model 1 | woba_value ~ movement_quality_20_80 | movement_quality_20_80 | -0.0006 | 0.0001 | -6.9400 | 0.0000 | *** | -0.0007 | -0.0004 | 0.0443 | 0.0433 | -6087.8532 | -6078.0618 | 988 |
+| woba_value | Model 2 | woba_value ~ location_score_20_80 | location_score_20_80 | -0.0007 | 0.0002 | -4.7274 | 0.0000 | *** | -0.0010 | -0.0004 | 0.0235 | 0.0225 | -6066.5887 | -6056.7973 | 988 |
+| woba_value | Model 3 | woba_value ~ movement_quality_20_80 + location_score_20_80 | movement_quality_20_80 | -0.0006 | 0.0001 | -7.0437 | 0.0000 | *** | -0.0007 | -0.0004 | 0.0676 | 0.0657 | -6110.2533 | -6095.5663 | 988 |
+| woba_value | Model 3 | woba_value ~ movement_quality_20_80 + location_score_20_80 | location_score_20_80 | -0.0007 | 0.0002 | -4.8045 | 0.0000 | *** | -0.0010 | -0.0004 | 0.0676 | 0.0657 | -6110.2533 | -6095.5663 | 988 |
+| woba_value | Model 4 | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0001 | 0.0002 | -0.3634 | 0.7164 |  | -0.0004 | 0.0003 | 0.0936 | 0.0853 | -6124.1766 | -6075.2198 | 988 |
+| woba_value | Model 4 | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.0007 | 0.0002 | -4.6458 | 0.0000 | *** | -0.0010 | -0.0004 | 0.0936 | 0.0853 | -6124.1766 | -6075.2198 | 988 |
+| woba_value | Model 5 | woba_value ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0001 | 0.0002 | -0.3965 | 0.6918 |  | -0.0004 | 0.0003 | 0.1153 | 0.1053 | -6144.1090 | -6085.3608 | 988 |
+| woba_value | Model 5 | woba_value ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.0006 | 0.0002 | -4.0393 | 0.0001 | *** | -0.0009 | -0.0003 | 0.1153 | 0.1053 | -6144.1090 | -6085.3608 | 988 |
+| whiff_pct | Model 1 | whiff_pct ~ movement_quality_20_80 | movement_quality_20_80 | 0.0023 | 0.0002 | 10.6200 | 0.0000 | *** | 0.0019 | 0.0028 | 0.0985 | 0.0976 | -4143.1362 | -4133.3448 | 988 |
+| whiff_pct | Model 2 | whiff_pct ~ location_score_20_80 | location_score_20_80 | 0.0019 | 0.0004 | 4.5723 | 0.0000 | *** | 0.0011 | 0.0027 | 0.0209 | 0.0199 | -4061.5870 | -4051.7957 | 988 |
+| whiff_pct | Model 3 | whiff_pct ~ movement_quality_20_80 + location_score_20_80 | movement_quality_20_80 | 0.0023 | 0.0002 | 10.7822 | 0.0000 | *** | 0.0019 | 0.0028 | 0.1191 | 0.1173 | -4163.9962 | -4149.3092 | 988 |
+| whiff_pct | Model 3 | whiff_pct ~ movement_quality_20_80 + location_score_20_80 | location_score_20_80 | 0.0019 | 0.0004 | 4.7969 | 0.0000 | *** | 0.0011 | 0.0026 | 0.1191 | 0.1173 | -4163.9962 | -4149.3092 | 988 |
+| whiff_pct | Model 4 | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0006 | 0.0004 | -1.6039 | 0.1091 |  | -0.0013 | 0.0001 | 0.2174 | 0.2102 | -4266.8848 | -4217.9280 | 988 |
+| whiff_pct | Model 4 | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) + C(batter_side) | location_score_20_80 | 0.0018 | 0.0004 | 4.6485 | 0.0000 | *** | 0.0010 | 0.0025 | 0.2174 | 0.2102 | -4266.8848 | -4217.9280 | 988 |
+| whiff_pct | Model 5 | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0004 | 0.0004 | -1.0038 | 0.3157 |  | -0.0011 | 0.0004 | 0.2745 | 0.2663 | -4337.7946 | -4279.0464 | 988 |
+| whiff_pct | Model 5 | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | 0.0013 | 0.0004 | 3.4795 | 0.0005 | *** | 0.0006 | 0.0021 | 0.2745 | 0.2663 | -4337.7946 | -4279.0464 | 988 |
+| hardhit_pct | Model 1 | hardhit_pct ~ movement_quality_20_80 | movement_quality_20_80 | -0.0003 | 0.0002 | -1.2949 | 0.1956 |  | -0.0007 | 0.0002 | 0.0019 | 0.0009 | -4250.5814 | -4240.7900 | 988 |
+| hardhit_pct | Model 2 | hardhit_pct ~ location_score_20_80 | location_score_20_80 | -0.0020 | 0.0004 | -5.2117 | 0.0000 | *** | -0.0027 | -0.0012 | 0.0286 | 0.0276 | -4277.3468 | -4267.5554 | 988 |
+| hardhit_pct | Model 3 | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 | movement_quality_20_80 | -0.0003 | 0.0002 | -1.3004 | 0.1938 |  | -0.0007 | 0.0001 | 0.0304 | 0.0284 | -4277.2122 | -4262.5251 | 988 |
+| hardhit_pct | Model 3 | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 | location_score_20_80 | -0.0020 | 0.0004 | -5.1880 | 0.0000 | *** | -0.0027 | -0.0012 | 0.0304 | 0.0284 | -4277.2122 | -4262.5251 | 988 |
+| hardhit_pct | Model 4 | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0001 | 0.0004 | -0.1567 | 0.8755 |  | -0.0009 | 0.0008 | 0.0474 | 0.0386 | -4280.6777 | -4231.7209 | 988 |
+| hardhit_pct | Model 4 | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.0019 | 0.0004 | -4.8110 | 0.0000 | *** | -0.0027 | -0.0011 | 0.0474 | 0.0386 | -4280.6777 | -4231.7209 | 988 |
+| hardhit_pct | Model 5 | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0001 | 0.0004 | -0.3022 | 0.7626 |  | -0.0010 | 0.0007 | 0.0647 | 0.0542 | -4294.8433 | -4236.0951 | 988 |
+| hardhit_pct | Model 5 | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.0017 | 0.0004 | -4.1778 | 0.0000 | *** | -0.0025 | -0.0009 | 0.0647 | 0.0542 | -4294.8433 | -4236.0951 | 988 |
+
+## Table 4. Robustness Regression Table
+
+| dependent | model | formula | term | coefficient | robust_se | t_stat | p_value | p_stars | ci_lower | ci_upper | r_squared | adj_r_squared | aic | bic | sample_size | sample | check |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| xwoba_frontier | WLS pitch_count | xwoba_frontier ~ weighted full model | movement_quality_20_80 | 0.0006 | 0.0003 | 2.2344 | 0.0257 | * | 0.0001 | 0.0012 | 0.5242 | 0.5189 | -1586.1842 | -1527.4360 | 988 |  |  |
+| xwoba_frontier | WLS pitch_count | xwoba_frontier ~ weighted full model | location_score_20_80 | -0.0001 | 0.0003 | -0.2771 | 0.7818 |  | -0.0007 | 0.0005 | 0.5242 | 0.5189 | -1586.1842 | -1527.4360 | 988 |  |  |
+| xwoba_frontier | WLS batted_ball_count | xwoba_frontier ~ weighted full model | movement_quality_20_80 | 0.0010 | 0.0002 | 5.1462 | 0.0000 | *** | 0.0006 | 0.0014 | 0.6157 | 0.6114 | -2089.8764 | -2031.1282 | 988 |  |  |
+| xwoba_frontier | WLS batted_ball_count | xwoba_frontier ~ weighted full model | location_score_20_80 | -0.0001 | 0.0002 | -0.4012 | 0.6884 |  | -0.0005 | 0.0003 | 0.6157 | 0.6114 | -2089.8764 | -2031.1282 | 988 |  |  |
+| xwoba_frontier | Standardized OLS | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0980 | 0.0604 | -1.6219 | 0.1051 |  | -0.2166 | 0.0206 | 0.0962 | 0.0861 | -75.9739 | -17.2258 | 988 | All | All |
+| xwoba_frontier | Standardized OLS | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.2078 | 0.0330 | -6.2953 | 0.0000 | *** | -0.2726 | -0.1430 | 0.0962 | 0.0861 | -75.9739 | -17.2258 | 988 | All | All |
+| xwoba_frontier | Cook's distance <= 4/n | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0002 | 0.0002 | -1.1953 | 0.2323 |  | -0.0006 | 0.0001 | 0.1213 | 0.1109 | -5632.6475 | -5574.5225 | 938 | All | All |
+| xwoba_frontier | Cook's distance <= 4/n | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.0013 | 0.0002 | -7.3553 | 0.0000 | *** | -0.0016 | -0.0009 | 0.1213 | 0.1109 | -5632.6475 | -5574.5225 | 938 | All | All |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0012 | 0.0005 | -2.1709 | 0.0320 | * | -0.0023 | -0.0001 | 0.1373 | 0.1146 | -700.9991 | -689.9163 | 118 | Changeup | Changeup |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0020 | 0.0006 | -3.5968 | 0.0005 | *** | -0.0031 | -0.0009 | 0.1373 | 0.1146 | -700.9991 | -689.9163 | 118 | Changeup | Changeup |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | 0.0042 | 0.0022 | 1.8904 | 0.0628 | + | -0.0002 | 0.0087 | 0.1503 | 0.1139 | -407.2160 | -397.9998 | 74 | Curveball | Curveball |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0035 | 0.0011 | -3.1909 | 0.0021 | ** | -0.0056 | -0.0013 | 0.1503 | 0.1139 | -407.2160 | -397.9998 | 74 | Curveball | Curveball |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | 0.0000 | 0.0010 | 0.0054 | 0.9957 |  | -0.0021 | 0.0021 | 0.0773 | -0.0092 | -204.8035 | -198.4694 | 36 | Cutter | Cutter |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0006 | 0.0022 | -0.2946 | 0.7702 |  | -0.0051 | 0.0038 | 0.0773 | -0.0092 | -204.8035 | -198.4694 | 36 | Cutter | Cutter |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0001 | 0.0003 | -0.4026 | 0.6874 |  | -0.0007 | 0.0004 | 0.0398 | 0.0323 | -2269.2442 | -2253.4208 | 386 | Four-Seam | Four-Seam |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0011 | 0.0003 | -3.8302 | 0.0001 | *** | -0.0017 | -0.0005 | 0.0398 | 0.0323 | -2269.2442 | -2253.4208 | 386 | Four-Seam | Four-Seam |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0004 | 0.0004 | -0.9965 | 0.3204 |  | -0.0013 | 0.0004 | 0.0537 | 0.0374 | -986.9089 | -974.1818 | 178 | Sinker | Sinker |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0017 | 0.0008 | -2.2761 | 0.0241 | * | -0.0032 | -0.0002 | 0.0537 | 0.0374 | -986.9089 | -974.1818 | 178 | Sinker | Sinker |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0009 | 0.0008 | -1.0998 | 0.2729 |  | -0.0024 | 0.0007 | 0.0653 | 0.0500 | -1049.3743 | -1036.4499 | 187 | Slider | Slider |
+| xwoba_frontier | Pitch-type-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0012 | 0.0004 | -2.9684 | 0.0034 | ** | -0.0020 | -0.0004 | 0.0653 | 0.0500 | -1049.3743 | -1036.4499 | 187 | Slider | Slider |
+| xwoba_frontier | Batter-side-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | movement_quality_20_80 | -0.0001 | 0.0003 | -0.3941 | 0.6937 |  | -0.0008 | 0.0005 | 0.0668 | 0.0511 | -2728.3414 | -2690.6841 | 485 | L | L |
+| xwoba_frontier | Batter-side-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | location_score_20_80 | -0.0013 | 0.0003 | -4.1163 | 0.0000 | *** | -0.0019 | -0.0007 | 0.0668 | 0.0511 | -2728.3414 | -2690.6841 | 485 | L | L |
+| xwoba_frontier | Batter-side-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | movement_quality_20_80 | -0.0005 | 0.0003 | -1.7923 | 0.0737 | + | -0.0010 | 0.0000 | 0.1195 | 0.1053 | -2931.5423 | -2893.5569 | 503 | R | R |
+| xwoba_frontier | Batter-side-specific | xwoba_frontier ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | location_score_20_80 | -0.0015 | 0.0003 | -5.4950 | 0.0000 | *** | -0.0020 | -0.0009 | 0.1195 | 0.1053 | -2931.5423 | -2893.5569 | 503 | R | R |
+| woba_value | WLS pitch_count | woba_value ~ weighted full model | movement_quality_20_80 | 0.0002 | 0.0002 | 1.0129 | 0.3113 |  | -0.0001 | 0.0005 | 0.2832 | 0.2751 | -2245.7950 | -2187.0468 | 988 |  |  |
+| woba_value | WLS pitch_count | woba_value ~ weighted full model | location_score_20_80 | -0.0001 | 0.0001 | -0.9767 | 0.3290 |  | -0.0004 | 0.0001 | 0.2832 | 0.2751 | -2245.7950 | -2187.0468 | 988 |  |  |
+| woba_value | WLS batted_ball_count | woba_value ~ weighted full model | movement_quality_20_80 | 0.0005 | 0.0002 | 3.3757 | 0.0008 | *** | 0.0002 | 0.0008 | 0.3692 | 0.3621 | -2707.9140 | -2649.1658 | 988 |  |  |
+| woba_value | WLS batted_ball_count | woba_value ~ weighted full model | location_score_20_80 | -0.0001 | 0.0002 | -0.4651 | 0.6419 |  | -0.0004 | 0.0002 | 0.3692 | 0.3621 | -2707.9140 | -2649.1658 | 988 |  |  |
+| woba_value | Standardized OLS | woba_value ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0248 | 0.0627 | -0.3965 | 0.6918 |  | -0.1478 | 0.0981 | 0.1153 | 0.1053 | -97.0268 | -38.2786 | 988 | All | All |
+| woba_value | Standardized OLS | woba_value ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.1326 | 0.0328 | -4.0393 | 0.0001 | *** | -0.1970 | -0.0682 | 0.1153 | 0.1053 | -97.0268 | -38.2786 | 988 | All | All |
+| woba_value | Cook's distance <= 4/n | woba_value ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0002 | 0.0002 | -1.4308 | 0.1528 |  | -0.0005 | 0.0001 | 0.1262 | 0.1159 | -6113.4725 | -6055.2456 | 946 | All | All |
+| woba_value | Cook's distance <= 4/n | woba_value ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.0004 | 0.0001 | -3.1501 | 0.0017 | ** | -0.0007 | -0.0002 | 0.1262 | 0.1159 | -6113.4725 | -6055.2456 | 946 | All | All |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | 0.0004 | 0.0005 | 0.9356 | 0.3514 |  | -0.0005 | 0.0013 | 0.0380 | 0.0127 | -726.1953 | -715.1126 | 118 | Changeup | Changeup |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0009 | 0.0006 | -1.4983 | 0.1368 |  | -0.0021 | 0.0003 | 0.0380 | 0.0127 | -726.1953 | -715.1126 | 118 | Changeup | Changeup |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | 0.0017 | 0.0016 | 1.0326 | 0.3054 |  | -0.0016 | 0.0049 | 0.1298 | 0.0925 | -447.1831 | -437.9668 | 74 | Curveball | Curveball |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0023 | 0.0015 | -1.5605 | 0.1232 |  | -0.0053 | 0.0007 | 0.1298 | 0.0925 | -447.1831 | -437.9668 | 74 | Curveball | Curveball |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | 0.0003 | 0.0011 | 0.2817 | 0.7800 |  | -0.0020 | 0.0026 | 0.0353 | -0.0552 | -211.7068 | -205.3727 | 36 | Cutter | Cutter |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | 0.0014 | 0.0021 | 0.6889 | 0.4959 |  | -0.0028 | 0.0057 | 0.0353 | -0.0552 | -211.7068 | -205.3727 | 36 | Cutter | Cutter |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | 0.0000 | 0.0003 | 0.1391 | 0.8894 |  | -0.0005 | 0.0005 | 0.0216 | 0.0139 | -2405.6956 | -2389.8722 | 386 | Four-Seam | Four-Seam |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0007 | 0.0002 | -2.6904 | 0.0074 | ** | -0.0011 | -0.0002 | 0.0216 | 0.0139 | -2405.6956 | -2389.8722 | 386 | Four-Seam | Four-Seam |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0003 | 0.0003 | -0.8282 | 0.4087 |  | -0.0009 | 0.0004 | 0.0177 | 0.0008 | -1066.0352 | -1053.3081 | 178 | Sinker | Sinker |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0007 | 0.0005 | -1.3263 | 0.1865 |  | -0.0018 | 0.0003 | 0.0177 | 0.0008 | -1066.0352 | -1053.3081 | 178 | Sinker | Sinker |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0007 | 0.0006 | -1.2784 | 0.2027 |  | -0.0019 | 0.0004 | 0.0736 | 0.0584 | -1214.1700 | -1201.2456 | 187 | Slider | Slider |
+| woba_value | Pitch-type-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0009 | 0.0003 | -3.3940 | 0.0008 | *** | -0.0014 | -0.0004 | 0.0736 | 0.0584 | -1214.1700 | -1201.2456 | 187 | Slider | Slider |
+| woba_value | Batter-side-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | movement_quality_20_80 | -0.0000 | 0.0002 | -0.0857 | 0.9317 |  | -0.0005 | 0.0004 | 0.1187 | 0.1039 | -3023.6705 | -2986.0131 | 485 | L | L |
+| woba_value | Batter-side-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | location_score_20_80 | -0.0009 | 0.0002 | -3.4867 | 0.0005 | *** | -0.0014 | -0.0004 | 0.1187 | 0.1039 | -3023.6705 | -2986.0131 | 485 | L | L |
+| woba_value | Batter-side-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | movement_quality_20_80 | -0.0001 | 0.0002 | -0.2704 | 0.7870 |  | -0.0006 | 0.0004 | 0.0820 | 0.0671 | -3092.3903 | -3054.4050 | 503 | R | R |
+| woba_value | Batter-side-specific | woba_value ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | location_score_20_80 | -0.0007 | 0.0002 | -3.2640 | 0.0012 | ** | -0.0012 | -0.0003 | 0.0820 | 0.0671 | -3092.3903 | -3054.4050 | 503 | R | R |
+| whiff_pct | WLS pitch_count | whiff_pct ~ weighted full model | movement_quality_20_80 | 0.0005 | 0.0005 | 1.0534 | 0.2924 |  | -0.0005 | 0.0015 | 0.3518 | 0.3445 | -340.7579 | -282.0097 | 988 |  |  |
+| whiff_pct | WLS pitch_count | whiff_pct ~ weighted full model | location_score_20_80 | 0.0023 | 0.0005 | 4.3395 | 0.0000 | *** | 0.0013 | 0.0034 | 0.3518 | 0.3445 | -340.7579 | -282.0097 | 988 |  |  |
+| whiff_pct | Standardized OLS | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0504 | 0.0502 | -1.0038 | 0.3157 |  | -0.1490 | 0.0481 | 0.2745 | 0.2663 | -293.0735 | -234.3253 | 988 | All | All |
+| whiff_pct | Standardized OLS | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | 0.1009 | 0.0290 | 3.4795 | 0.0005 | *** | 0.0440 | 0.1578 | 0.2745 | 0.2663 | -293.0735 | -234.3253 | 988 | All | All |
+| whiff_pct | Cook's distance <= 4/n | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0004 | 0.0003 | -1.1699 | 0.2424 |  | -0.0011 | 0.0003 | 0.3150 | 0.3068 | -4323.8180 | -4265.6930 | 938 | All | All |
+| whiff_pct | Cook's distance <= 4/n | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | 0.0017 | 0.0004 | 4.7630 | 0.0000 | *** | 0.0010 | 0.0024 | 0.3150 | 0.3068 | -4323.8180 | -4265.6930 | 938 | All | All |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | 0.0013 | 0.0014 | 0.9059 | 0.3669 |  | -0.0015 | 0.0041 | 0.0645 | 0.0399 | -490.1190 | -479.0363 | 118 | Changeup | Changeup |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | 0.0035 | 0.0014 | 2.5659 | 0.0116 | * | 0.0008 | 0.0063 | 0.0645 | 0.0399 | -490.1190 | -479.0363 | 118 | Changeup | Changeup |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0144 | 0.0034 | -4.2837 | 0.0001 | *** | -0.0211 | -0.0077 | 0.2568 | 0.2250 | -309.9981 | -300.7818 | 74 | Curveball | Curveball |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | 0.0016 | 0.0029 | 0.5538 | 0.5815 |  | -0.0041 | 0.0073 | 0.2568 | 0.2250 | -309.9981 | -300.7818 | 74 | Curveball | Curveball |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | 0.0056 | 0.0025 | 2.2206 | 0.0336 | * | 0.0005 | 0.0107 | 0.1663 | 0.0881 | -157.8334 | -151.4993 | 36 | Cutter | Cutter |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | 0.0028 | 0.0038 | 0.7435 | 0.4626 |  | -0.0050 | 0.0107 | 0.1663 | 0.0881 | -157.8334 | -151.4993 | 36 | Cutter | Cutter |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0007 | 0.0005 | -1.3924 | 0.1646 |  | -0.0017 | 0.0003 | 0.0420 | 0.0345 | -1749.8467 | -1734.0233 | 386 | Four-Seam | Four-Seam |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | 0.0018 | 0.0005 | 3.2668 | 0.0012 | ** | 0.0007 | 0.0028 | 0.0420 | 0.0345 | -1749.8467 | -1734.0233 | 386 | Four-Seam | Four-Seam |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | 0.0002 | 0.0007 | 0.3016 | 0.7633 |  | -0.0011 | 0.0015 | 0.0853 | 0.0695 | -800.3215 | -787.5943 | 178 | Sinker | Sinker |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | 0.0017 | 0.0010 | 1.7606 | 0.0801 | + | -0.0002 | 0.0036 | 0.0853 | 0.0695 | -800.3215 | -787.5943 | 178 | Sinker | Sinker |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0056 | 0.0017 | -3.3244 | 0.0011 | ** | -0.0089 | -0.0023 | 0.0658 | 0.0505 | -772.8135 | -759.8891 | 187 | Slider | Slider |
+| whiff_pct | Pitch-type-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | 0.0013 | 0.0009 | 1.5612 | 0.1202 |  | -0.0004 | 0.0030 | 0.0658 | 0.0505 | -772.8135 | -759.8891 | 187 | Slider | Slider |
+| whiff_pct | Batter-side-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | movement_quality_20_80 | -0.0008 | 0.0006 | -1.4643 | 0.1438 |  | -0.0020 | 0.0003 | 0.2304 | 0.2175 | -2074.4857 | -2036.8284 | 485 | L | L |
+| whiff_pct | Batter-side-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | location_score_20_80 | 0.0025 | 0.0006 | 4.2259 | 0.0000 | *** | 0.0013 | 0.0037 | 0.2304 | 0.2175 | -2074.4857 | -2036.8284 | 485 | L | L |
+| whiff_pct | Batter-side-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | movement_quality_20_80 | -0.0005 | 0.0005 | -1.0255 | 0.3056 |  | -0.0015 | 0.0005 | 0.2428 | 0.2305 | -2202.2366 | -2164.2513 | 503 | R | R |
+| whiff_pct | Batter-side-specific | whiff_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | location_score_20_80 | 0.0012 | 0.0006 | 2.1461 | 0.0324 | * | 0.0001 | 0.0023 | 0.2428 | 0.2305 | -2202.2366 | -2164.2513 | 503 | R | R |
+| hardhit_pct | WLS pitch_count | hardhit_pct ~ weighted full model | movement_quality_20_80 | 0.0005 | 0.0004 | 1.3242 | 0.1857 |  | -0.0003 | 0.0014 | 0.1749 | 0.1656 | -385.7477 | -326.9995 | 988 |  |  |
+| hardhit_pct | WLS pitch_count | hardhit_pct ~ weighted full model | location_score_20_80 | -0.0006 | 0.0004 | -1.3612 | 0.1738 |  | -0.0014 | 0.0002 | 0.1749 | 0.1656 | -385.7477 | -326.9995 | 988 |  |  |
+| hardhit_pct | WLS batted_ball_count | hardhit_pct ~ weighted full model | movement_quality_20_80 | 0.0010 | 0.0004 | 2.9102 | 0.0037 | ** | 0.0003 | 0.0017 | 0.2569 | 0.2486 | -911.4862 | -852.7380 | 988 |  |  |
+| hardhit_pct | WLS batted_ball_count | hardhit_pct ~ weighted full model | location_score_20_80 | -0.0004 | 0.0004 | -1.1320 | 0.2579 |  | -0.0011 | 0.0003 | 0.2569 | 0.2486 | -911.4862 | -852.7380 | 988 |  |  |
+| hardhit_pct | Standardized OLS | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0194 | 0.0641 | -0.3022 | 0.7626 |  | -0.1451 | 0.1064 | 0.0647 | 0.0542 | -42.1184 | 16.6298 | 988 | All | All |
+| hardhit_pct | Standardized OLS | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.1432 | 0.0343 | -4.1778 | 0.0000 | *** | -0.2104 | -0.0759 | 0.0647 | 0.0542 | -42.1184 | 16.6298 | 988 | All | All |
+| hardhit_pct | Cook's distance <= 4/n | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | movement_quality_20_80 | -0.0003 | 0.0003 | -0.7754 | 0.4383 |  | -0.0010 | 0.0004 | 0.0845 | 0.0736 | -4369.6000 | -4311.4494 | 940 | All | All |
+| hardhit_pct | Cook's distance <= 4/n | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + pitch_count + batted_ball_count + C(pitch_type) + C(batter_side) | location_score_20_80 | -0.0015 | 0.0003 | -4.5648 | 0.0000 | *** | -0.0022 | -0.0009 | 0.0845 | 0.0736 | -4369.6000 | -4311.4494 | 940 | All | All |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0009 | 0.0014 | -0.6665 | 0.5064 |  | -0.0037 | 0.0018 | 0.1068 | 0.0833 | -503.8749 | -492.7921 | 118 | Changeup | Changeup |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0045 | 0.0013 | -3.3657 | 0.0010 | ** | -0.0071 | -0.0018 | 0.1068 | 0.0833 | -503.8749 | -492.7921 | 118 | Changeup | Changeup |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | 0.0067 | 0.0041 | 1.6287 | 0.1079 |  | -0.0015 | 0.0149 | 0.0547 | 0.0142 | -288.9771 | -279.7609 | 74 | Curveball | Curveball |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0031 | 0.0025 | -1.2338 | 0.2214 |  | -0.0080 | 0.0019 | 0.0547 | 0.0142 | -288.9771 | -279.7609 | 74 | Curveball | Curveball |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0016 | 0.0026 | -0.6257 | 0.5360 |  | -0.0070 | 0.0037 | 0.0858 | 0.0001 | -141.0006 | -134.6665 | 36 | Cutter | Cutter |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0015 | 0.0049 | -0.3073 | 0.7606 |  | -0.0115 | 0.0085 | 0.0858 | 0.0001 | -141.0006 | -134.6665 | 36 | Cutter | Cutter |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | 0.0002 | 0.0006 | 0.3634 | 0.7165 |  | -0.0009 | 0.0013 | 0.0132 | 0.0054 | -1728.9518 | -1713.1284 | 386 | Four-Seam | Four-Seam |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0012 | 0.0006 | -2.1858 | 0.0294 | * | -0.0023 | -0.0001 | 0.0132 | 0.0054 | -1728.9518 | -1713.1284 | 386 | Four-Seam | Four-Seam |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0001 | 0.0009 | -0.1540 | 0.8778 |  | -0.0020 | 0.0017 | 0.0208 | 0.0039 | -751.8885 | -739.1614 | 178 | Sinker | Sinker |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0022 | 0.0016 | -1.3805 | 0.1692 |  | -0.0052 | 0.0009 | 0.0208 | 0.0039 | -751.8885 | -739.1614 | 178 | Sinker | Sinker |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | movement_quality_20_80 | -0.0008 | 0.0014 | -0.5782 | 0.5638 |  | -0.0035 | 0.0019 | 0.0619 | 0.0466 | -822.6695 | -809.7451 | 187 | Slider | Slider |
+| hardhit_pct | Pitch-type-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(batter_side) | location_score_20_80 | -0.0025 | 0.0008 | -3.2364 | 0.0014 | ** | -0.0040 | -0.0010 | 0.0619 | 0.0466 | -822.6695 | -809.7451 | 187 | Slider | Slider |
+| hardhit_pct | Batter-side-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | movement_quality_20_80 | 0.0001 | 0.0007 | 0.1703 | 0.8649 |  | -0.0012 | 0.0014 | 0.0484 | 0.0324 | -2086.9468 | -2049.2895 | 485 | L | L |
+| hardhit_pct | Batter-side-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | location_score_20_80 | -0.0018 | 0.0006 | -2.9894 | 0.0029 | ** | -0.0030 | -0.0006 | 0.0484 | 0.0324 | -2086.9468 | -2049.2895 | 485 | L | L |
+| hardhit_pct | Batter-side-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | movement_quality_20_80 | -0.0002 | 0.0006 | -0.4307 | 0.6669 |  | -0.0013 | 0.0009 | 0.0590 | 0.0438 | -2184.9558 | -2146.9705 | 503 | R | R |
+| hardhit_pct | Batter-side-specific | hardhit_pct ~ movement_quality_20_80 + location_score_20_80 + C(pitch_type) | location_score_20_80 | -0.0024 | 0.0006 | -4.2393 | 0.0000 | *** | -0.0035 | -0.0013 | 0.0590 | 0.0438 | -2184.9558 | -2146.9705 | 503 | R | R |
+
+## Table 5. Pitch-Type-Specific Results
+
+No rows.
+
+## Table 6. Batter-Side-Specific Results
+
+No rows.
+
+## Figures
+
+- `paper_research/paper_1_movement_vs_location/plots/r_squared_comparison.png`
+- `paper_research/paper_1_movement_vs_location/plots/movement_vs_xwoba.png`
+- `paper_research/paper_1_movement_vs_location/plots/location_vs_xwoba.png`
+- `paper_research/paper_1_movement_vs_location/plots/movement_vs_whiff_pct.png`
+- `paper_research/paper_1_movement_vs_location/plots/location_vs_hardhit_pct.png`
+- `paper_research/paper_1_movement_vs_location/plots/movement_location_coefficient_comparison.png`

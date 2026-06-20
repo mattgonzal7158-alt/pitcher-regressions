@@ -1,0 +1,288 @@
+from __future__ import annotations
+
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+
+INPUT_PATH = Path("data/processed/pitcher_pitch_type_xwoba_metrics.csv")
+OUTPUT_PATH = Path("data/processed/pitch_value_scores.csv")
+REPORT_PATH = Path("reports/pitch_value_score_leaderboards.md")
+
+MIN_PITCHES = 50
+MIN_BATTED_BALLS = 10
+
+PREDICTORS = [
+    "whiff_pct",
+    "csw_pct",
+    "putaway_pct",
+    "k_pct",
+    "avg_exit_velocity",
+    "hardhit_pct",
+    "barrel_pct",
+    "sweetspot_pct",
+]
+
+# Standardized coefficients from xwoba_pitch_metric_regression_report.md.
+# Positive coefficients raise xwOBA, so Pitch Value Score uses the negative
+# weighted sum: higher score means lower expected damage.
+STANDARDIZED_COEFFICIENTS = {
+    "whiff_pct": 0.003254,
+    "csw_pct": 0.029336,
+    "putaway_pct": -0.014520,
+    "k_pct": -0.043673,
+    "avg_exit_velocity": 0.589000,
+    "hardhit_pct": 0.239017,
+    "barrel_pct": -0.049151,
+    "sweetspot_pct": 0.303807,
+}
+
+LEADERBOARD_GROUPS = {
+    "Four-Seams": ["Four-Seam"],
+    "Sinkers": ["Sinker"],
+    "Sliders": ["Slider"],
+    "Curveballs": ["Curveball"],
+    "Changeups": ["Changeup"],
+}
+
+
+def percentile_rank(values: pd.Series) -> pd.Series:
+    return values.rank(method="average", pct=True).mul(100)
+
+
+def add_pitch_value_scores(df: pd.DataFrame) -> pd.DataFrame:
+    model_df = df.loc[
+        df["pitch_count"].ge(MIN_PITCHES)
+        & df["batted_ball_count"].ge(MIN_BATTED_BALLS)
+    ].copy()
+    model_df = model_df.dropna(subset=["xwoba_frontier", *PREDICTORS])
+
+    means = model_df[PREDICTORS].mean()
+    stds = model_df[PREDICTORS].std(ddof=0).replace(0, np.nan)
+
+    weighted_damage = pd.Series(0.0, index=model_df.index)
+    for variable in PREDICTORS:
+        z_value = (model_df[variable] - means[variable]) / stds[variable]
+        model_df[f"{variable}_z"] = z_value
+        model_df[f"{variable}_score_component"] = -STANDARDIZED_COEFFICIENTS[variable] * z_value
+        weighted_damage += STANDARDIZED_COEFFICIENTS[variable] * z_value
+
+    model_df["pitch_value_raw"] = -weighted_damage
+    raw_mean = model_df["pitch_value_raw"].mean()
+    raw_std = model_df["pitch_value_raw"].std(ddof=0)
+    model_df["pitch_value_20_80"] = (
+        50 + 10 * ((model_df["pitch_value_raw"] - raw_mean) / raw_std)
+    ).clip(20, 80)
+    model_df["pitch_value_0_100"] = percentile_rank(model_df["pitch_value_raw"])
+    model_df["overall_rank"] = model_df["pitch_value_raw"].rank(
+        method="first", ascending=False
+    ).astype(int)
+    model_df["pitch_type_rank"] = (
+        model_df.groupby("pitch_type")["pitch_value_raw"]
+        .rank(method="first", ascending=False)
+        .astype(int)
+    )
+
+    return model_df.sort_values("overall_rank")
+
+
+def format_rate(value: float) -> str:
+    return "" if pd.isna(value) else f"{value * 100:.1f}%"
+
+
+def leaderboard_table(df: pd.DataFrame, rows: int = 25) -> list[str]:
+    columns = [
+        "Rank",
+        "Pitcher",
+        "Team",
+        "Pitch Type",
+        "Pitches",
+        "BBE",
+        "xwOBA",
+        "PVS 20-80",
+        "PVS 0-100",
+        "EV",
+        "Whiff%",
+        "K%",
+        "HardHit%",
+        "SweetSpot%",
+        "Pitch Type Rank",
+    ]
+    lines = ["| " + " | ".join(columns) + " |", "|" + "|".join(["---"] * len(columns)) + "|"]
+    for row in df.head(rows).itertuples(index=False):
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    str(row.overall_rank),
+                    str(row.pitcher_name),
+                    str(row.pitcher_team),
+                    str(row.pitch_type),
+                    f"{int(row.pitch_count):,}",
+                    f"{int(row.batted_ball_count):,}",
+                    f"{row.xwoba_frontier:.3f}",
+                    f"{row.pitch_value_20_80:.1f}",
+                    f"{row.pitch_value_0_100:.1f}",
+                    f"{row.avg_exit_velocity:.1f}",
+                    format_rate(row.whiff_pct),
+                    format_rate(row.k_pct),
+                    format_rate(row.hardhit_pct),
+                    format_rate(row.sweetspot_pct),
+                    str(row.pitch_type_rank),
+                ]
+            )
+            + " |"
+        )
+    return lines
+
+
+def write_report(scored: pd.DataFrame, output_path: Path) -> None:
+    lines = [
+        "# Frontier League Pitch Value Score",
+        "",
+        f"- Input file: `{INPUT_PATH}`",
+        f"- Output file: `{output_path}`",
+        f"- Qualified pitcher-pitch types scored: {len(scored):,}",
+        f"- Qualification: at least {MIN_PITCHES} pitches and {MIN_BATTED_BALLS} tracked batted balls",
+        "- Score direction: higher is better, meaning lower expected xwOBA damage based on the standardized regression coefficients.",
+        "- Pitch type normalization: `Fastball` is grouped with `Four-Seam`; `Two-Seam` is grouped with `Sinker`.",
+        "",
+        "## What The Score Means",
+        "",
+        "Pitch Value Score is a pitch-level quality grade. Higher is better. A high score means that a pitcher-pitch type has the mix of miss, strike, and contact-management traits that the Frontier League regression associated with lower expected damage.",
+        "",
+        "This is not a full pitcher grade. It grades one pitch type for one pitcher. A pitcher can have an elite individual pitch and still have a weaker overall arsenal, command profile, workload, or role fit.",
+        "",
+        "The score is built so the interpretation is familiar:",
+        "",
+        "- `50` on the 20-80 scale is league average among qualified pitcher-pitch types.",
+        "- `60` is roughly one standard deviation better than average.",
+        "- `70` is roughly two standard deviations better than average.",
+        "- `80` is the top-end cap used for the report.",
+        "- `pitch_value_0_100` is the pitch's percentile rank among qualified pitcher-pitch types.",
+        "",
+        "## Inputs",
+        "",
+        "The score starts from pitcher + pitch type aggregates. Each row represents one pitch type thrown by one pitcher, not a single pitch. To reduce noise, only rows with enough volume are scored.",
+        "",
+        "Pitch type labels are normalized before scoring: `Fastball` and `Four-Seam` are one pitch type labeled `Four-Seam`, while `Two-Seam` and `Sinker` are one pitch type labeled `Sinker`.",
+        "",
+        "| Input Metric | Baseball Meaning | Score Direction |",
+        "|---|---|---|",
+        "| Whiff% | Ability to miss bats when hitters swing. | Higher is generally better, but the regression weight was near zero after contact metrics were included. |",
+        "| CSW% | Called strikes plus whiffs per pitch. | Measures count-control and bat-missing. |",
+        "| PutAway% | Strikeouts per two-strike pitch. | Higher means the pitch can finish plate appearances. |",
+        "| K% | Strikeouts per terminal PA-ending pitch for that pitch type. | Higher means stronger bat-missing/finishing results. |",
+        "| Average Exit Velocity | How hard tracked batted balls are hit. | Lower is better. |",
+        "| HardHit% | Share of batted balls at least 95 mph. | Lower is better. |",
+        "| Barrel% | Share of batted balls in an approximate barrel launch/EV zone. | Lower is usually better, but the multivariate coefficient is conditional on EV/HardHit/SweetSpot. |",
+        "| SweetSpot% | Share of batted balls launched from 8 to 32 degrees. | Lower is better for pitchers because this is a productive launch window. |",
+        "",
+        "## Score Method",
+        "",
+        "The score uses the standardized coefficients from the regression where average `xwoba_frontier` was predicted by the miss and contact metrics. Those coefficients say how strongly each metric was associated with expected damage after controlling for the others.",
+        "",
+        "Each metric was standardized across qualified pitcher-pitch type rows. The standardized regression coefficient was applied to estimate xwOBA pressure, then the sign was reversed so lower-xwOBA traits score higher.",
+        "",
+        "`pitch_value_raw = -sum(standardized_coefficient * metric_z)`",
+        "",
+        "- `pitch_value_20_80`: scouting-style scale, mean 50 and 10 points per standard deviation, clipped from 20 to 80.",
+        "- `pitch_value_0_100`: percentile rank of `pitch_value_raw` among qualified pitcher-pitch types.",
+        "- `overall_rank`: rank across all qualified pitcher-pitch types.",
+        "- `pitch_type_rank`: rank within that exact pitch type label.",
+        "",
+        "Because the sign is reversed, a metric with a positive xwOBA coefficient hurts the Pitch Value Score when it is high. A metric with a negative xwOBA coefficient helps the score when it is high.",
+        "",
+        "## Methodology Notes",
+        "",
+        "- The dependent variable for the original scoring regression was `xwoba_frontier`, which was generated from batted-ball launch traits and Frontier League wOBA values.",
+        "- The scoring model is descriptive. It identifies which observed pitch-level outcomes were associated with lower expected damage in this dataset.",
+        "- Contact quality carries much of the weight because the regression found average exit velocity, SweetSpot%, and HardHit% were the strongest predictors of xwOBA.",
+        "- Miss metrics still matter for baseball evaluation, but in this multivariate score they receive less weight if they did not explain additional xwOBA variation beyond contact quality.",
+        "- Small samples can still move the leaderboards. The qualification filter helps, but the score should be read with pitch count and batted-ball count nearby.",
+        "- The score does not directly include command, sequencing, handedness splits, game context, injury risk, or scouting grades.",
+        "",
+        "## Top 25 Pitches in the League",
+        "",
+        *leaderboard_table(scored, rows=25),
+        "",
+        "## Leaderboards by Pitch Family",
+        "",
+    ]
+
+    for title, pitch_types in LEADERBOARD_GROUPS.items():
+        subset = scored.loc[scored["pitch_type"].isin(pitch_types)].copy()
+        lines.extend([f"### {title}", ""])
+        if subset.empty:
+            lines.append("No qualified pitches.")
+        else:
+            lines.extend(leaderboard_table(subset, rows=25))
+        lines.append("")
+
+    lines.extend(
+        [
+            "## Standardized Coefficients Used",
+            "",
+            "| Metric | Standardized Coefficient | Score Direction |",
+            "|---|---:|---|",
+        ]
+    )
+    for metric, coefficient in STANDARDIZED_COEFFICIENTS.items():
+        direction = "helps score when lower" if coefficient > 0 else "helps score when higher"
+        lines.append(f"| `{metric}` | {coefficient:.6f} | {direction} |")
+
+    REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
+
+
+def main() -> None:
+    df = pd.read_csv(INPUT_PATH)
+    missing = sorted(
+        {
+            "pitcher_name",
+            "pitcher_team",
+            "pitch_type",
+            "pitch_count",
+            "batted_ball_count",
+            "xwoba_frontier",
+            *PREDICTORS,
+        }.difference(df.columns)
+    )
+    if missing:
+        raise ValueError(f"Missing required columns: {missing}")
+
+    scored = add_pitch_value_scores(df)
+    output_path = OUTPUT_PATH
+    try:
+        scored.to_csv(output_path, index=False)
+    except PermissionError:
+        output_path = Path("data/processed/pitch_value_scores_with_type_rank.csv")
+        scored.to_csv(output_path, index=False)
+
+    write_report(scored, output_path)
+
+    print(f"Wrote scores: {output_path}")
+    print(f"Wrote leaderboards: {REPORT_PATH}")
+    print(f"Qualified pitcher-pitch types: {len(scored):,}")
+    print("\nTop 25 pitches:")
+    print(
+        scored[
+            [
+                "overall_rank",
+                "pitcher_name",
+                "pitcher_team",
+                "pitch_type",
+                "pitch_count",
+                "batted_ball_count",
+                "xwoba_frontier",
+                "pitch_value_20_80",
+                "pitch_value_0_100",
+            ]
+        ]
+        .head(25)
+        .to_string(index=False)
+    )
+
+
+if __name__ == "__main__":
+    main()

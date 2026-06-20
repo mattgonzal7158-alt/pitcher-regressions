@@ -1,0 +1,45 @@
+dependent,diagnostic,variable,value,p_value
+xwoba_frontier,VIF,movement_quality_20_80,1.0872787559112957,
+xwoba_frontier,VIF,location_score_20_80,1.0246148717158852,
+xwoba_frontier,VIF,pitch_count,3.3549516252377765,
+xwoba_frontier,VIF,batted_ball_count,3.4999556618440364,
+xwoba_frontier,Breusch-Pagan LM,,53.55841512056384,6.511151185673708e-11
+xwoba_frontier,White LM,,67.30756753681268,5.906966424127789e-09
+xwoba_frontier,Jarque-Bera,,7.833297582988957,0.01990769792808157
+xwoba_frontier,Shapiro-Wilk,,0.9964853676339757,0.026006569374503775
+xwoba_frontier,Durbin-Watson,,1.478874224598402,
+xwoba_frontier,Residual mean,,-6.74224508881674e-15,
+xwoba_frontier,Residual std,,0.056042667992927155,
+woba_value,VIF,movement_quality_20_80,1.0872787559112957,
+woba_value,VIF,location_score_20_80,1.0246148717158852,
+woba_value,VIF,pitch_count,3.3549516252377765,
+woba_value,VIF,batted_ball_count,3.4999556618440364,
+woba_value,Breusch-Pagan LM,,59.50675021615087,3.682698441793852e-12
+woba_value,White LM,,86.28944256765209,1.8965845667793302e-12
+woba_value,Jarque-Bera,,69.29391267746051,8.974660884238016e-16
+woba_value,Shapiro-Wilk,,0.9832422409866473,3.1404567391694016e-09
+woba_value,Durbin-Watson,,1.8020554676920653,
+woba_value,Residual mean,,-2.979173363245157e-15,
+woba_value,Residual std,,0.0441127554841458,
+whiff_pct,VIF,movement_quality_20_80,1.0872787559112957,
+whiff_pct,VIF,location_score_20_80,1.0246148717158852,
+whiff_pct,VIF,pitch_count,3.3549516252377765,
+whiff_pct,VIF,batted_ball_count,3.4999556618440364,
+whiff_pct,Breusch-Pagan LM,,40.730001199629605,3.057000606507326e-08
+whiff_pct,White LM,,81.9972214334665,1.2037499552222047e-11
+whiff_pct,Jarque-Bera,,18.40554831141402,0.00010075949124115732
+whiff_pct,Shapiro-Wilk,,0.9930282496988078,0.00013718702465101434
+whiff_pct,Durbin-Watson,,1.9350742694472836,
+whiff_pct,Residual mean,,-3.0241216638372683e-15,
+whiff_pct,Residual std,,0.11004349238636016,
+hardhit_pct,VIF,movement_quality_20_80,1.0872787559112957,
+hardhit_pct,VIF,location_score_20_80,1.0246148717158852,
+hardhit_pct,VIF,pitch_count,3.3549516252377765,
+hardhit_pct,VIF,batted_ball_count,3.4999556618440364,
+hardhit_pct,Breusch-Pagan LM,,47.16784851116989,1.406964188095252e-09
+hardhit_pct,White LM,,64.67211098980997,1.7503187915100708e-08
+hardhit_pct,Jarque-Bera,,114.63923180894405,1.277635904207969e-25
+hardhit_pct,Shapiro-Wilk,,0.9727514994017467,1.1714349500416812e-12
+hardhit_pct,Durbin-Watson,,1.6347964600755212,
+hardhit_pct,Residual mean,,-6.411425596458799e-15,
+hardhit_pct,Residual std,,0.11246163555390068,
