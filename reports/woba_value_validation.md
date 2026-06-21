@@ -1,7 +1,7 @@
 # woba_value Validation Report
 
-- Input file: `2026-data.parquet`
-- Output file: `2026-data-with-woba.parquet`
+- Input file: `data\raw\2026-data.parquet`
+- Output file: `data\processed\2026-data-with-woba.parquet`
 - Rows saved: 92,670
 - Columns saved: 243
 

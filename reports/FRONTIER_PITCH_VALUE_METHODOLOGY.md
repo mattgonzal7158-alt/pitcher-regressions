@@ -60,15 +60,15 @@ The selected xwOBA model used:
 
 That model was selected because it had the best holdout RMSE and R-squared among the tested xwOBA models.
 
-## Regression Behind Pitch Value Score
+## Score Weights Behind Pitch Value Score
 
-Pitch Value Score comes from this regression:
+Pitch Value Score uses frozen standardized weights on miss, strike, and contact-management metrics:
 
-`xwoba_frontier ~ miss metrics + contact metrics`
+`xwOBA_pressure = sum(standardized_weight * metric_z)`
 
-The goal was to learn which pitch-level outcomes are most predictive of lower expected damage.
+The goal is to grade which pitch-level outcomes point toward lower expected damage.
 
-The regression found that contact quality carried most of the predictive weight:
+Contact quality carries most of the score weight:
 
 - Average Exit Velocity
 - SweetSpot%
@@ -80,9 +80,9 @@ Miss metrics still matter in baseball evaluation, but in this model they added l
 
 Each input metric is standardized across qualified pitcher-pitch type rows.
 
-Then the standardized regression coefficients are applied:
+Then the standardized score weights are applied:
 
-`xwOBA_pressure = sum(standardized_coefficient * metric_z)`
+`xwOBA_pressure = sum(standardized_weight * metric_z)`
 
 Because lower xwOBA is better for pitchers, the sign is reversed:
 
@@ -98,7 +98,7 @@ So:
 
 | Column | Meaning |
 |---|---|
-| `pitch_value_raw` | Unscaled regression-weighted score. Higher is better. |
+| `pitch_value_raw` | Unscaled weighted score. Higher is better. |
 | `pitch_value_20_80` | Scouting-style scale. 50 is average, 60 is plus, 70 is double-plus, 80 is the cap. |
 | `pitch_value_0_100` | Percentile rank among qualified pitcher-pitch types. |
 | `overall_rank` | Rank among all qualified pitcher-pitch types. |
@@ -125,11 +125,11 @@ Always read the score with:
 
 Small batted-ball samples can make contact metrics noisy.
 
-## Movement Regression
+## Movement Archetypes
 
-After Pitch Value Score was created, I tested which movement and release traits were associated with higher scores.
+After Pitch Value Score was created, movement and release traits were grouped into archetypes.
 
-Movement predictors:
+Movement traits:
 
 - IVB
 - HB
@@ -139,47 +139,15 @@ Movement predictors:
 - Release Height
 - Release Side
 
-Interaction terms tested:
-
-- IVB x Velocity
-- HB x Velocity
-- Spin x Velocity
-
-The movement model answers a different question than the Pitch Value Score model.
+The movement grouping answers a different question than the Pitch Value Score.
 
 Pitch Value Score asks:
 
 > Which pitches have the best miss, strike, and contact-management outcomes?
 
-Movement regression asks:
+Movement archetypes ask:
 
-> Which movement traits are associated with those better pitch scores?
-
-## How To Read Movement Regression Tables
-
-All movement predictors are standardized before modeling.
-
-A coefficient of `+1.00` means:
-
-> A one-standard-deviation increase in that trait is associated with a one-point increase in Pitch Value Score, holding the other movement traits constant.
-
-A negative coefficient means the trait is associated with lower Pitch Value Score after controls.
-
-Important distinction:
-
-- Correlation is the raw one-to-one relationship.
-- Regression is the conditional relationship after accounting for other variables.
-
-If correlation and regression disagree, the trait probably overlaps with pitch type, velocity band, role, or another movement trait.
-
-Current movement-model takeaway:
-
-- Movement traits explain only a modest share of Pitch Value Score.
-- Spin Rate and Spin x Velocity are the clearest positive movement signals.
-- Velocity by itself is negative after controls, which should be read as a pitch-mix/context finding, not as "velocity is bad."
-- IVB is weak after controls in this league-wide model.
-
-## Movement Archetypes
+> Which movement families do these scored pitches belong to?
 
 Movement archetypes were clustered with:
 
@@ -218,9 +186,7 @@ These are scouting targets. They may need better command, usage, sequencing, or 
 | `reports/pitch_value_score_leaderboards.md` | Main score explanation and leaderboards. |
 | `data/processed/pitch_value_scores_with_type_rank.csv` | Current normalized Pitch Value Score table with pitch-type ranks. |
 | `data/processed/pitch_value_scores.csv` | Canonical filename; may be stale if the CSV is open/locked during regeneration. |
-| `reports/pitch_value_movement_report.md` | Movement regression, impact tables, correlations, and plots. |
-| `data/processed/pitch_value_movement_correlations.csv` | Raw correlations between movement traits and outcomes. |
-| `data/processed/pitch_value_movement_regression_coefficients.csv` | Regression coefficients for the interaction movement model. |
+| `data/processed/movement_score_inputs.csv` | Pitch Value joined to movement and release traits for archetypes and master tables. |
 | `reports/pitch_movement_archetype_report.md` | Movement clusters, top archetypes, undervalued pitches, scouting notes. |
 
 ## Limitations

@@ -10,7 +10,7 @@ INPUT_PATHS = {
     "location_scores": Path("data/processed/location_scores.csv"),
     "split_leaderboards": Path("data/processed/pitch_leaderboard_splits.csv"),
     "platoon_weapons": Path("data/processed/platoon_weapon_scores.csv"),
-    "movement_model": Path("data/processed/pitch_value_movement_model_data.csv"),
+    "movement_score_inputs": Path("data/processed/movement_score_inputs.csv"),
     "archetypes": Path("data/processed/pitch_movement_archetypes.csv"),
 }
 OUTPUT_PATH = Path("data/processed/master_pitch_evaluation_table.csv")
@@ -274,7 +274,7 @@ def merge_platoon(
 def merge_movement(
     master: pd.DataFrame, frames: dict[str, pd.DataFrame], warnings: list[str]
 ) -> pd.DataFrame:
-    source_name = "archetypes" if "archetypes" in frames else "movement_model"
+    source_name = "archetypes" if "archetypes" in frames else "movement_score_inputs"
     if source_name not in frames:
         return master
 

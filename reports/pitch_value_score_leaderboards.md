@@ -4,12 +4,12 @@
 - Output file: `data\processed\pitch_value_scores.csv`
 - Qualified pitcher-pitch types scored: 568
 - Qualification: at least 50 pitches and 10 tracked batted balls
-- Score direction: higher is better, meaning lower expected xwOBA damage based on the standardized regression coefficients.
+- Score direction: higher is better, meaning lower expected xwOBA damage based on the frozen standardized score weights.
 - Pitch type normalization: `Fastball` is grouped with `Four-Seam`; `Two-Seam` is grouped with `Sinker`.
 
 ## What The Score Means
 
-Pitch Value Score is a pitch-level quality grade. Higher is better. A high score means that a pitcher-pitch type has the mix of miss, strike, and contact-management traits that the Frontier League regression associated with lower expected damage.
+Pitch Value Score is a pitch-level quality grade. Higher is better. A high score means that a pitcher-pitch type has a strong mix of miss, strike, and contact-management traits associated with lower expected damage.
 
 This is not a full pitcher grade. It grades one pitch type for one pitcher. A pitcher can have an elite individual pitch and still have a weaker overall arsenal, command profile, workload, or role fit.
 
@@ -29,7 +29,7 @@ Pitch type labels are normalized before scoring: `Fastball` and `Four-Seam` are 
 
 | Input Metric | Baseball Meaning | Score Direction |
 |---|---|---|
-| Whiff% | Ability to miss bats when hitters swing. | Higher is generally better, but the regression weight was near zero after contact metrics were included. |
+| Whiff% | Ability to miss bats when hitters swing. | Higher is generally better, but this frozen score weight is small after contact metrics are included. |
 | CSW% | Called strikes plus whiffs per pitch. | Measures count-control and bat-missing. |
 | PutAway% | Strikeouts per two-strike pitch. | Higher means the pitch can finish plate appearances. |
 | K% | Strikeouts per terminal PA-ending pitch for that pitch type. | Higher means stronger bat-missing/finishing results. |
@@ -40,25 +40,24 @@ Pitch type labels are normalized before scoring: `Fastball` and `Four-Seam` are 
 
 ## Score Method
 
-The score uses the standardized coefficients from the regression where average `xwoba_frontier` was predicted by the miss and contact metrics. Those coefficients say how strongly each metric was associated with expected damage after controlling for the others.
+The score uses frozen standardized weights on the miss and contact metrics. Those weights encode how strongly each metric is associated with expected damage in the scoring system.
 
-Each metric was standardized across qualified pitcher-pitch type rows. The standardized regression coefficient was applied to estimate xwOBA pressure, then the sign was reversed so lower-xwOBA traits score higher.
+Each metric is standardized across qualified pitcher-pitch type rows. The standardized score weight is applied to estimate xwOBA pressure, then the sign is reversed so lower-xwOBA traits score higher.
 
-`pitch_value_raw = -sum(standardized_coefficient * metric_z)`
+`pitch_value_raw = -sum(standardized_weight * metric_z)`
 
 - `pitch_value_20_80`: scouting-style scale, mean 50 and 10 points per standard deviation, clipped from 20 to 80.
 - `pitch_value_0_100`: percentile rank of `pitch_value_raw` among qualified pitcher-pitch types.
 - `overall_rank`: rank across all qualified pitcher-pitch types.
 - `pitch_type_rank`: rank within that exact pitch type label.
 
-Because the sign is reversed, a metric with a positive xwOBA coefficient hurts the Pitch Value Score when it is high. A metric with a negative xwOBA coefficient helps the score when it is high.
+Because the sign is reversed, a metric with a positive damage weight hurts the Pitch Value Score when it is high. A metric with a negative damage weight helps the score when it is high.
 
 ## Methodology Notes
 
-- The dependent variable for the original scoring regression was `xwoba_frontier`, which was generated from batted-ball launch traits and Frontier League wOBA values.
 - The scoring model is descriptive. It identifies which observed pitch-level outcomes were associated with lower expected damage in this dataset.
-- Contact quality carries much of the weight because the regression found average exit velocity, SweetSpot%, and HardHit% were the strongest predictors of xwOBA.
-- Miss metrics still matter for baseball evaluation, but in this multivariate score they receive less weight if they did not explain additional xwOBA variation beyond contact quality.
+- Contact quality carries much of the weight because average exit velocity, SweetSpot%, and HardHit% are the strongest damage signals in the current score.
+- Miss metrics still matter for baseball evaluation, but in this multivariate score they receive less weight when contact quality already captures most of the damage signal.
 - Small samples can still move the leaderboards. The qualification filter helps, but the score should be read with pitch count and batted-ball count nearby.
 - The score does not directly include command, sequencing, handedness splits, game context, injury risk, or scouting grades.
 

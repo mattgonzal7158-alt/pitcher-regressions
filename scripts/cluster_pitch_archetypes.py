@@ -11,7 +11,7 @@ from sklearn.metrics import silhouette_score
 from sklearn.preprocessing import StandardScaler
 
 
-INPUT_PATH = Path("data/processed/pitch_value_movement_model_data.csv")
+INPUT_PATH = Path("data/processed/movement_score_inputs.csv")
 OUTPUT_PATH = Path("data/processed/pitch_movement_archetypes.csv")
 CLUSTER_SUMMARY_PATH = Path("data/processed/pitch_movement_archetype_summary.csv")
 HIGH_ARCHETYPE_PITCHES_PATH = Path("data/processed/highest_performing_archetype_pitches.csv")

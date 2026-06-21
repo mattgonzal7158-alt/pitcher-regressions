@@ -1,6 +1,6 @@
 # Frontier League TrackMan Parquet Data Audit
 
-- File: `2026-data.parquet`
+- File: `data\raw\2026-data.parquet`
 - Rows: 92,670
 - Columns: 242
 - Memory usage in pandas: 581.67 MB

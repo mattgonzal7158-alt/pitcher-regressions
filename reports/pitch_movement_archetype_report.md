@@ -1,6 +1,6 @@
 # Frontier League Movement Archetypes
 
-- Input file: `data\processed\pitch_value_movement_model_data.csv`
+- Input file: `data\processed\movement_score_inputs.csv`
 - Scored output: `data\processed\pitch_movement_archetypes.csv`
 - Cluster summary: `data\processed\pitch_movement_archetype_summary.csv`
 - Highest-performing archetype pitch list: `data\processed\highest_performing_archetype_pitches.csv`
