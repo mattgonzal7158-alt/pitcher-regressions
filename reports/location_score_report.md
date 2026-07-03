@@ -3,8 +3,8 @@
 - Pitch input file: `data\processed\2026-data-with-woba-xwoba.parquet`
 - Location grid input file: `data\processed\location_value_grid.csv`
 - Output file: `data\processed\location_scores.csv`
-- Assigned pitch rows: 91,744
-- Qualified pitcher + pitch type + batter side rows: 1,187
+- Assigned pitch rows: 129,986
+- Qualified pitcher + pitch type + batter side rows: 1,558
 - Qualification: at least 25 pitches with an assigned location grid value
 - Score direction: higher is better; positive location advantage means the pitch was located in a lower-xwOBA grid cell than the pitch type + batter side league average.
 - Pitch type normalization: `Fastball` is grouped with `Four-Seam`; `Two-Seam` is grouped with `Sinker`.
@@ -27,36 +27,36 @@ Scores are aggregated by pitcher, normalized pitch type, and batter side:
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Binns, Malik | NEW_JER6 | Four-Seam | RHH | 25 | 0.0190 | 0.0151 | 0.2210 | 0.2400 | 80.0 | 100.0 | 1 |
-| 2 | Perez, Kelvin | WAS_WIL3 | Slider | RHH | 45 | 0.0183 | 0.0152 | 0.2117 | 0.2301 | 80.0 | 99.9 | 1 |
-| 3 | McCartney, Seth | MIS_MUD | Slider | RHH | 36 | 0.0171 | 0.0034 | 0.2130 | 0.2301 | 80.0 | 99.8 | 2 |
-| 4 | Nova, Fraynel | LAK_ERI24 | Slider | RHH | 100 | 0.0171 | 0.0118 | 0.2130 | 0.2301 | 80.0 | 99.7 | 3 |
-| 5 | Smith, Ethan | WIN_CIT29 | Slider | RHH | 30 | 0.0167 | 0.0007 | 0.2133 | 0.2301 | 80.0 | 99.7 | 4 |
-| 6 | Reeves, Cobe | NEW_YOR13 | Four-Seam | RHH | 27 | 0.0167 | 0.0204 | 0.2233 | 0.2400 | 80.0 | 99.6 | 2 |
-| 7 | Blair, Davis | DOW_EAS1 | Slider | RHH | 61 | 0.0163 | 0.0095 | 0.2137 | 0.2301 | 79.2 | 99.5 | 5 |
-| 8 | Long, Maddox | WAS_WIL3 | Changeup | LHH | 31 | 0.0162 | 0.0167 | 0.2273 | 0.2436 | 79.0 | 99.4 | 1 |
-| 9 | Willeman, Landon | EVA_OTT | Slider | RHH | 33 | 0.0157 | 0.0000 | 0.2143 | 0.2301 | 77.9 | 99.3 | 6 |
-| 10 | Petraitis, AJ | LEM_COL | Four-Seam | RHH | 29 | 0.0151 | 0.0078 | 0.2249 | 0.2400 | 76.6 | 99.2 | 3 |
-| 11 | Wehrle, Tyler | WIN_CIT29 | Four-Seam | LHH | 75 | 0.0151 | 0.0141 | 0.2315 | 0.2466 | 76.5 | 99.2 | 1 |
-| 12 | Belton, Hunter | MIS_MUD | Slider | RHH | 75 | 0.0150 | 0.0058 | 0.2151 | 0.2301 | 76.3 | 99.1 | 7 |
-| 13 | Perdomo, Rafael | QUE_CAP | Slider | RHH | 46 | 0.0149 | 0.0007 | 0.2152 | 0.2301 | 76.0 | 99.0 | 8 |
-| 14 | Perozzi, John | SUS_COU1 | Slider | RHH | 46 | 0.0148 | 0.0152 | 0.2152 | 0.2301 | 76.0 | 98.9 | 9 |
-| 15 | Gamelin, Shaun | JOL_SLA | Slider | RHH | 31 | 0.0148 | 0.0102 | 0.2153 | 0.2301 | 75.8 | 98.8 | 10 |
-| 16 | Sechrist, Zander | WAS_WIL3 | Sinker | LHH | 28 | 0.0147 | 0.0045 | 0.2485 | 0.2632 | 75.7 | 98.7 | 1 |
-| 17 | Whitesell, Max | FLO_Y'A | Slider | RHH | 77 | 0.0145 | 0.0050 | 0.2155 | 0.2301 | 75.3 | 98.7 | 11 |
-| 18 | Cohn, Cooper | NIU_HUS | Slider | RHH | 27 | 0.0145 | 0.0000 | 0.2155 | 0.2301 | 75.3 | 98.6 | 12 |
-| 19 | Davis, Tyler | WAS_WIL3 | Four-Seam | LHH | 48 | 0.0144 | 0.0141 | 0.2323 | 0.2466 | 75.0 | 98.5 | 2 |
-| 20 | Salata, Derek | SCH_BOO | Slider | RHH | 100 | 0.0142 | 0.0082 | 0.2158 | 0.2301 | 74.7 | 98.4 | 13 |
-| 21 | Smith, Jackson | MIS_MUD | Changeup | LHH | 26 | 0.0142 | 0.0086 | 0.2294 | 0.2436 | 74.5 | 98.3 | 2 |
-| 22 | Wiltse, Ryan | EVA_OTT | Slider | RHH | 35 | 0.0140 | 0.0082 | 0.2160 | 0.2301 | 74.3 | 98.2 | 14 |
-| 23 | Garcia, Hector | WAS_WIL3 | Slider | RHH | 36 | 0.0139 | 0.0075 | 0.2161 | 0.2301 | 74.1 | 98.1 | 15 |
-| 24 | Hagan, Jack | DOW_EAS1 | Slider | RHH | 73 | 0.0138 | 0.0082 | 0.2163 | 0.2301 | 73.7 | 98.1 | 16 |
-| 25 | Pindel, Buddie | SCH_BOO | Slider | RHH | 66 | 0.0136 | 0.0000 | 0.2165 | 0.2301 | 73.3 | 98.0 | 17 |
-| 26 | Bargo, Casey | NEW_ENG23 | Slider | RHH | 29 | 0.0131 | 0.0095 | 0.2169 | 0.2301 | 72.3 | 97.9 | 18 |
-| 27 | Leak, Anthony | NEW_YOR13 | Slider | RHH | 94 | 0.0130 | 0.0045 | 0.2170 | 0.2301 | 72.0 | 97.8 | 19 |
-| 28 | Duby, Bill | NEW_JER6 | Slider | RHH | 38 | 0.0128 | 0.0073 | 0.2173 | 0.2301 | 71.6 | 97.7 | 20 |
-| 29 | Ginn, Landon | WAS_WIL3 | Four-Seam | RHH | 44 | 0.0128 | 0.0080 | 0.2272 | 0.2400 | 71.6 | 97.6 | 4 |
-| 30 | Mercado, Nelson | OTT_TIT | Four-Seam | RHH | 42 | 0.0127 | 0.0074 | 0.2273 | 0.2400 | 71.5 | 97.6 | 5 |
+| 1 | Gilleran, Jimmy | NEW_ENG23 | Slider | RHH | 54 | 0.0247 | 0.0236 | 0.2083 | 0.2330 | 80.0 | 100.0 | 1 |
+| 2 | Wiltse, Ryan | EVA_OTT | Slider | RHH | 59 | 0.0246 | 0.0130 | 0.2084 | 0.2330 | 80.0 | 99.9 | 2 |
+| 3 | Garcia, Hector | WAS_WIL3 | Slider | RHH | 36 | 0.0242 | 0.0138 | 0.2088 | 0.2330 | 80.0 | 99.9 | 3 |
+| 4 | Thompson, Ross | SCH_BOO | Slider | RHH | 181 | 0.0240 | 0.0116 | 0.2091 | 0.2330 | 80.0 | 99.8 | 4 |
+| 5 | Salata, Derek | SCH_BOO | Slider | RHH | 141 | 0.0227 | 0.0167 | 0.2103 | 0.2330 | 80.0 | 99.7 | 5 |
+| 6 | Perez, Kelvin | WAS_WIL3 | Slider | RHH | 90 | 0.0227 | 0.0107 | 0.2103 | 0.2330 | 80.0 | 99.7 | 6 |
+| 7 | Smith, Ethan | WIN_CIT29 | Slider | RHH | 30 | 0.0222 | 0.0024 | 0.2108 | 0.2330 | 80.0 | 99.6 | 7 |
+| 8 | Vailes, Gage | GAT_GRI | Slider | RHH | 177 | 0.0216 | 0.0121 | 0.2114 | 0.2330 | 80.0 | 99.6 | 8 |
+| 9 | Allemann, Braeden | QUE_CAP | Slider | RHH | 39 | 0.0214 | 0.0073 | 0.2116 | 0.2330 | 80.0 | 99.5 | 9 |
+| 10 | Kirby, Zach | WAS_WIL3 | Slider | RHH | 126 | 0.0211 | 0.0083 | 0.2120 | 0.2330 | 80.0 | 99.4 | 10 |
+| 11 | Blair, Davis | DOW_EAS1 | Slider | RHH | 61 | 0.0210 | 0.0130 | 0.2120 | 0.2330 | 80.0 | 99.4 | 11 |
+| 12 | Belton, Hunter | MIS_MUD | Slider | RHH | 75 | 0.0210 | 0.0094 | 0.2121 | 0.2330 | 80.0 | 99.3 | 12 |
+| 13 | Albert, Wes | TRI_VAL | Slider | RHH | 25 | 0.0209 | 0.0116 | 0.2121 | 0.2330 | 80.0 | 99.2 | 13 |
+| 14 | Leak, Anthony | NEW_YOR13 | Slider | RHH | 131 | 0.0207 | 0.0110 | 0.2123 | 0.2330 | 79.8 | 99.2 | 14 |
+| 15 | Helt, Robert | LAK_ERI24 | Slider | RHH | 137 | 0.0207 | 0.0042 | 0.2124 | 0.2330 | 79.6 | 99.1 | 15 |
+| 16 | Finarelli, Nick | LON_ISL22 | Slider | RHH | 31 | 0.0207 | 0.0041 | 0.2124 | 0.2330 | 79.6 | 99.0 | 16 |
+| 17 | Duncan, Tanner | DOW_EAS1 | Slider | RHH | 28 | 0.0206 | 0.0000 | 0.2125 | 0.2330 | 79.5 | 99.0 | 17 |
+| 18 | Nova, Fraynel | LAK_ERI24 | Slider | RHH | 126 | 0.0205 | 0.0141 | 0.2125 | 0.2330 | 79.4 | 98.9 | 18 |
+| 19 | Perdomo, Rafael | QUE_CAP | Slider | RHH | 46 | 0.0204 | 0.0105 | 0.2126 | 0.2330 | 79.3 | 98.8 | 19 |
+| 20 | Gamelin, Shaun | JOL_SLA | Slider | RHH | 34 | 0.0199 | 0.0159 | 0.2131 | 0.2330 | 78.4 | 98.8 | 20 |
+| 21 | Moore, Kyle | SCH_BOO | Slider | RHH | 31 | 0.0194 | 0.0094 | 0.2136 | 0.2330 | 77.5 | 98.7 | 21 |
+| 22 | Estrella, Noah | TRI_VAL | Four-Seam | RHH | 48 | 0.0192 | 0.0161 | 0.2225 | 0.2416 | 77.0 | 98.7 | 1 |
+| 23 | Smith, Donny | JOL_SLA | Slider | RHH | 29 | 0.0183 | 0.0037 | 0.2147 | 0.2330 | 75.4 | 98.6 | 22 |
+| 24 | Cameron, Wyatt | SCH_BOO | Slider | RHH | 50 | 0.0183 | 0.0000 | 0.2148 | 0.2330 | 75.4 | 98.5 | 23 |
+| 25 | Delaney, Carter | WIN_CIT29 | Slider | RHH | 40 | 0.0182 | 0.0087 | 0.2148 | 0.2330 | 75.4 | 98.5 | 24 |
+| 26 | Hagan, Jack | DOW_EAS1 | Slider | RHH | 118 | 0.0182 | 0.0110 | 0.2149 | 0.2330 | 75.2 | 98.4 | 25 |
+| 27 | Johnson, Preston | MIS_MUD | Four-Seam | RHH | 28 | 0.0180 | 0.0162 | 0.2236 | 0.2416 | 75.0 | 98.3 | 2 |
+| 28 | Encarnacion, J.D. | EVA_OTT | Changeup | LHH | 28 | 0.0180 | 0.0126 | 0.2245 | 0.2425 | 74.9 | 98.3 | 1 |
+| 29 | Maietta, Dante | WIN_CIT29 | Slider | RHH | 38 | 0.0179 | 0.0008 | 0.2152 | 0.2330 | 74.7 | 98.2 | 26 |
+| 30 | McCartney, Seth | MIS_MUD | Slider | RHH | 36 | 0.0178 | 0.0021 | 0.2152 | 0.2330 | 74.6 | 98.1 | 27 |
 
 ## Top Location Scores by Pitch Type and Batter Side
 
@@ -64,271 +64,280 @@ Scores are aggregated by pitcher, normalized pitch type, and batter side:
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 8 | Long, Maddox | WAS_WIL3 | Changeup | LHH | 31 | 0.0162 | 0.0167 | 0.2273 | 0.2436 | 79.0 | 99.4 | 1 |
-| 21 | Smith, Jackson | MIS_MUD | Changeup | LHH | 26 | 0.0142 | 0.0086 | 0.2294 | 0.2436 | 74.5 | 98.3 | 2 |
-| 34 | Dill, Austin | TRI_VAL | Changeup | LHH | 107 | 0.0126 | 0.0133 | 0.2310 | 0.2436 | 71.2 | 97.2 | 3 |
-| 37 | Hicks, Jackson | DOW_EAS1 | Changeup | LHH | 25 | 0.0125 | 0.0000 | 0.2311 | 0.2436 | 70.9 | 97.0 | 4 |
-| 45 | Burcham, Jacob | GAT_GRI | Changeup | LHH | 42 | 0.0120 | 0.0066 | 0.2316 | 0.2436 | 69.8 | 96.3 | 5 |
-| 76 | Hampton, Ky | OTT_TIT | Changeup | LHH | 74 | 0.0103 | 0.0135 | 0.2333 | 0.2436 | 66.2 | 93.7 | 6 |
-| 96 | Kirby, Zach | WAS_WIL3 | Changeup | LHH | 114 | 0.0096 | 0.0022 | 0.2340 | 0.2436 | 64.7 | 92.0 | 7 |
-| 111 | Albert, Wes | TRI_VAL | Changeup | LHH | 38 | 0.0091 | 0.0000 | 0.2345 | 0.2436 | 63.6 | 90.7 | 8 |
-| 113 | Maietta, Dante | WIN_CIT29 | Changeup | LHH | 68 | 0.0090 | 0.0022 | 0.2345 | 0.2436 | 63.5 | 90.6 | 9 |
-| 120 | Huter, Blayne | SUS_COU1 | Changeup | LHH | 30 | 0.0088 | 0.0043 | 0.2348 | 0.2436 | 63.0 | 90.0 | 10 |
-| 126 | Vailes, Gage | GAT_GRI | Changeup | LHH | 79 | 0.0087 | 0.0010 | 0.2349 | 0.2436 | 62.8 | 89.5 | 11 |
-| 130 | Martinez, Mason | TRI_VAL | Changeup | LHH | 51 | 0.0087 | 0.0053 | 0.2349 | 0.2436 | 62.7 | 89.1 | 12 |
-| 132 | Drakeford, Dosie | NEW_JER6 | Changeup | LHH | 26 | 0.0085 | 0.0022 | 0.2351 | 0.2436 | 62.3 | 89.0 | 13 |
-| 142 | Whitesell, Max | FLO_Y'A | Changeup | LHH | 33 | 0.0083 | 0.0000 | 0.2353 | 0.2436 | 61.8 | 88.1 | 14 |
-| 157 | Long, Jalon | NEW_YOR13 | Changeup | LHH | 45 | 0.0079 | 0.0000 | 0.2357 | 0.2436 | 61.1 | 86.9 | 15 |
+| 28 | Encarnacion, J.D. | EVA_OTT | Changeup | LHH | 28 | 0.0180 | 0.0126 | 0.2245 | 0.2425 | 74.9 | 98.3 | 1 |
+| 37 | Smith, Jackson | MIS_MUD | Changeup | LHH | 51 | 0.0170 | 0.0113 | 0.2255 | 0.2425 | 73.1 | 97.7 | 2 |
+| 67 | Dill, Austin | TRI_VAL | Changeup | LHH | 107 | 0.0150 | 0.0113 | 0.2275 | 0.2425 | 69.6 | 95.8 | 3 |
+| 69 | Gregory, Ben | GAT_GRI | Changeup | LHH | 34 | 0.0150 | 0.0001 | 0.2275 | 0.2425 | 69.5 | 95.6 | 4 |
+| 70 | Burcham, Jacob | GAT_GRI | Changeup | LHH | 49 | 0.0150 | 0.0113 | 0.2275 | 0.2425 | 69.5 | 95.6 | 5 |
+| 79 | Hampton, Ky | OTT_TIT | Changeup | LHH | 116 | 0.0143 | 0.0142 | 0.2281 | 0.2425 | 68.4 | 95.0 | 6 |
+| 86 | Hicks, Jackson | DOW_EAS1 | Changeup | LHH | 25 | 0.0141 | 0.0000 | 0.2284 | 0.2425 | 67.9 | 94.5 | 7 |
+| 104 | Garcia, Jorge | SUS_COU1 | Changeup | LHH | 34 | 0.0131 | 0.0000 | 0.2294 | 0.2425 | 66.2 | 93.4 | 8 |
+| 112 | Marynczak, Arlo | TRI_VAL | Changeup | LHH | 75 | 0.0126 | 0.0000 | 0.2298 | 0.2425 | 65.4 | 92.9 | 9 |
+| 119 | Gartland, Chad | TRI_VAL | Changeup | LHH | 25 | 0.0124 | 0.0047 | 0.2301 | 0.2425 | 64.9 | 92.4 | 10 |
+| 122 | Maietta, Dante | WIN_CIT29 | Changeup | LHH | 114 | 0.0123 | 0.0000 | 0.2301 | 0.2425 | 64.9 | 92.2 | 11 |
+| 135 | Igami, Chikara | QUE_CAP | Changeup | LHH | 33 | 0.0119 | 0.0036 | 0.2305 | 0.2425 | 64.1 | 91.4 | 12 |
+| 137 | O'Hanlon, Michael | WAS_WIL3 | Changeup | LHH | 31 | 0.0118 | 0.0002 | 0.2307 | 0.2425 | 63.9 | 91.3 | 13 |
+| 139 | Albert, Wes | TRI_VAL | Changeup | LHH | 38 | 0.0118 | 0.0024 | 0.2307 | 0.2425 | 63.8 | 91.1 | 14 |
+| 145 | Leak, Anthony | NEW_YOR13 | Changeup | LHH | 51 | 0.0116 | 0.0104 | 0.2309 | 0.2425 | 63.6 | 90.8 | 15 |
 
 ### Changeup vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 60 | Toribio, Noe | TRO_AIG | Changeup | RHH | 27 | 0.0110 | 0.0098 | 0.2389 | 0.2498 | 67.6 | 95.0 | 1 |
-| 77 | Alpern, Liam | FLO_Y'A | Changeup | RHH | 38 | 0.0103 | 0.0009 | 0.2396 | 0.2498 | 66.2 | 93.6 | 2 |
-| 216 | Sanchez, Edwin | LAK_ERI24 | Changeup | RHH | 43 | 0.0067 | 0.0000 | 0.2431 | 0.2498 | 58.6 | 81.9 | 3 |
-| 220 | Thornton, Tyler | NEW_ENG23 | Changeup | RHH | 25 | 0.0067 | 0.0060 | 0.2432 | 0.2498 | 58.4 | 81.6 | 4 |
-| 237 | Reeves, Cobe | NEW_YOR13 | Changeup | RHH | 33 | 0.0065 | 0.0000 | 0.2433 | 0.2498 | 58.0 | 80.1 | 5 |
-| 246 | Villalobos, Jonaiker | FLO_Y'A | Changeup | RHH | 104 | 0.0064 | 0.0011 | 0.2434 | 0.2498 | 57.8 | 79.4 | 6 |
-| 249 | Fry, Dale | LON_ISL22 | Changeup | RHH | 26 | 0.0064 | 0.0005 | 0.2435 | 0.2498 | 57.7 | 79.1 | 7 |
-| 269 | Parra, Andres | LAK_ERI24 | Changeup | RHH | 41 | 0.0061 | 0.0000 | 0.2437 | 0.2498 | 57.1 | 77.4 | 8 |
-| 300 | Gollert, Harley | QUE_CAP | Changeup | RHH | 38 | 0.0055 | 0.0000 | 0.2443 | 0.2498 | 55.9 | 74.8 | 9 |
-| 323 | Barker, Alex | NEW_YOR13 | Changeup | RHH | 61 | 0.0053 | 0.0000 | 0.2445 | 0.2498 | 55.4 | 72.9 | 10 |
-| 354 | Sakurai, Masatoshi | QUE_CAP | Changeup | RHH | 91 | 0.0049 | 0.0000 | 0.2450 | 0.2498 | 54.5 | 70.3 | 11 |
-| 359 | Heredia-Bustos, Rolando | DOW_EAS1 | Changeup | RHH | 42 | 0.0048 | -0.0006 | 0.2450 | 0.2498 | 54.4 | 69.8 | 12 |
-| 361 | Galva, Claudio | GAT_GRI | Changeup | RHH | 45 | 0.0048 | 0.0019 | 0.2451 | 0.2498 | 54.3 | 69.7 | 13 |
-| 377 | Pierson, Kenny | LAK_ERI24 | Changeup | RHH | 104 | 0.0046 | 0.0014 | 0.2452 | 0.2498 | 54.0 | 68.3 | 14 |
-| 425 | Maietta, Dante | WIN_CIT29 | Changeup | RHH | 44 | 0.0041 | 0.0000 | 0.2457 | 0.2498 | 52.8 | 64.3 | 15 |
+| 101 | Culley, Wesley | NEW_YOR13 | Changeup | RHH | 36 | 0.0132 | 0.0081 | 0.2364 | 0.2496 | 66.4 | 93.6 | 1 |
+| 170 | Alpern, Liam | FLO_Y'A | Changeup | RHH | 38 | 0.0110 | 0.0000 | 0.2386 | 0.2496 | 62.4 | 89.2 | 2 |
+| 182 | Gollert, Harley | TRO_AIG | Changeup | RHH | 93 | 0.0107 | 0.0086 | 0.2389 | 0.2496 | 62.0 | 88.4 | 3 |
+| 209 | Parra, Andres | LAK_ERI24 | Changeup | RHH | 41 | 0.0100 | 0.0021 | 0.2396 | 0.2496 | 60.7 | 86.6 | 4 |
+| 221 | Gollert, Harley | QUE_CAP | Changeup | RHH | 38 | 0.0098 | 0.0016 | 0.2398 | 0.2496 | 60.4 | 85.9 | 5 |
+| 230 | Campbell, Tyler | MIS_MUD | Changeup | RHH | 45 | 0.0096 | 0.0000 | 0.2400 | 0.2496 | 60.0 | 85.3 | 6 |
+| 277 | Carroll, Jake | JOL_SLA | Changeup | RHH | 29 | 0.0090 | 0.0000 | 0.2406 | 0.2496 | 58.9 | 82.3 | 7 |
+| 282 | Pindel, Buddie | SCH_BOO | Changeup | RHH | 25 | 0.0088 | 0.0085 | 0.2408 | 0.2496 | 58.6 | 82.0 | 8 |
+| 293 | Galva, Claudio | GAT_GRI | Changeup | RHH | 64 | 0.0086 | 0.0019 | 0.2410 | 0.2496 | 58.3 | 81.3 | 9 |
+| 308 | Thornton, Tyler | NEW_ENG23 | Changeup | RHH | 48 | 0.0084 | 0.0074 | 0.2412 | 0.2496 | 57.8 | 80.3 | 10 |
+| 328 | Fry, Dale | LON_ISL22 | Changeup | RHH | 26 | 0.0082 | 0.0009 | 0.2414 | 0.2496 | 57.4 | 79.0 | 11 |
+| 339 | Givens-Craig, Hayden | SUS_COU1 | Changeup | RHH | 35 | 0.0080 | 0.0000 | 0.2416 | 0.2496 | 57.2 | 78.3 | 12 |
+| 343 | Barker, Alex | NEW_YOR13 | Changeup | RHH | 80 | 0.0080 | 0.0000 | 0.2416 | 0.2496 | 57.1 | 78.0 | 13 |
+| 349 | Sanchez, Edwin | LAK_ERI24 | Changeup | RHH | 70 | 0.0080 | 0.0000 | 0.2417 | 0.2496 | 57.0 | 77.7 | 14 |
+| 350 | Steinhauer, Ryan | NEW_JER6 | Changeup | RHH | 57 | 0.0079 | 0.0030 | 0.2417 | 0.2496 | 57.0 | 77.6 | 15 |
 
 ### Curveball vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 309 | Good, Ty | GAT_GRI | Curveball | LHH | 33 | 0.0054 | 0.0000 | 0.2420 | 0.2475 | 55.7 | 74.1 | 1 |
-| 393 | Langrell, Connor | MIS_MUD | Curveball | LHH | 35 | 0.0044 | 0.0000 | 0.2430 | 0.2475 | 53.5 | 67.0 | 2 |
-| 406 | Shinn, Nathan | LAK_ERI24 | Curveball | LHH | 29 | 0.0043 | 0.0000 | 0.2432 | 0.2475 | 53.2 | 65.9 | 3 |
-| 459 | Williams, Pierce | NEW_ENG23 | Curveball | LHH | 52 | 0.0037 | 0.0000 | 0.2437 | 0.2475 | 52.0 | 61.4 | 4 |
-| 542 | Peters, Garrett | NEW_YOR13 | Curveball | LHH | 62 | 0.0030 | 0.0000 | 0.2445 | 0.2475 | 50.4 | 54.4 | 5 |
-| 561 | Puccetti, Dominic | OTT_TIT | Curveball | LHH | 104 | 0.0027 | 0.0000 | 0.2447 | 0.2475 | 49.9 | 52.8 | 6 |
-| 573 | Noriega, Branden | LAK_ERI24 | Curveball | LHH | 29 | 0.0026 | 0.0000 | 0.2449 | 0.2475 | 49.6 | 51.8 | 7 |
-| 578 | Kassebaum, Torin | LON_ISL22 | Curveball | LHH | 25 | 0.0026 | 0.0000 | 0.2449 | 0.2475 | 49.5 | 51.4 | 8 |
-| 595 | Martzolf, Max | OTT_TIT | Curveball | LHH | 56 | 0.0024 | 0.0000 | 0.2451 | 0.2475 | 49.2 | 50.0 | 9 |
-| 599 | Pierson, Kenny | LAK_ERI24 | Curveball | LHH | 37 | 0.0024 | 0.0000 | 0.2451 | 0.2475 | 49.1 | 49.6 | 10 |
-| 623 | Baker, Luke | EVA_OTT | Curveball | LHH | 37 | 0.0021 | 0.0000 | 0.2454 | 0.2475 | 48.5 | 47.6 | 11 |
-| 628 | Figueredo, Kevin | WIN_CIT29 | Curveball | LHH | 45 | 0.0021 | 0.0000 | 0.2454 | 0.2475 | 48.5 | 47.2 | 12 |
-| 630 | Andueza, Axel | DOW_EAS1 | Curveball | LHH | 72 | 0.0020 | 0.0000 | 0.2454 | 0.2475 | 48.4 | 47.0 | 13 |
-| 669 | Rohde, Isaac | NEW_YOR13 | Curveball | LHH | 30 | 0.0017 | 0.0000 | 0.2458 | 0.2475 | 47.7 | 43.7 | 14 |
-| 686 | Garcia, Brett | OTT_TIT | Curveball | LHH | 36 | 0.0016 | 0.0000 | 0.2459 | 0.2475 | 47.4 | 42.3 | 15 |
+| 160 | Carroll, Jake | JOL_SLA | Curveball | LHH | 29 | 0.0113 | 0.0033 | 0.2385 | 0.2498 | 63.0 | 89.8 | 1 |
+| 331 | Shinn, Nathan | LAK_ERI24 | Curveball | LHH | 29 | 0.0081 | 0.0000 | 0.2417 | 0.2498 | 57.3 | 78.8 | 2 |
+| 366 | Langrell, Connor | MIS_MUD | Curveball | LHH | 48 | 0.0077 | 0.0051 | 0.2420 | 0.2498 | 56.7 | 76.6 | 3 |
+| 466 | Barker, Alex | NEW_YOR13 | Curveball | LHH | 28 | 0.0063 | 0.0000 | 0.2434 | 0.2498 | 54.2 | 70.2 | 4 |
+| 518 | Morgan, Cooper | QUE_CAP | Curveball | LHH | 44 | 0.0059 | 0.0031 | 0.2439 | 0.2498 | 53.3 | 66.8 | 5 |
+| 537 | Williams, Pierce | NEW_ENG23 | Curveball | LHH | 59 | 0.0057 | 0.0000 | 0.2441 | 0.2498 | 53.0 | 65.6 | 6 |
+| 580 | Kassebaum, Torin | LON_ISL22 | Curveball | LHH | 25 | 0.0053 | 0.0048 | 0.2445 | 0.2498 | 52.3 | 62.8 | 7 |
+| 621 | Fauci, Sonny | NEW_JER6 | Curveball | LHH | 30 | 0.0048 | 0.0000 | 0.2450 | 0.2498 | 51.5 | 60.2 | 8 |
+| 630 | Peters, Garrett | NEW_YOR13 | Curveball | LHH | 87 | 0.0047 | 0.0000 | 0.2450 | 0.2498 | 51.3 | 59.6 | 9 |
+| 639 | Foltz Jr., Michael | WAS_WIL3 | Curveball | LHH | 30 | 0.0047 | 0.0018 | 0.2451 | 0.2498 | 51.2 | 59.1 | 10 |
+| 695 | Villalobos, Jonaiker | FLO_Y'A | Curveball | LHH | 49 | 0.0041 | 0.0000 | 0.2457 | 0.2498 | 50.2 | 55.5 | 11 |
+| 703 | Rohde, Isaac | NEW_YOR13 | Curveball | LHH | 34 | 0.0041 | 0.0000 | 0.2457 | 0.2498 | 50.1 | 54.9 | 12 |
+| 740 | Sanchez, Edwin | LAK_ERI24 | Curveball | LHH | 33 | 0.0037 | 0.0000 | 0.2461 | 0.2498 | 49.5 | 52.6 | 13 |
+| 749 | Noriega, Branden | LAK_ERI24 | Curveball | LHH | 40 | 0.0036 | 0.0000 | 0.2461 | 0.2498 | 49.4 | 52.0 | 14 |
+| 760 | Martzolf, Max | OTT_TIT | Curveball | LHH | 56 | 0.0035 | 0.0000 | 0.2462 | 0.2498 | 49.2 | 51.3 | 15 |
 
 ### Curveball vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 80 | Coles, Chad | WAS_WIL3 | Curveball | RHH | 31 | 0.0102 | 0.0000 | 0.2464 | 0.2566 | 66.0 | 93.3 | 1 |
-| 116 | Garcia, Hector | WAS_WIL3 | Curveball | RHH | 27 | 0.0089 | 0.0092 | 0.2478 | 0.2566 | 63.1 | 90.3 | 2 |
-| 162 | Plumadore, Carson | WIN_CIT29 | Curveball | RHH | 25 | 0.0078 | 0.0042 | 0.2488 | 0.2566 | 60.9 | 86.4 | 3 |
-| 205 | Allemann, Braeden | QUE_CAP | Curveball | RHH | 74 | 0.0070 | 0.0000 | 0.2497 | 0.2566 | 59.0 | 82.8 | 4 |
-| 224 | Perdomo, Rafael | QUE_CAP | Curveball | RHH | 26 | 0.0066 | 0.0000 | 0.2500 | 0.2566 | 58.3 | 81.2 | 5 |
-| 227 | Henderson, Drew | DOW_EAS1 | Curveball | RHH | 105 | 0.0066 | 0.0000 | 0.2500 | 0.2566 | 58.3 | 81.0 | 6 |
-| 242 | Sesar, Jorden | SUS_COU1 | Curveball | RHH | 53 | 0.0064 | 0.0000 | 0.2502 | 0.2566 | 57.9 | 79.7 | 7 |
-| 243 | Cameron, Wyatt | SCH_BOO | Curveball | RHH | 33 | 0.0064 | 0.0000 | 0.2502 | 0.2566 | 57.9 | 79.6 | 8 |
-| 278 | Langrell, Connor | MIS_MUD | Curveball | RHH | 38 | 0.0059 | 0.0000 | 0.2507 | 0.2566 | 56.8 | 76.7 | 9 |
-| 289 | Moore, Kyle | SCH_BOO | Curveball | RHH | 60 | 0.0057 | 0.0003 | 0.2509 | 0.2566 | 56.4 | 75.7 | 10 |
-| 308 | Townes, Holland | SCH_BOO | Curveball | RHH | 41 | 0.0055 | 0.0000 | 0.2512 | 0.2566 | 55.8 | 74.1 | 11 |
-| 327 | Barron, Oscar | TES_BLA1 | Curveball | RHH | 153 | 0.0052 | 0.0000 | 0.2514 | 0.2566 | 55.3 | 72.5 | 12 |
-| 346 | Sechrist, Zander | WAS_WIL3 | Curveball | RHH | 37 | 0.0050 | 0.0000 | 0.2517 | 0.2566 | 54.8 | 70.9 | 13 |
-| 350 | Willeman, Landon | EVA_OTT | Curveball | RHH | 37 | 0.0049 | 0.0000 | 0.2517 | 0.2566 | 54.6 | 70.6 | 14 |
-| 358 | Helt, Robert | LAK_ERI24 | Curveball | RHH | 44 | 0.0048 | 0.0000 | 0.2518 | 0.2566 | 54.4 | 69.9 | 15 |
+| 54 | Hargrove, Dawson | LAK_ERI24 | Curveball | RHH | 26 | 0.0157 | 0.0145 | 0.2399 | 0.2555 | 70.8 | 96.6 | 1 |
+| 90 | Garcia, Hector | WAS_WIL3 | Curveball | RHH | 27 | 0.0139 | 0.0105 | 0.2417 | 0.2555 | 67.6 | 94.3 | 2 |
+| 113 | Simpson, Garret | EVA_OTT | Curveball | RHH | 37 | 0.0126 | 0.0009 | 0.2430 | 0.2555 | 65.2 | 92.8 | 3 |
+| 141 | Maryniak, Connor | NEW_JER6 | Curveball | RHH | 59 | 0.0117 | 0.0048 | 0.2438 | 0.2555 | 63.7 | 91.0 | 4 |
+| 237 | Lawson, Nathan | FLO_Y'A | Curveball | RHH | 30 | 0.0096 | 0.0004 | 0.2460 | 0.2555 | 59.9 | 84.9 | 5 |
+| 243 | Allemann, Braeden | QUE_CAP | Curveball | RHH | 108 | 0.0095 | 0.0000 | 0.2460 | 0.2555 | 59.8 | 84.5 | 6 |
+| 245 | Plumadore, Carson | WIN_CIT29 | Curveball | RHH | 30 | 0.0095 | 0.0076 | 0.2461 | 0.2555 | 59.8 | 84.3 | 7 |
+| 249 | Majick, Eli | NEW_ENG23 | Curveball | RHH | 28 | 0.0094 | 0.0015 | 0.2461 | 0.2555 | 59.6 | 84.1 | 8 |
+| 272 | Perdomo, Rafael | QUE_CAP | Curveball | RHH | 26 | 0.0090 | 0.0000 | 0.2465 | 0.2555 | 59.0 | 82.6 | 9 |
+| 286 | Langrell, Connor | MIS_MUD | Curveball | RHH | 47 | 0.0087 | 0.0000 | 0.2468 | 0.2555 | 58.4 | 81.7 | 10 |
+| 303 | Hohenstein, Liam | WIN_CIT29 | Curveball | RHH | 34 | 0.0085 | 0.0000 | 0.2471 | 0.2555 | 58.0 | 80.6 | 11 |
+| 317 | Coles, Chad | WAS_WIL3 | Curveball | RHH | 43 | 0.0083 | 0.0008 | 0.2472 | 0.2555 | 57.7 | 79.7 | 12 |
+| 354 | Moore, Kyle | SCH_BOO | Curveball | RHH | 73 | 0.0079 | 0.0000 | 0.2476 | 0.2555 | 56.9 | 77.3 | 13 |
+| 370 | Hampton, Ky | OTT_TIT | Curveball | RHH | 33 | 0.0076 | 0.0000 | 0.2479 | 0.2555 | 56.4 | 76.3 | 14 |
+| 375 | Henderson, Drew | DOW_EAS1 | Curveball | RHH | 149 | 0.0075 | 0.0000 | 0.2480 | 0.2555 | 56.3 | 76.0 | 15 |
 
 ### Cutter vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 506 | Cook, Cole | SCH_BOO | Cutter | LHH | 28 | 0.0033 | 0.0015 | 0.2178 | 0.2211 | 51.1 | 57.5 | 1 |
-| 586 | Petschke, Ben | EVA_OTT | Cutter | LHH | 128 | 0.0025 | 0.0000 | 0.2186 | 0.2211 | 49.4 | 50.7 | 2 |
-| 590 | Parsons, Billy | SUS_COU1 | Cutter | LHH | 29 | 0.0025 | 0.0000 | 0.2186 | 0.2211 | 49.3 | 50.4 | 3 |
-| 605 | McEvoy, Aidan | FLO_Y'A | Cutter | LHH | 29 | 0.0023 | 0.0000 | 0.2187 | 0.2211 | 49.0 | 49.1 | 4 |
-| 606 | Sechrist, Zander | WAS_WIL3 | Cutter | LHH | 27 | 0.0023 | 0.0000 | 0.2187 | 0.2211 | 49.0 | 49.0 | 5 |
-| 629 | Gamelin, Shaun | JOL_SLA | Cutter | LHH | 51 | 0.0020 | 0.0000 | 0.2190 | 0.2211 | 48.4 | 47.1 | 6 |
-| 633 | Salata, Derek | SCH_BOO | Cutter | LHH | 26 | 0.0020 | 0.0000 | 0.2191 | 0.2211 | 48.4 | 46.8 | 7 |
-| 683 | Langrell, Connor | MIS_MUD | Cutter | LHH | 50 | 0.0016 | 0.0014 | 0.2195 | 0.2211 | 47.5 | 42.5 | 8 |
-| 747 | Webster, Evan | FLO_Y'A | Cutter | LHH | 70 | 0.0011 | 0.0000 | 0.2200 | 0.2211 | 46.4 | 37.2 | 9 |
-| 749 | Morgan, Marcus | JOL_SLA | Cutter | LHH | 38 | 0.0011 | 0.0000 | 0.2200 | 0.2211 | 46.4 | 37.0 | 10 |
-| 797 | Gorgen, Grady | NEW_YOR13 | Cutter | LHH | 30 | 0.0006 | 0.0000 | 0.2205 | 0.2211 | 45.3 | 32.9 | 11 |
-| 798 | Binns, Malik | NEW_JER6 | Cutter | LHH | 30 | 0.0006 | 0.0000 | 0.2205 | 0.2211 | 45.3 | 32.9 | 12 |
-| 849 | Parks, Pavin | LAK_ERI24 | Cutter | LHH | 39 | 0.0000 | 0.0000 | 0.2211 | 0.2211 | 44.0 | 28.6 | 13 |
-| 926 | Saturria, Michael | NEW_ENG23 | Cutter | LHH | 76 | -0.0007 | 0.0000 | 0.2218 | 0.2211 | 42.5 | 22.1 | 14 |
-| 951 | MacMillan, Blake | TRO_AIG | Cutter | LHH | 37 | -0.0010 | 0.0000 | 0.2221 | 0.2211 | 41.8 | 20.0 | 15 |
+| 743 | McEvoy, Aidan | FLO_Y'A | Cutter | LHH | 36 | 0.0037 | 0.0000 | 0.2209 | 0.2247 | 49.5 | 52.4 | 1 |
+| 808 | Cook, Cole | SCH_BOO | Cutter | LHH | 29 | 0.0031 | 0.0033 | 0.2216 | 0.2247 | 48.4 | 48.2 | 2 |
+| 860 | Petschke, Ben | EVA_OTT | Cutter | LHH | 146 | 0.0027 | 0.0000 | 0.2220 | 0.2247 | 47.7 | 44.9 | 3 |
+| 912 | Majick, Eli | NEW_ENG23 | Cutter | LHH | 26 | 0.0023 | 0.0025 | 0.2224 | 0.2247 | 46.9 | 41.5 | 4 |
+| 932 | Parsons, Billy | SUS_COU1 | Cutter | LHH | 39 | 0.0021 | 0.0000 | 0.2226 | 0.2247 | 46.6 | 40.2 | 5 |
+| 1004 | Sechrist, Zander | WAS_WIL3 | Cutter | LHH | 41 | 0.0015 | 0.0000 | 0.2232 | 0.2247 | 45.5 | 35.6 | 6 |
+| 1054 | Salata, Derek | SCH_BOO | Cutter | LHH | 47 | 0.0011 | 0.0000 | 0.2235 | 0.2247 | 44.9 | 32.4 | 7 |
+| 1070 | Binns, Malik | NEW_JER6 | Cutter | LHH | 34 | 0.0010 | 0.0000 | 0.2237 | 0.2247 | 44.7 | 31.4 | 8 |
+| 1083 | Webster, Evan | FLO_Y'A | Cutter | LHH | 76 | 0.0009 | 0.0000 | 0.2237 | 0.2247 | 44.5 | 30.6 | 9 |
+| 1084 | Langrell, Connor | MIS_MUD | Cutter | LHH | 100 | 0.0009 | 0.0009 | 0.2237 | 0.2247 | 44.5 | 30.5 | 10 |
+| 1118 | Debban, Caleb | NEW_JER6 | Cutter | LHH | 58 | 0.0007 | 0.0000 | 0.2240 | 0.2247 | 44.1 | 28.3 | 11 |
+| 1128 | Morgan, Marcus | JOL_SLA | Cutter | LHH | 38 | 0.0006 | 0.0000 | 0.2241 | 0.2247 | 43.9 | 27.7 | 12 |
+| 1145 | Bell, Brendan | NEW_ENG23 | Cutter | LHH | 38 | 0.0004 | 0.0000 | 0.2243 | 0.2247 | 43.6 | 26.6 | 13 |
+| 1165 | Smith, Jackson | MIS_MUD | Cutter | LHH | 39 | 0.0002 | 0.0000 | 0.2245 | 0.2247 | 43.2 | 25.3 | 14 |
+| 1186 | Parks, Pavin | LAK_ERI24 | Cutter | LHH | 40 | 0.0000 | 0.0000 | 0.2246 | 0.2247 | 42.9 | 23.9 | 15 |
 
 ### Cutter vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 279 | Wiltse, Ryan | EVA_OTT | Cutter | RHH | 29 | 0.0059 | 0.0000 | 0.2342 | 0.2400 | 56.7 | 76.6 | 1 |
-| 441 | Baird, Dustin | MIS_MUD | Cutter | RHH | 30 | 0.0039 | 0.0015 | 0.2362 | 0.2400 | 52.3 | 62.9 | 2 |
-| 446 | Correa, Nelvin | QUE_CAP | Cutter | RHH | 28 | 0.0038 | 0.0043 | 0.2362 | 0.2400 | 52.3 | 62.5 | 3 |
-| 448 | Parks, Pavin | LAK_ERI24 | Cutter | RHH | 73 | 0.0038 | 0.0000 | 0.2362 | 0.2400 | 52.2 | 62.3 | 4 |
-| 476 | Glickstein, Aaron | SCH_BOO | Cutter | RHH | 26 | 0.0036 | 0.0028 | 0.2364 | 0.2400 | 51.8 | 60.0 | 5 |
-| 491 | Jones, Breyln | NEW_JER6 | Cutter | RHH | 33 | 0.0035 | 0.0000 | 0.2366 | 0.2400 | 51.5 | 58.7 | 6 |
-| 526 | Morgan, Cooper | QUE_CAP | Cutter | RHH | 27 | 0.0032 | 0.0029 | 0.2369 | 0.2400 | 50.8 | 55.8 | 7 |
-| 551 | Smith, Jackson | MIS_MUD | Cutter | RHH | 32 | 0.0029 | 0.0000 | 0.2371 | 0.2400 | 50.3 | 53.7 | 8 |
-| 563 | Salata, Derek | SCH_BOO | Cutter | RHH | 39 | 0.0027 | 0.0000 | 0.2373 | 0.2400 | 49.9 | 52.7 | 9 |
-| 646 | Petschke, Ben | EVA_OTT | Cutter | RHH | 82 | 0.0019 | 0.0000 | 0.2381 | 0.2400 | 48.2 | 45.7 | 10 |
-| 700 | Gamelin, Shaun | JOL_SLA | Cutter | RHH | 62 | 0.0015 | 0.0000 | 0.2386 | 0.2400 | 47.2 | 41.1 | 11 |
-| 719 | Williams, Brian | MIS_MUD | Cutter | RHH | 62 | 0.0013 | 0.0000 | 0.2387 | 0.2400 | 46.8 | 39.5 | 12 |
-| 755 | Binns, Malik | NEW_JER6 | Cutter | RHH | 48 | 0.0010 | 0.0000 | 0.2390 | 0.2400 | 46.2 | 36.5 | 13 |
-| 765 | Bohnert, Matthew | WIN_CIT29 | Cutter | RHH | 32 | 0.0009 | 0.0000 | 0.2392 | 0.2400 | 45.9 | 35.6 | 14 |
-| 788 | Saturria, Michael | NEW_ENG23 | Cutter | RHH | 79 | 0.0007 | 0.0000 | 0.2393 | 0.2400 | 45.5 | 33.7 | 15 |
+| 385 | Good, Ty | GAT_GRI | Cutter | RHH | 31 | 0.0073 | 0.0035 | 0.2383 | 0.2457 | 55.9 | 75.4 | 1 |
+| 408 | Wiltse, Ryan | EVA_OTT | Cutter | RHH | 34 | 0.0070 | 0.0000 | 0.2386 | 0.2457 | 55.4 | 73.9 | 2 |
+| 415 | Ginn, Landon | WAS_WIL3 | Cutter | RHH | 56 | 0.0069 | 0.0000 | 0.2388 | 0.2457 | 55.2 | 73.4 | 3 |
+| 472 | Baird, Dustin | MIS_MUD | Cutter | RHH | 30 | 0.0063 | 0.0003 | 0.2394 | 0.2457 | 54.0 | 69.8 | 4 |
+| 494 | Lockhart, Gauge | LAK_ERI24 | Cutter | RHH | 30 | 0.0061 | 0.0109 | 0.2396 | 0.2457 | 53.7 | 68.4 | 5 |
+| 498 | Jones, Breyln | NEW_JER6 | Cutter | RHH | 40 | 0.0060 | 0.0003 | 0.2396 | 0.2457 | 53.6 | 68.1 | 6 |
+| 652 | Salata, Derek | SCH_BOO | Cutter | RHH | 64 | 0.0046 | 0.0000 | 0.2411 | 0.2457 | 51.0 | 58.2 | 7 |
+| 667 | Bell, Brendan | NEW_ENG23 | Cutter | RHH | 25 | 0.0044 | 0.0000 | 0.2412 | 0.2457 | 50.8 | 57.3 | 8 |
+| 668 | Majick, Eli | NEW_ENG23 | Cutter | RHH | 40 | 0.0044 | 0.0020 | 0.2412 | 0.2457 | 50.8 | 57.2 | 9 |
+| 765 | Valdez, Alex | EVA_OTT | Cutter | RHH | 43 | 0.0035 | 0.0000 | 0.2422 | 0.2457 | 49.0 | 51.0 | 10 |
+| 779 | Townes, Holland | SCH_BOO | Cutter | RHH | 26 | 0.0033 | 0.0002 | 0.2423 | 0.2457 | 48.8 | 50.1 | 11 |
+| 803 | Petschke, Ben | EVA_OTT | Cutter | RHH | 103 | 0.0031 | 0.0004 | 0.2425 | 0.2457 | 48.5 | 48.5 | 12 |
+| 813 | Smith, Jackson | MIS_MUD | Cutter | RHH | 53 | 0.0031 | 0.0000 | 0.2426 | 0.2457 | 48.3 | 47.9 | 13 |
+| 829 | Parks, Pavin | LAK_ERI24 | Cutter | RHH | 94 | 0.0029 | 0.0000 | 0.2427 | 0.2457 | 48.1 | 46.9 | 14 |
+| 850 | Thiels, Brenton | MIS_MUD | Cutter | RHH | 28 | 0.0028 | 0.0000 | 0.2429 | 0.2457 | 47.8 | 45.5 | 15 |
 
 ### Four-Seam vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 11 | Wehrle, Tyler | WIN_CIT29 | Four-Seam | LHH | 75 | 0.0151 | 0.0141 | 0.2315 | 0.2466 | 76.5 | 99.2 | 1 |
-| 19 | Davis, Tyler | WAS_WIL3 | Four-Seam | LHH | 48 | 0.0144 | 0.0141 | 0.2323 | 0.2466 | 75.0 | 98.5 | 2 |
-| 31 | Bauer, Patrick | QUE_CAP | Four-Seam | LHH | 26 | 0.0127 | 0.0118 | 0.2340 | 0.2466 | 71.3 | 97.5 | 3 |
-| 33 | Foster, Kobe | WAS_WIL3 | Four-Seam | LHH | 88 | 0.0126 | 0.0141 | 0.2340 | 0.2466 | 71.2 | 97.3 | 4 |
-| 35 | Parsons, Billy | SUS_COU1 | Four-Seam | LHH | 128 | 0.0126 | 0.0117 | 0.2340 | 0.2466 | 71.1 | 97.1 | 5 |
-| 40 | Barreto, Brayhans | TRI_VAL | Four-Seam | LHH | 38 | 0.0122 | 0.0005 | 0.2344 | 0.2466 | 70.4 | 96.7 | 6 |
-| 49 | Herbert, Andrew | WAS_WIL3 | Four-Seam | LHH | 35 | 0.0119 | 0.0116 | 0.2348 | 0.2466 | 69.6 | 96.0 | 7 |
-| 56 | Peters, Andrew | NEW_JER6 | Four-Seam | LHH | 71 | 0.0111 | 0.0071 | 0.2355 | 0.2466 | 68.0 | 95.4 | 8 |
-| 57 | Leak, Anthony | NEW_YOR13 | Four-Seam | LHH | 31 | 0.0111 | 0.0109 | 0.2355 | 0.2466 | 67.9 | 95.3 | 9 |
-| 63 | Marynczak, Arlo | TRI_VAL | Four-Seam | LHH | 52 | 0.0109 | 0.0128 | 0.2357 | 0.2466 | 67.4 | 94.8 | 10 |
-| 69 | Fowler, Dalton | SUS_COU1 | Four-Seam | LHH | 43 | 0.0107 | 0.0078 | 0.2359 | 0.2466 | 67.1 | 94.3 | 11 |
-| 72 | De Los Santos, Enmanuel | NEW_ENG23 | Four-Seam | LHH | 46 | 0.0105 | 0.0089 | 0.2361 | 0.2466 | 66.7 | 94.0 | 12 |
-| 75 | Cartwright, Eli | GAT_GRI | Four-Seam | LHH | 42 | 0.0104 | 0.0069 | 0.2362 | 0.2466 | 66.5 | 93.8 | 13 |
-| 78 | Kines, Gunnar | JOL_SLA | Four-Seam | LHH | 121 | 0.0103 | 0.0064 | 0.2364 | 0.2466 | 66.1 | 93.5 | 14 |
-| 93 | Ferguson, Francis | QUE_CAP | Four-Seam | LHH | 51 | 0.0097 | 0.0078 | 0.2369 | 0.2466 | 65.0 | 92.2 | 15 |
+| 50 | Davis, Tyler | WAS_WIL3 | Four-Seam | LHH | 48 | 0.0160 | 0.0177 | 0.2302 | 0.2462 | 71.4 | 96.9 | 1 |
+| 52 | Wehrle, Tyler | WIN_CIT29 | Four-Seam | LHH | 80 | 0.0157 | 0.0178 | 0.2305 | 0.2462 | 70.9 | 96.7 | 2 |
+| 65 | Brothers, Kellen | SUS_COU1 | Four-Seam | LHH | 134 | 0.0151 | 0.0163 | 0.2311 | 0.2462 | 69.8 | 95.9 | 3 |
+| 80 | Parsons, Billy | SUS_COU1 | Four-Seam | LHH | 171 | 0.0143 | 0.0142 | 0.2319 | 0.2462 | 68.4 | 94.9 | 4 |
+| 93 | Foster, Kobe | WAS_WIL3 | Four-Seam | LHH | 133 | 0.0138 | 0.0142 | 0.2324 | 0.2462 | 67.4 | 94.1 | 5 |
+| 117 | Smith, Ben | NEW_ENG23 | Four-Seam | LHH | 40 | 0.0124 | 0.0122 | 0.2338 | 0.2462 | 65.0 | 92.6 | 6 |
+| 128 | Herbert, Andrew | WAS_WIL3 | Four-Seam | LHH | 35 | 0.0122 | 0.0142 | 0.2341 | 0.2462 | 64.6 | 91.8 | 7 |
+| 131 | Ferguson, Francis | QUE_CAP | Four-Seam | LHH | 51 | 0.0120 | 0.0142 | 0.2342 | 0.2462 | 64.3 | 91.7 | 8 |
+| 144 | Fowler, Dalton | SUS_COU1 | Four-Seam | LHH | 43 | 0.0117 | 0.0131 | 0.2345 | 0.2462 | 63.7 | 90.8 | 9 |
+| 164 | Zaffiro, Cole | SCH_BOO | Four-Seam | LHH | 85 | 0.0112 | 0.0131 | 0.2350 | 0.2462 | 62.9 | 89.5 | 10 |
+| 180 | Alpern, Liam | FLO_Y'A | Four-Seam | LHH | 86 | 0.0107 | 0.0090 | 0.2355 | 0.2462 | 62.0 | 88.5 | 11 |
+| 181 | Moore, Kyle | SCH_BOO | Four-Seam | LHH | 93 | 0.0107 | 0.0067 | 0.2355 | 0.2462 | 62.0 | 88.4 | 12 |
+| 189 | O'Dell, Casey | JOL_SLA | Four-Seam | LHH | 35 | 0.0104 | 0.0078 | 0.2358 | 0.2462 | 61.5 | 87.9 | 13 |
+| 197 | Lawson, Nathan | FLO_Y'A | Four-Seam | LHH | 38 | 0.0102 | 0.0117 | 0.2360 | 0.2462 | 61.1 | 87.4 | 14 |
+| 202 | Kirby, Zach | WAS_WIL3 | Four-Seam | LHH | 163 | 0.0101 | 0.0109 | 0.2361 | 0.2462 | 60.9 | 87.1 | 15 |
 
 ### Four-Seam vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Binns, Malik | NEW_JER6 | Four-Seam | RHH | 25 | 0.0190 | 0.0151 | 0.2210 | 0.2400 | 80.0 | 100.0 | 1 |
-| 6 | Reeves, Cobe | NEW_YOR13 | Four-Seam | RHH | 27 | 0.0167 | 0.0204 | 0.2233 | 0.2400 | 80.0 | 99.6 | 2 |
-| 10 | Petraitis, AJ | LEM_COL | Four-Seam | RHH | 29 | 0.0151 | 0.0078 | 0.2249 | 0.2400 | 76.6 | 99.2 | 3 |
-| 29 | Ginn, Landon | WAS_WIL3 | Four-Seam | RHH | 44 | 0.0128 | 0.0080 | 0.2272 | 0.2400 | 71.6 | 97.6 | 4 |
-| 30 | Mercado, Nelson | OTT_TIT | Four-Seam | RHH | 42 | 0.0127 | 0.0074 | 0.2273 | 0.2400 | 71.5 | 97.6 | 5 |
-| 32 | Johnson, Preston | MIS_MUD | Four-Seam | RHH | 28 | 0.0126 | 0.0090 | 0.2274 | 0.2400 | 71.2 | 97.4 | 6 |
-| 39 | Perozzi, John | SUS_COU1 | Four-Seam | RHH | 51 | 0.0123 | 0.0034 | 0.2277 | 0.2400 | 70.5 | 96.8 | 7 |
-| 41 | Davis, Tyler | WIN_CIT29 | Four-Seam | RHH | 33 | 0.0122 | 0.0021 | 0.2278 | 0.2400 | 70.3 | 96.6 | 8 |
-| 52 | Shears, Tanner | SCH_BOO | Four-Seam | RHH | 67 | 0.0116 | 0.0037 | 0.2284 | 0.2400 | 68.9 | 95.7 | 9 |
-| 64 | Brothers, Kellen | SUS_COU1 | Four-Seam | RHH | 60 | 0.0108 | 0.0023 | 0.2292 | 0.2400 | 67.4 | 94.7 | 10 |
-| 68 | Grounds, Jackson | DOW_EAS1 | Four-Seam | RHH | 48 | 0.0107 | 0.0091 | 0.2293 | 0.2400 | 67.2 | 94.4 | 11 |
-| 71 | Kines, Gunnar | JOL_SLA | Four-Seam | RHH | 131 | 0.0105 | 0.0053 | 0.2295 | 0.2400 | 66.7 | 94.1 | 12 |
-| 73 | Gardner, Sam | GAT_GRI | Four-Seam | RHH | 27 | 0.0105 | 0.0000 | 0.2295 | 0.2400 | 66.6 | 93.9 | 13 |
-| 74 | Nakata, Yuto | QUE_CAP | Four-Seam | RHH | 58 | 0.0105 | 0.0090 | 0.2295 | 0.2400 | 66.5 | 93.9 | 14 |
-| 83 | Albert, Wes | TRI_VAL | Four-Seam | RHH | 52 | 0.0101 | 0.0085 | 0.2299 | 0.2400 | 65.8 | 93.1 | 15 |
+| 22 | Estrella, Noah | TRI_VAL | Four-Seam | RHH | 48 | 0.0192 | 0.0161 | 0.2225 | 0.2416 | 77.0 | 98.7 | 1 |
+| 27 | Johnson, Preston | MIS_MUD | Four-Seam | RHH | 28 | 0.0180 | 0.0162 | 0.2236 | 0.2416 | 75.0 | 98.3 | 2 |
+| 32 | Delvecchio, Dylan | LAK_ERI24 | Four-Seam | RHH | 25 | 0.0178 | 0.0209 | 0.2238 | 0.2416 | 74.5 | 98.0 | 3 |
+| 33 | Mercado, Nelson | OTT_TIT | Four-Seam | RHH | 42 | 0.0175 | 0.0145 | 0.2241 | 0.2416 | 74.1 | 97.9 | 4 |
+| 34 | Brothers, Kellen | SUS_COU1 | Four-Seam | RHH | 100 | 0.0174 | 0.0192 | 0.2242 | 0.2416 | 73.9 | 97.9 | 5 |
+| 53 | Binns, Malik | NEW_JER6 | Four-Seam | RHH | 48 | 0.0157 | 0.0134 | 0.2259 | 0.2416 | 70.9 | 96.7 | 6 |
+| 59 | Ginn, Landon | WAS_WIL3 | Four-Seam | RHH | 59 | 0.0154 | 0.0130 | 0.2262 | 0.2416 | 70.3 | 96.3 | 7 |
+| 61 | Gardner, Sam | GAT_GRI | Four-Seam | RHH | 27 | 0.0152 | 0.0224 | 0.2264 | 0.2416 | 70.0 | 96.1 | 8 |
+| 62 | Langhorne, Miles | SUS_COU1 | Four-Seam | RHH | 40 | 0.0152 | 0.0020 | 0.2264 | 0.2416 | 69.9 | 96.1 | 9 |
+| 73 | Grounds, Jackson | DOW_EAS1 | Four-Seam | RHH | 48 | 0.0149 | 0.0126 | 0.2267 | 0.2416 | 69.3 | 95.4 | 10 |
+| 74 | Chapple, Bronson | TRO_AIG | Four-Seam | RHH | 49 | 0.0147 | 0.0164 | 0.2269 | 0.2416 | 69.1 | 95.3 | 11 |
+| 76 | Cohn, Cooper | NIU_HUS | Four-Seam | RHH | 38 | 0.0145 | 0.0070 | 0.2271 | 0.2416 | 68.7 | 95.2 | 12 |
+| 77 | Kalisky, Jack | OTT_TIT | Four-Seam | RHH | 29 | 0.0144 | 0.0193 | 0.2272 | 0.2416 | 68.6 | 95.1 | 13 |
+| 78 | O'Dell, Casey | JOL_SLA | Four-Seam | RHH | 37 | 0.0144 | 0.0224 | 0.2273 | 0.2416 | 68.4 | 95.1 | 14 |
+| 82 | Albert, Wes | TRI_VAL | Four-Seam | RHH | 54 | 0.0141 | 0.0181 | 0.2275 | 0.2416 | 68.0 | 94.8 | 15 |
 
 ### Sinker vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 16 | Sechrist, Zander | WAS_WIL3 | Sinker | LHH | 28 | 0.0147 | 0.0045 | 0.2485 | 0.2632 | 75.7 | 98.7 | 1 |
-| 99 | Lawson, Nathan | FLO_Y'A | Sinker | LHH | 28 | 0.0095 | 0.0078 | 0.2537 | 0.2632 | 64.5 | 91.7 | 2 |
-| 112 | Kelly, Aiden | TRI_VAL | Sinker | LHH | 51 | 0.0091 | 0.0000 | 0.2542 | 0.2632 | 63.5 | 90.6 | 3 |
-| 114 | Sabatine, Gino | TRI_VAL | Sinker | LHH | 28 | 0.0090 | 0.0019 | 0.2542 | 0.2632 | 63.5 | 90.5 | 4 |
-| 127 | Gregory, Ben | GAT_GRI | Sinker | LHH | 31 | 0.0087 | 0.0036 | 0.2545 | 0.2632 | 62.8 | 89.4 | 5 |
-| 184 | Kines, Gunnar | JOL_SLA | Sinker | LHH | 30 | 0.0073 | 0.0066 | 0.2559 | 0.2632 | 59.8 | 84.6 | 6 |
-| 190 | Harper, Scott | NEW_YOR13 | Sinker | LHH | 41 | 0.0072 | 0.0000 | 0.2560 | 0.2632 | 59.6 | 84.1 | 7 |
-| 208 | Mannering, Shawn | DOW_EAS1 | Sinker | LHH | 27 | 0.0069 | 0.0000 | 0.2563 | 0.2632 | 58.9 | 82.6 | 8 |
-| 219 | Shoemaker, Adam | QUE_CAP | Sinker | LHH | 25 | 0.0067 | 0.0045 | 0.2565 | 0.2632 | 58.5 | 81.6 | 9 |
-| 228 | Gilleran, James | NEW_ENG23 | Sinker | LHH | 25 | 0.0066 | 0.0039 | 0.2566 | 0.2632 | 58.3 | 80.9 | 10 |
-| 235 | McCartney, Seth | MIS_MUD | Sinker | LHH | 67 | 0.0065 | 0.0000 | 0.2567 | 0.2632 | 58.1 | 80.3 | 11 |
-| 251 | Vecerka, Boris | QUE_CAP | Sinker | LHH | 52 | 0.0063 | 0.0018 | 0.2569 | 0.2632 | 57.7 | 78.9 | 12 |
-| 277 | Bradford, Ethan | NEW_YOR13 | Sinker | LHH | 44 | 0.0059 | 0.0072 | 0.2573 | 0.2632 | 56.8 | 76.7 | 13 |
-| 306 | Stuka, Ted | OTT_TIT | Sinker | LHH | 45 | 0.0055 | 0.0000 | 0.2578 | 0.2632 | 55.8 | 74.3 | 14 |
-| 324 | Hicks, Jackson | DOW_EAS1 | Sinker | LHH | 31 | 0.0053 | 0.0000 | 0.2579 | 0.2632 | 55.4 | 72.8 | 15 |
+| 103 | Sechrist, Zander | WAS_WIL3 | Sinker | LHH | 32 | 0.0132 | 0.0043 | 0.2511 | 0.2643 | 66.3 | 93.5 | 1 |
+| 241 | Kelly, Aiden | TRI_VAL | Sinker | LHH | 51 | 0.0095 | 0.0000 | 0.2548 | 0.2643 | 59.8 | 84.6 | 2 |
+| 268 | Mannering, Shawn | DOW_EAS1 | Sinker | LHH | 27 | 0.0091 | 0.0084 | 0.2552 | 0.2643 | 59.1 | 82.9 | 3 |
+| 278 | Sabatine, Gino | TRI_VAL | Sinker | LHH | 36 | 0.0090 | 0.0004 | 0.2553 | 0.2643 | 58.8 | 82.2 | 4 |
+| 289 | Aldeano, Austin | TRO_AIG | Sinker | LHH | 45 | 0.0087 | 0.0078 | 0.2556 | 0.2643 | 58.3 | 81.5 | 5 |
+| 300 | Williams, Pierce | NEW_ENG23 | Sinker | LHH | 27 | 0.0085 | 0.0140 | 0.2558 | 0.2643 | 58.0 | 80.8 | 6 |
+| 311 | Vecerka, Boris | QUE_CAP | Sinker | LHH | 113 | 0.0083 | 0.0075 | 0.2559 | 0.2643 | 57.7 | 80.1 | 7 |
+| 315 | McCartney, Seth | MIS_MUD | Sinker | LHH | 67 | 0.0083 | 0.0007 | 0.2560 | 0.2643 | 57.7 | 79.8 | 8 |
+| 332 | Gilleran, James | NEW_ENG23 | Sinker | LHH | 25 | 0.0081 | 0.0061 | 0.2562 | 0.2643 | 57.3 | 78.8 | 9 |
+| 334 | Kines, Gunnar | JOL_SLA | Sinker | LHH | 73 | 0.0081 | 0.0144 | 0.2562 | 0.2643 | 57.3 | 78.6 | 10 |
+| 360 | Allemann, Braeden | QUE_CAP | Sinker | LHH | 35 | 0.0078 | 0.0000 | 0.2565 | 0.2643 | 56.8 | 77.0 | 11 |
+| 393 | Webster, Evan | FLO_Y'A | Sinker | LHH | 33 | 0.0072 | 0.0113 | 0.2571 | 0.2643 | 55.7 | 74.8 | 12 |
+| 394 | Barreto, Brayhans | TRI_VAL | Sinker | LHH | 44 | 0.0072 | 0.0000 | 0.2571 | 0.2643 | 55.7 | 74.8 | 13 |
+| 404 | Stuka, Ted | OTT_TIT | Sinker | LHH | 63 | 0.0072 | 0.0007 | 0.2571 | 0.2643 | 55.6 | 74.1 | 14 |
+| 429 | Joven, Art | MIS_MUD | Sinker | LHH | 100 | 0.0067 | 0.0032 | 0.2576 | 0.2643 | 54.8 | 72.5 | 15 |
 
 ### Sinker vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 44 | Leach, Landon | TRO_AIG | Sinker | RHH | 44 | 0.0120 | 0.0106 | 0.2436 | 0.2556 | 69.9 | 96.4 | 1 |
-| 137 | Mannering, Shawn | DOW_EAS1 | Sinker | RHH | 32 | 0.0084 | 0.0067 | 0.2472 | 0.2556 | 62.1 | 88.5 | 2 |
-| 145 | Campbell, AJ | WIN_CIT29 | Sinker | RHH | 25 | 0.0081 | 0.0075 | 0.2475 | 0.2556 | 61.5 | 87.9 | 3 |
-| 159 | Turner, Eric | JOL_SLA | Sinker | RHH | 42 | 0.0079 | 0.0077 | 0.2477 | 0.2556 | 61.0 | 86.7 | 4 |
-| 203 | Delongchamp, Luke | TRI_VAL | Sinker | RHH | 37 | 0.0070 | 0.0000 | 0.2486 | 0.2556 | 59.1 | 83.0 | 5 |
-| 211 | Ryan, Dillon | NEW_ENG23 | Sinker | RHH | 66 | 0.0069 | 0.0072 | 0.2488 | 0.2556 | 58.8 | 82.3 | 6 |
-| 213 | Plumadore, Carson | WIN_CIT29 | Sinker | RHH | 32 | 0.0068 | 0.0106 | 0.2488 | 0.2556 | 58.7 | 82.1 | 7 |
-| 215 | Donnan, Blake | FLO_Y'A | Sinker | RHH | 84 | 0.0068 | 0.0071 | 0.2488 | 0.2556 | 58.6 | 82.0 | 8 |
-| 217 | Glickstein, Aaron | SCH_BOO | Sinker | RHH | 33 | 0.0067 | 0.0069 | 0.2489 | 0.2556 | 58.5 | 81.8 | 9 |
-| 236 | Rodriguez, Joe Joe | NEW_JER6 | Sinker | RHH | 47 | 0.0065 | 0.0018 | 0.2491 | 0.2556 | 58.1 | 80.2 | 10 |
-| 238 | Gregory, Ben | GAT_GRI | Sinker | RHH | 45 | 0.0065 | 0.0071 | 0.2491 | 0.2556 | 58.0 | 80.0 | 11 |
-| 263 | Still, Stephen | TRI_VAL | Sinker | RHH | 50 | 0.0062 | 0.0047 | 0.2494 | 0.2556 | 57.3 | 77.9 | 12 |
-| 362 | Cook, Cole | SCH_BOO | Sinker | RHH | 36 | 0.0047 | 0.0017 | 0.2509 | 0.2556 | 54.2 | 69.6 | 13 |
-| 368 | Hoeymans, Jack | GAT_GRI | Sinker | RHH | 35 | 0.0047 | 0.0000 | 0.2509 | 0.2556 | 54.1 | 69.1 | 14 |
-| 378 | Milburn, Isaac | FLO_Y'A | Sinker | RHH | 51 | 0.0046 | 0.0000 | 0.2510 | 0.2556 | 54.0 | 68.2 | 15 |
+| 108 | Leach, Landon | TRO_AIG | Sinker | RHH | 44 | 0.0127 | 0.0063 | 0.2416 | 0.2543 | 65.5 | 93.1 | 1 |
+| 158 | Aldeano, Austin | TRO_AIG | Sinker | RHH | 25 | 0.0113 | 0.0177 | 0.2430 | 0.2543 | 63.0 | 89.9 | 2 |
+| 165 | Donnan, Blake | FLO_Y'A | Sinker | RHH | 84 | 0.0112 | 0.0108 | 0.2431 | 0.2543 | 62.9 | 89.5 | 3 |
+| 190 | Campbell, AJ | WIN_CIT29 | Sinker | RHH | 29 | 0.0104 | 0.0080 | 0.2439 | 0.2543 | 61.4 | 87.9 | 4 |
+| 206 | Petschke, Ben | EVA_OTT | Sinker | RHH | 33 | 0.0101 | 0.0080 | 0.2443 | 0.2543 | 60.8 | 86.8 | 5 |
+| 226 | Turner, Eric | JOL_SLA | Sinker | RHH | 45 | 0.0097 | 0.0067 | 0.2446 | 0.2543 | 60.1 | 85.6 | 6 |
+| 234 | Glickstein, Aaron | SCH_BOO | Sinker | RHH | 60 | 0.0096 | 0.0148 | 0.2447 | 0.2543 | 59.9 | 85.0 | 7 |
+| 238 | Vecerka, Boris | QUE_CAP | Sinker | RHH | 77 | 0.0096 | 0.0033 | 0.2448 | 0.2543 | 59.9 | 84.8 | 8 |
+| 292 | De Jesus, Larry | DOW_EAS1 | Sinker | RHH | 30 | 0.0086 | 0.0076 | 0.2457 | 0.2543 | 58.3 | 81.3 | 9 |
+| 306 | Ryan, Dillon | NEW_ENG23 | Sinker | RHH | 88 | 0.0084 | 0.0006 | 0.2459 | 0.2543 | 57.9 | 80.4 | 10 |
+| 333 | Mannering, Shawn | DOW_EAS1 | Sinker | RHH | 32 | 0.0081 | 0.0001 | 0.2462 | 0.2543 | 57.3 | 78.7 | 11 |
+| 341 | Hoeymans, Jack | GAT_GRI | Sinker | RHH | 35 | 0.0080 | 0.0016 | 0.2463 | 0.2543 | 57.1 | 78.2 | 12 |
+| 357 | Cerda, Junior | EVA_OTT | Sinker | RHH | 39 | 0.0078 | 0.0014 | 0.2465 | 0.2543 | 56.8 | 77.2 | 13 |
+| 363 | Primeaux, Parker | SUS_COU1 | Sinker | RHH | 28 | 0.0078 | 0.0181 | 0.2465 | 0.2543 | 56.7 | 76.8 | 14 |
+| 371 | Colon, Jeffrey | TRO_AIG | Sinker | RHH | 26 | 0.0076 | 0.0000 | 0.2467 | 0.2543 | 56.4 | 76.3 | 15 |
 
 ### Slider vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 117 | Bradford, Ethan | NEW_YOR13 | Slider | LHH | 30 | 0.0088 | 0.0052 | 0.2267 | 0.2355 | 63.1 | 90.2 | 1 |
-| 125 | Potteiger, Jack | JOL_SLA | Slider | LHH | 30 | 0.0087 | 0.0034 | 0.2268 | 0.2355 | 62.8 | 89.6 | 2 |
-| 201 | Cosentino, Nick | JOL_SLA | Slider | LHH | 30 | 0.0070 | 0.0026 | 0.2285 | 0.2355 | 59.1 | 83.2 | 3 |
-| 204 | Dima, Josh | GAT_GRI | Slider | LHH | 60 | 0.0070 | 0.0000 | 0.2285 | 0.2355 | 59.0 | 82.9 | 4 |
-| 209 | Cook, Cole | SCH_BOO | Slider | LHH | 87 | 0.0069 | 0.0000 | 0.2286 | 0.2355 | 58.8 | 82.5 | 5 |
-| 212 | Alpern, Liam | FLO_Y'A | Slider | LHH | 38 | 0.0068 | 0.0000 | 0.2286 | 0.2355 | 58.8 | 82.2 | 6 |
-| 239 | MacMillan, Blake | TRO_AIG | Slider | LHH | 37 | 0.0065 | 0.0019 | 0.2290 | 0.2355 | 58.0 | 79.9 | 7 |
-| 248 | Parsons, Billy | SUS_COU1 | Slider | LHH | 86 | 0.0064 | 0.0034 | 0.2291 | 0.2355 | 57.8 | 79.2 | 8 |
-| 274 | Majick, Eli | NEW_ENG23 | Slider | LHH | 42 | 0.0060 | 0.0039 | 0.2295 | 0.2355 | 56.9 | 77.0 | 9 |
-| 284 | Linderman, Greyson | JOL_SLA | Slider | LHH | 27 | 0.0058 | 0.0000 | 0.2297 | 0.2355 | 56.5 | 76.2 | 10 |
-| 292 | Joven, Art | MIS_MUD | Slider | LHH | 93 | 0.0057 | 0.0000 | 0.2298 | 0.2355 | 56.3 | 75.5 | 11 |
-| 314 | Eckaus, David | EVA_OTT | Slider | LHH | 45 | 0.0054 | 0.0000 | 0.2301 | 0.2355 | 55.7 | 73.6 | 12 |
-| 329 | Armstrong, Andrew | NEW_YOR13 | Slider | LHH | 40 | 0.0052 | 0.0000 | 0.2303 | 0.2355 | 55.2 | 72.4 | 13 |
-| 338 | Kaminer, Brandon | DOW_EAS1 | Slider | LHH | 33 | 0.0051 | 0.0029 | 0.2304 | 0.2355 | 54.9 | 71.6 | 14 |
-| 344 | Hensey, Rob | SUS_COU1 | Slider | LHH | 45 | 0.0050 | 0.0000 | 0.2305 | 0.2355 | 54.8 | 71.1 | 15 |
+| 98 | Smith, Ben | NEW_ENG23 | Slider | LHH | 33 | 0.0134 | 0.0000 | 0.2235 | 0.2369 | 66.7 | 93.8 | 1 |
+| 129 | Potteiger, Jack | JOL_SLA | Slider | LHH | 30 | 0.0122 | 0.0054 | 0.2247 | 0.2369 | 64.5 | 91.8 | 2 |
+| 167 | McEvoy, Aidan | FLO_Y'A | Slider | LHH | 65 | 0.0111 | 0.0000 | 0.2258 | 0.2369 | 62.6 | 89.3 | 3 |
+| 174 | Barker, Alex | NEW_YOR13 | Slider | LHH | 59 | 0.0109 | 0.0000 | 0.2260 | 0.2369 | 62.2 | 88.9 | 4 |
+| 179 | Campbell, Tyler | MIS_MUD | Slider | LHH | 80 | 0.0108 | 0.0088 | 0.2261 | 0.2369 | 62.0 | 88.6 | 5 |
+| 184 | Alpern, Liam | FLO_Y'A | Slider | LHH | 38 | 0.0106 | 0.0000 | 0.2263 | 0.2369 | 61.8 | 88.3 | 6 |
+| 188 | Harris, Everette | TRI_VAL | Slider | LHH | 29 | 0.0105 | 0.0047 | 0.2264 | 0.2369 | 61.5 | 88.0 | 7 |
+| 192 | Maher, Adam | TRI_VAL | Slider | LHH | 47 | 0.0103 | 0.0000 | 0.2266 | 0.2369 | 61.3 | 87.7 | 8 |
+| 193 | Armstrong, Andrew | NEW_YOR13 | Slider | LHH | 60 | 0.0103 | 0.0037 | 0.2266 | 0.2369 | 61.2 | 87.7 | 9 |
+| 199 | Dima, Josh | GAT_GRI | Slider | LHH | 71 | 0.0102 | 0.0000 | 0.2267 | 0.2369 | 61.0 | 87.3 | 10 |
+| 203 | Cook, Cole | SCH_BOO | Slider | LHH | 102 | 0.0101 | 0.0009 | 0.2268 | 0.2369 | 60.9 | 87.0 | 11 |
+| 225 | Eckaus, David | EVA_OTT | Slider | LHH | 107 | 0.0097 | 0.0000 | 0.2272 | 0.2369 | 60.1 | 85.6 | 12 |
+| 246 | Hensey, Rob | SUS_COU1 | Slider | LHH | 67 | 0.0095 | 0.0060 | 0.2274 | 0.2369 | 59.7 | 84.3 | 13 |
+| 248 | Scott, Brandon | LAK_ERI24 | Slider | LHH | 64 | 0.0095 | 0.0000 | 0.2274 | 0.2369 | 59.7 | 84.1 | 14 |
+| 257 | Milburn, Isaac | FLO_Y'A | Slider | LHH | 70 | 0.0093 | 0.0020 | 0.2276 | 0.2369 | 59.4 | 83.6 | 15 |
 
 ### Slider vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 2 | Perez, Kelvin | WAS_WIL3 | Slider | RHH | 45 | 0.0183 | 0.0152 | 0.2117 | 0.2301 | 80.0 | 99.9 | 1 |
-| 3 | McCartney, Seth | MIS_MUD | Slider | RHH | 36 | 0.0171 | 0.0034 | 0.2130 | 0.2301 | 80.0 | 99.8 | 2 |
-| 4 | Nova, Fraynel | LAK_ERI24 | Slider | RHH | 100 | 0.0171 | 0.0118 | 0.2130 | 0.2301 | 80.0 | 99.7 | 3 |
-| 5 | Smith, Ethan | WIN_CIT29 | Slider | RHH | 30 | 0.0167 | 0.0007 | 0.2133 | 0.2301 | 80.0 | 99.7 | 4 |
-| 7 | Blair, Davis | DOW_EAS1 | Slider | RHH | 61 | 0.0163 | 0.0095 | 0.2137 | 0.2301 | 79.2 | 99.5 | 5 |
-| 9 | Willeman, Landon | EVA_OTT | Slider | RHH | 33 | 0.0157 | 0.0000 | 0.2143 | 0.2301 | 77.9 | 99.3 | 6 |
-| 12 | Belton, Hunter | MIS_MUD | Slider | RHH | 75 | 0.0150 | 0.0058 | 0.2151 | 0.2301 | 76.3 | 99.1 | 7 |
-| 13 | Perdomo, Rafael | QUE_CAP | Slider | RHH | 46 | 0.0149 | 0.0007 | 0.2152 | 0.2301 | 76.0 | 99.0 | 8 |
-| 14 | Perozzi, John | SUS_COU1 | Slider | RHH | 46 | 0.0148 | 0.0152 | 0.2152 | 0.2301 | 76.0 | 98.9 | 9 |
-| 15 | Gamelin, Shaun | JOL_SLA | Slider | RHH | 31 | 0.0148 | 0.0102 | 0.2153 | 0.2301 | 75.8 | 98.8 | 10 |
-| 17 | Whitesell, Max | FLO_Y'A | Slider | RHH | 77 | 0.0145 | 0.0050 | 0.2155 | 0.2301 | 75.3 | 98.7 | 11 |
-| 18 | Cohn, Cooper | NIU_HUS | Slider | RHH | 27 | 0.0145 | 0.0000 | 0.2155 | 0.2301 | 75.3 | 98.6 | 12 |
-| 20 | Salata, Derek | SCH_BOO | Slider | RHH | 100 | 0.0142 | 0.0082 | 0.2158 | 0.2301 | 74.7 | 98.4 | 13 |
-| 22 | Wiltse, Ryan | EVA_OTT | Slider | RHH | 35 | 0.0140 | 0.0082 | 0.2160 | 0.2301 | 74.3 | 98.2 | 14 |
-| 23 | Garcia, Hector | WAS_WIL3 | Slider | RHH | 36 | 0.0139 | 0.0075 | 0.2161 | 0.2301 | 74.1 | 98.1 | 15 |
+| 1 | Gilleran, Jimmy | NEW_ENG23 | Slider | RHH | 54 | 0.0247 | 0.0236 | 0.2083 | 0.2330 | 80.0 | 100.0 | 1 |
+| 2 | Wiltse, Ryan | EVA_OTT | Slider | RHH | 59 | 0.0246 | 0.0130 | 0.2084 | 0.2330 | 80.0 | 99.9 | 2 |
+| 3 | Garcia, Hector | WAS_WIL3 | Slider | RHH | 36 | 0.0242 | 0.0138 | 0.2088 | 0.2330 | 80.0 | 99.9 | 3 |
+| 4 | Thompson, Ross | SCH_BOO | Slider | RHH | 181 | 0.0240 | 0.0116 | 0.2091 | 0.2330 | 80.0 | 99.8 | 4 |
+| 5 | Salata, Derek | SCH_BOO | Slider | RHH | 141 | 0.0227 | 0.0167 | 0.2103 | 0.2330 | 80.0 | 99.7 | 5 |
+| 6 | Perez, Kelvin | WAS_WIL3 | Slider | RHH | 90 | 0.0227 | 0.0107 | 0.2103 | 0.2330 | 80.0 | 99.7 | 6 |
+| 7 | Smith, Ethan | WIN_CIT29 | Slider | RHH | 30 | 0.0222 | 0.0024 | 0.2108 | 0.2330 | 80.0 | 99.6 | 7 |
+| 8 | Vailes, Gage | GAT_GRI | Slider | RHH | 177 | 0.0216 | 0.0121 | 0.2114 | 0.2330 | 80.0 | 99.6 | 8 |
+| 9 | Allemann, Braeden | QUE_CAP | Slider | RHH | 39 | 0.0214 | 0.0073 | 0.2116 | 0.2330 | 80.0 | 99.5 | 9 |
+| 10 | Kirby, Zach | WAS_WIL3 | Slider | RHH | 126 | 0.0211 | 0.0083 | 0.2120 | 0.2330 | 80.0 | 99.4 | 10 |
+| 11 | Blair, Davis | DOW_EAS1 | Slider | RHH | 61 | 0.0210 | 0.0130 | 0.2120 | 0.2330 | 80.0 | 99.4 | 11 |
+| 12 | Belton, Hunter | MIS_MUD | Slider | RHH | 75 | 0.0210 | 0.0094 | 0.2121 | 0.2330 | 80.0 | 99.3 | 12 |
+| 13 | Albert, Wes | TRI_VAL | Slider | RHH | 25 | 0.0209 | 0.0116 | 0.2121 | 0.2330 | 80.0 | 99.2 | 13 |
+| 14 | Leak, Anthony | NEW_YOR13 | Slider | RHH | 131 | 0.0207 | 0.0110 | 0.2123 | 0.2330 | 79.8 | 99.2 | 14 |
+| 15 | Helt, Robert | LAK_ERI24 | Slider | RHH | 137 | 0.0207 | 0.0042 | 0.2124 | 0.2330 | 79.6 | 99.1 | 15 |
 
 ### Splitter vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 676 | Thompson, Ross | SCH_BOO | Splitter | LHH | 69 | 0.0017 | 0.0000 | 0.2357 | 0.2374 | 47.6 | 43.1 | 1 |
-| 682 | Salata, Derek | SCH_BOO | Splitter | LHH | 64 | 0.0016 | -0.0000 | 0.2358 | 0.2374 | 47.5 | 42.6 | 2 |
-| 724 | Williams, Brian | MIS_MUD | Splitter | LHH | 40 | 0.0013 | 0.0000 | 0.2361 | 0.2374 | 46.7 | 39.1 | 3 |
-| 730 | Pindel, Buddie | SCH_BOO | Splitter | LHH | 50 | 0.0012 | -0.0000 | 0.2362 | 0.2374 | 46.7 | 38.6 | 4 |
-| 734 | Garcia, Hector | WAS_WIL3 | Splitter | LHH | 59 | 0.0012 | 0.0000 | 0.2362 | 0.2374 | 46.6 | 38.2 | 5 |
-| 746 | Andueza, Axel | DOW_EAS1 | Splitter | LHH | 25 | 0.0011 | 0.0000 | 0.2363 | 0.2374 | 46.4 | 37.2 | 6 |
-| 764 | Vitas, Ben | JOL_SLA | Splitter | LHH | 38 | 0.0009 | -0.0000 | 0.2365 | 0.2374 | 45.9 | 35.7 | 7 |
-| 810 | Thornton, Tyler | NEW_ENG23 | Splitter | LHH | 28 | 0.0005 | -0.0000 | 0.2369 | 0.2374 | 45.0 | 31.8 | 8 |
-| 840 | Orth, Harry | SCH_BOO | Splitter | LHH | 31 | 0.0001 | 0.0000 | 0.2372 | 0.2374 | 44.3 | 29.3 | 9 |
-| 850 | Villers, Ian | QUE_CAP | Splitter | LHH | 39 | -0.0000 | 0.0000 | 0.2374 | 0.2374 | 44.0 | 28.5 | 10 |
-| 887 | Parsons, Billy | SUS_COU1 | Splitter | LHH | 26 | -0.0003 | -0.0000 | 0.2377 | 0.2374 | 43.4 | 25.4 | 11 |
-| 971 | Duby, Bill | NEW_JER6 | Splitter | LHH | 30 | -0.0013 | -0.0000 | 0.2387 | 0.2374 | 41.3 | 18.3 | 12 |
-| 978 | Nakata, Yuto | QUE_CAP | Splitter | LHH | 47 | -0.0014 | -0.0000 | 0.2388 | 0.2374 | 41.1 | 17.7 | 13 |
+| 864 | Coles, Chad | WAS_WIL3 | Splitter | LHH | 31 | 0.0027 | 0.0000 | 0.2402 | 0.2429 | 47.6 | 44.6 | 1 |
+| 920 | Thornton, Tyler | NEW_ENG23 | Splitter | LHH | 52 | 0.0022 | 0.0000 | 0.2407 | 0.2429 | 46.8 | 41.0 | 2 |
+| 958 | Williams, Brian | MIS_MUD | Splitter | LHH | 49 | 0.0019 | 0.0000 | 0.2410 | 0.2429 | 46.2 | 38.6 | 3 |
+| 964 | Perozzi, John | SUS_COU1 | Splitter | LHH | 32 | 0.0018 | 0.0000 | 0.2411 | 0.2429 | 46.2 | 38.2 | 4 |
+| 979 | Eldred, Zach | NEW_ENG23 | Splitter | LHH | 34 | 0.0017 | 0.0000 | 0.2412 | 0.2429 | 45.8 | 37.2 | 5 |
+| 995 | Salata, Derek | SCH_BOO | Splitter | LHH | 88 | 0.0016 | 0.0000 | 0.2414 | 0.2429 | 45.6 | 36.2 | 6 |
+| 996 | Thompson, Ross | SCH_BOO | Splitter | LHH | 104 | 0.0016 | 0.0000 | 0.2414 | 0.2429 | 45.6 | 36.1 | 7 |
+| 1012 | Andueza, Axel | DOW_EAS1 | Splitter | LHH | 44 | 0.0014 | 0.0000 | 0.2415 | 0.2429 | 45.4 | 35.1 | 8 |
+| 1033 | Pindel, Buddie | SCH_BOO | Splitter | LHH | 52 | 0.0013 | 0.0000 | 0.2416 | 0.2429 | 45.1 | 33.8 | 9 |
+| 1041 | Garcia, Hector | WAS_WIL3 | Splitter | LHH | 59 | 0.0012 | 0.0000 | 0.2417 | 0.2429 | 45.0 | 33.2 | 10 |
+| 1087 | Orth, Harry | SCH_BOO | Splitter | LHH | 31 | 0.0009 | 0.0000 | 0.2420 | 0.2429 | 44.4 | 30.3 | 11 |
+| 1130 | Parsons, Billy | SUS_COU1 | Splitter | LHH | 33 | 0.0006 | 0.0000 | 0.2424 | 0.2429 | 43.9 | 27.5 | 12 |
+| 1139 | Vitas, Ben | JOL_SLA | Splitter | LHH | 68 | 0.0005 | 0.0000 | 0.2425 | 0.2429 | 43.7 | 27.0 | 13 |
+| 1147 | Villers, Ian | QUE_CAP | Splitter | LHH | 39 | 0.0004 | 0.0000 | 0.2426 | 0.2429 | 43.5 | 26.4 | 14 |
+| 1164 | Gilleran, Jimmy | NEW_ENG23 | Splitter | LHH | 26 | 0.0002 | 0.0000 | 0.2427 | 0.2429 | 43.2 | 25.4 | 15 |
 
 ### Splitter vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 711 | Pindel, Buddie | SCH_BOO | Splitter | RHH | 30 | 0.0013 | 0.0000 | 0.2512 | 0.2525 | 46.9 | 40.2 | 1 |
-| 745 | Villers, Ian | QUE_CAP | Splitter | RHH | 25 | 0.0011 | 0.0000 | 0.2514 | 0.2525 | 46.4 | 37.3 | 2 |
-| 861 | Williams, Brian | MIS_MUD | Splitter | RHH | 29 | -0.0001 | 0.0000 | 0.2526 | 0.2525 | 43.8 | 27.5 | 3 |
+| 938 | Villers, Ian | QUE_CAP | Splitter | RHH | 25 | 0.0020 | 0.0000 | 0.2494 | 0.2514 | 46.5 | 39.9 | 1 |
+| 1025 | Pindel, Buddie | SCH_BOO | Splitter | RHH | 30 | 0.0013 | 0.0000 | 0.2501 | 0.2514 | 45.2 | 34.3 | 2 |
+| 1069 | Williams, Brian | MIS_MUD | Splitter | RHH | 37 | 0.0010 | 0.0000 | 0.2504 | 0.2514 | 44.7 | 31.5 | 3 |
+| 1138 | Eldred, Zach | NEW_ENG23 | Splitter | RHH | 32 | 0.0005 | 0.0000 | 0.2510 | 0.2514 | 43.7 | 27.0 | 4 |
+| 1153 | Shears, Tanner | SCH_BOO | Splitter | RHH | 30 | 0.0003 | 0.0000 | 0.2511 | 0.2514 | 43.4 | 26.1 | 5 |
+| 1267 | Vitas, Ben | JOL_SLA | Splitter | RHH | 30 | -0.0008 | 0.0000 | 0.2522 | 0.2514 | 41.5 | 18.7 | 6 |
+| 1348 | MacMillan, Blake | TRO_AIG | Splitter | RHH | 29 | -0.0016 | 0.0000 | 0.2530 | 0.2514 | 40.0 | 13.5 | 7 |
+| 1386 | Thornton, Tyler | NEW_ENG23 | Splitter | RHH | 36 | -0.0021 | 0.0000 | 0.2535 | 0.2514 | 39.2 | 11.1 | 8 |
+| 1415 | Nakata, Yuto | QUE_CAP | Splitter | RHH | 28 | -0.0025 | 0.0000 | 0.2539 | 0.2514 | 38.4 | 9.2 | 9 |
+| 1419 | Thompson, Ross | SCH_BOO | Splitter | RHH | 28 | -0.0026 | 0.0000 | 0.2540 | 0.2514 | 38.3 | 9.0 | 10 |
 
 ### Sweeper vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Batter Side | Pitches | Avg Adv | Median Adv | Grid xwOBA | League xwOBA | LS 20-80 | LS 0-100 | Type/Side Rank |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 808 | Simpson, Garret | EVA_OTT | Sweeper | RHH | 26 | 0.0005 | 0.0000 | 0.2063 | 0.2068 | 45.1 | 32.0 | 1 |
-| 843 | Cerda, Junior | EVA_OTT | Sweeper | RHH | 28 | 0.0001 | 0.0000 | 0.2067 | 0.2068 | 44.2 | 29.1 | 2 |
+| 1179 | Simpson, Garret | EVA_OTT | Sweeper | RHH | 32 | 0.0001 | 0.0000 | 0.1946 | 0.1946 | 43.0 | 24.4 | 1 |
+| 1195 | Cerda, Junior | EVA_OTT | Sweeper | RHH | 30 | -0.0000 | 0.0000 | 0.1947 | 0.1946 | 42.8 | 23.4 | 2 |

@@ -2,8 +2,8 @@
 
 - Input file: `data\processed\2026-data-with-woba.parquet`
 - Output file: `data\processed\2026-data-with-woba-xwoba.parquet`
-- Rows in source dataframe: 92,670
-- Batted balls modeled: 25,622
+- Rows in source dataframe: 131,151
+- Batted balls modeled: 36,428
 - Prediction column: `xwoba_frontier`
 - Selected model: `linear_ev_la_la2_batted_type`
 
@@ -21,24 +21,24 @@
 
 | Model | Train R-squared | Train RMSE | Test R-squared | Test RMSE |
 |---|---:|---:|---:|---:|
-| `linear_ev_la_la2_batted_type` | 0.219275 | 0.424451 | 0.223731 | 0.434674 |
-| `linear_ev_la_batted_type` | 0.216059 | 0.425324 | 0.220558 | 0.435561 |
-| `linear_ev_la_spray_batted_type` | 0.216054 | 0.425325 | 0.220551 | 0.435563 |
+| `linear_ev_la_la2_batted_type` | 0.219948 | 0.425684 | 0.219858 | 0.428099 |
+| `linear_ev_la_spray_batted_type` | 0.216678 | 0.426576 | 0.216163 | 0.429112 |
+| `linear_ev_la_batted_type` | 0.216674 | 0.426577 | 0.216143 | 0.429117 |
 
 ## Why This Model Was Selected
 
-`linear_ev_la_la2_batted_type` was selected because it had the lowest holdout RMSE (0.434674) and the highest/competitive holdout R-squared (0.223731) among the candidate models. RMSE was used as the primary criterion because the prediction task is to assign calibrated expected wOBA values to individual batted balls; lower prediction error is more directly useful than a slightly more complex specification with no error gain.
+`linear_ev_la_la2_batted_type` was selected because it had the lowest holdout RMSE (0.428099) and the highest/competitive holdout R-squared (0.219858) among the candidate models. RMSE was used as the primary criterion because the prediction task is to assign calibrated expected wOBA values to individual batted balls; lower prediction error is more directly useful than a slightly more complex specification with no error gain.
 
 ## Batted Ball Type Summary
 
 | Batted Ball Type | Count | Average woba_value |
 |---|---:|---:|
-| `Line Drive` | 5,143 | 0.509976 |
-| `Fly Ball` | 5,880 | 0.292780 |
-| `Bunt` | 129 | 0.249209 |
-| `Ground Ball` | 8,905 | 0.167130 |
-| `Pop Up` | 2,228 | 0.024271 |
-| `Unknown` | 3,337 | 0.000219 |
+| `Line Drive` | 7,273 | 0.509645 |
+| `Fly Ball` | 8,360 | 0.297280 |
+| `Bunt` | 182 | 0.264956 |
+| `Ground Ball` | 12,626 | 0.166675 |
+| `Pop Up` | 3,258 | 0.028095 |
+| `Unknown` | 4,729 | 0.000155 |
 
 ## Exploratory Plots
 
