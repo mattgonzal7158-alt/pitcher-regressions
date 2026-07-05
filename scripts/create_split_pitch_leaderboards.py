@@ -31,6 +31,27 @@ PITCH_VALUE_COLUMNS = {
     "overall_rank",
     "pitch_type_rank",
 }
+COMPONENT_SCORE_COLUMNS = [
+    "groundball_pct",
+    "line_drive_pct",
+    "flyball_pct",
+    "groundball_score_20_80",
+    "groundball_score_0_100",
+    "groundball_score_rank",
+    "groundball_score_pitch_type_rank",
+    "strikeout_score_20_80",
+    "strikeout_score_0_100",
+    "strikeout_score_rank",
+    "strikeout_score_pitch_type_rank",
+    "line_drive_score_20_80",
+    "line_drive_score_0_100",
+    "line_drive_score_rank",
+    "line_drive_score_pitch_type_rank",
+    "flyball_score_20_80",
+    "flyball_score_0_100",
+    "flyball_score_rank",
+    "flyball_score_pitch_type_rank",
+]
 
 LOCATION_SCORE_COLUMNS = {
     "pitcher_name",
@@ -70,7 +91,8 @@ def prepare_pitch_value(df: pd.DataFrame) -> pd.DataFrame:
     if missing:
         raise ValueError(f"Missing required Pitch Value columns: {missing}")
 
-    work = df[list(PITCH_VALUE_COLUMNS)].copy()
+    columns = [*PITCH_VALUE_COLUMNS, *[column for column in COMPONENT_SCORE_COLUMNS if column in df.columns]]
+    work = df[columns].copy()
     work["pitch_type"] = normalize_pitch_type(work["pitch_type"])
     work["pitcher_id_key"] = normalize_pitcher_id(work["pitcher_id"])
     work = work.rename(
@@ -155,6 +177,7 @@ def create_split_leaderboard(
         "pitch_value_xwoba_frontier",
         "pitch_value_overall_rank",
         "pitch_value_pitch_type_rank",
+        *[column for column in COMPONENT_SCORE_COLUMNS if column in joined.columns],
     ]
     return joined[columns].sort_values("overall_rank")
 

@@ -20,6 +20,18 @@ DISPLAY_COLUMNS = [
     "pitch_count",
     "final_pitch_score_20_80",
     "raw_pitch_score_20_80",
+    "groundball_score_20_80",
+    "groundball_score_rank",
+    "groundball_score_pitch_type_rank",
+    "strikeout_score_20_80",
+    "strikeout_score_rank",
+    "strikeout_score_pitch_type_rank",
+    "line_drive_score_20_80",
+    "line_drive_score_rank",
+    "line_drive_score_pitch_type_rank",
+    "flyball_score_20_80",
+    "flyball_score_rank",
+    "flyball_score_pitch_type_rank",
     "location_score_20_80",
     "stuff_plus_20_80",
     "execution_plus_20_80",
@@ -50,6 +62,10 @@ def build_leaderboards(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
     stuff_df = numeric_sort(df, "stuff_plus_20_80")
     execution_df = numeric_sort(df, "execution_plus_20_80")
     location_df = numeric_sort(df, "location_score_20_80")
+    groundball_df = numeric_sort(df, "groundball_score_20_80")
+    strikeout_df = numeric_sort(df, "strikeout_score_20_80")
+    line_drive_df = numeric_sort(df, "line_drive_score_20_80")
+    flyball_df = numeric_sort(df, "flyball_score_20_80")
 
     vs_rhh = numeric_sort(df.loc[df["batter_side"].eq("R")], "final_pitch_score_20_80")
     vs_lhh = numeric_sort(df.loc[df["batter_side"].eq("L")], "final_pitch_score_20_80")
@@ -76,6 +92,10 @@ def build_leaderboards(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
         "Best Stuff+": stuff_df,
         "Best Execution+": execution_df,
         "Best Location Score": location_df,
+        "Best Ground Ball Score": groundball_df,
+        "Best Strikeout Score": strikeout_df,
+        "Best Line Drive Suppression": line_drive_df,
+        "Best Fly Ball Suppression": flyball_df,
         "Best vs RHH": vs_rhh,
         "Best vs LHH": vs_lhh,
         "Best Development Targets": development,
@@ -112,6 +132,10 @@ def report_table(board: pd.DataFrame, rows: int | None = ROWS_PER_BOARD) -> list
         "Pitches",
         "Final",
         "Raw",
+        "GB",
+        "K",
+        "LD Supp",
+        "FB Supp",
         "Loc",
         "Stuff+",
         "Exec+",
@@ -139,6 +163,10 @@ def report_table(board: pd.DataFrame, rows: int | None = ROWS_PER_BOARD) -> list
                     "" if pd.isna(row.pitch_count) else f"{int(row.pitch_count):,}",
                     fmt(row.final_pitch_score_20_80),
                     fmt(row.raw_pitch_score_20_80),
+                    fmt(row.groundball_score_20_80),
+                    fmt(row.strikeout_score_20_80),
+                    fmt(row.line_drive_score_20_80),
+                    fmt(row.flyball_score_20_80),
                     fmt(row.location_score_20_80),
                     fmt(row.stuff_plus_20_80),
                     fmt(row.execution_plus_20_80),

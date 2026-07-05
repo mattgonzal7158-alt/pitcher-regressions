@@ -97,6 +97,9 @@ Metrics used:
 | `hardhit_pct` | Share of tracked batted balls at least 95 mph | Lower helps |
 | `barrel_pct` | Approximate barrel-zone share | Lower usually helps |
 | `sweetspot_pct` | Launch angle 8 to 32 degrees share | Lower helps |
+| `groundball_pct` | Launch angle below 10 degrees share | Higher helps the Ground Ball component |
+| `line_drive_pct` | Launch angle 10 to 25 degrees share | Lower helps the Line Drive Suppression component |
+| `flyball_pct` | Launch angle above 25 degrees share | Lower helps the Fly Ball Suppression component |
 
 Formula shape:
 
@@ -106,6 +109,15 @@ pitch_value_raw = -sum(frozen_standardized_weight * metric_z)
 pitch_value_20_80 = 50 + 10 * z(pitch_value_raw), clipped from 20 to 80
 pitch_value_0_100 = percentile rank of pitch_value_raw
 ```
+
+The Pitch Value output also includes standalone component scores and rankings:
+
+- `groundball_score_*`: higher scores mean more ground-ball contact.
+- `strikeout_score_*`: higher scores mean stronger strikeout rate.
+- `line_drive_score_*`: higher scores mean better line-drive suppression.
+- `flyball_score_*`: higher scores mean better fly-ball suppression.
+
+Each component includes a raw score, 20-80 score, percentile, overall rank, and pitch-type rank.
 
 Outputs:
 

@@ -109,16 +109,16 @@ Scores are aggregated by pitcher, normalized pitch type, and batter side:
 | 366 | Langrell, Connor | MIS_MUD | Curveball | LHH | 48 | 0.0077 | 0.0051 | 0.2420 | 0.2498 | 56.7 | 76.6 | 3 |
 | 466 | Barker, Alex | NEW_YOR13 | Curveball | LHH | 28 | 0.0063 | 0.0000 | 0.2434 | 0.2498 | 54.2 | 70.2 | 4 |
 | 518 | Morgan, Cooper | QUE_CAP | Curveball | LHH | 44 | 0.0059 | 0.0031 | 0.2439 | 0.2498 | 53.3 | 66.8 | 5 |
-| 537 | Williams, Pierce | NEW_ENG23 | Curveball | LHH | 59 | 0.0057 | 0.0000 | 0.2441 | 0.2498 | 53.0 | 65.6 | 6 |
+| 537 | Williams, Pierce | NEW_ENG23 | Curveball | LHH | 59 | 0.0057 | -0.0000 | 0.2441 | 0.2498 | 53.0 | 65.6 | 6 |
 | 580 | Kassebaum, Torin | LON_ISL22 | Curveball | LHH | 25 | 0.0053 | 0.0048 | 0.2445 | 0.2498 | 52.3 | 62.8 | 7 |
 | 621 | Fauci, Sonny | NEW_JER6 | Curveball | LHH | 30 | 0.0048 | 0.0000 | 0.2450 | 0.2498 | 51.5 | 60.2 | 8 |
-| 630 | Peters, Garrett | NEW_YOR13 | Curveball | LHH | 87 | 0.0047 | 0.0000 | 0.2450 | 0.2498 | 51.3 | 59.6 | 9 |
+| 630 | Peters, Garrett | NEW_YOR13 | Curveball | LHH | 87 | 0.0047 | -0.0000 | 0.2450 | 0.2498 | 51.3 | 59.6 | 9 |
 | 639 | Foltz Jr., Michael | WAS_WIL3 | Curveball | LHH | 30 | 0.0047 | 0.0018 | 0.2451 | 0.2498 | 51.2 | 59.1 | 10 |
 | 695 | Villalobos, Jonaiker | FLO_Y'A | Curveball | LHH | 49 | 0.0041 | 0.0000 | 0.2457 | 0.2498 | 50.2 | 55.5 | 11 |
 | 703 | Rohde, Isaac | NEW_YOR13 | Curveball | LHH | 34 | 0.0041 | 0.0000 | 0.2457 | 0.2498 | 50.1 | 54.9 | 12 |
 | 740 | Sanchez, Edwin | LAK_ERI24 | Curveball | LHH | 33 | 0.0037 | 0.0000 | 0.2461 | 0.2498 | 49.5 | 52.6 | 13 |
-| 749 | Noriega, Branden | LAK_ERI24 | Curveball | LHH | 40 | 0.0036 | 0.0000 | 0.2461 | 0.2498 | 49.4 | 52.0 | 14 |
-| 760 | Martzolf, Max | OTT_TIT | Curveball | LHH | 56 | 0.0035 | 0.0000 | 0.2462 | 0.2498 | 49.2 | 51.3 | 15 |
+| 749 | Noriega, Branden | LAK_ERI24 | Curveball | LHH | 40 | 0.0036 | -0.0000 | 0.2461 | 0.2498 | 49.4 | 52.0 | 14 |
+| 760 | Martzolf, Max | OTT_TIT | Curveball | LHH | 56 | 0.0035 | -0.0000 | 0.2462 | 0.2498 | 49.2 | 51.3 | 15 |
 
 ### Curveball vs RHH
 

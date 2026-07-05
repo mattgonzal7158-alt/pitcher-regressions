@@ -69,6 +69,9 @@ def aggregate_pitch_metrics(df: pd.DataFrame) -> pd.DataFrame:
     hard_hit = exit_velocity.ge(95)
     barrel = is_barrel(exit_velocity, launch_angle)
     sweet_spot = launch_angle.between(8, 32, inclusive="both")
+    ground_ball = launch_angle.lt(10)
+    line_drive = launch_angle.between(10, 25, inclusive="both")
+    fly_ball = launch_angle.gt(25)
 
     work = df[
         [
@@ -91,6 +94,9 @@ def aggregate_pitch_metrics(df: pd.DataFrame) -> pd.DataFrame:
     work["hardhit_count"] = (hard_hit & batted_ball).astype(int)
     work["barrel_count"] = (barrel & batted_ball).astype(int)
     work["sweetspot_count"] = (sweet_spot & batted_ball).astype(int)
+    work["groundball_count"] = (ground_ball & batted_ball).astype(int)
+    work["line_drive_count"] = (line_drive & batted_ball).astype(int)
+    work["flyball_count"] = (fly_ball & batted_ball).astype(int)
     work["exit_velocity_sum"] = exit_velocity.where(batted_ball).fillna(0)
 
     grouped = (
@@ -107,6 +113,9 @@ def aggregate_pitch_metrics(df: pd.DataFrame) -> pd.DataFrame:
             hardhit_count=("hardhit_count", "sum"),
             barrel_count=("barrel_count", "sum"),
             sweetspot_count=("sweetspot_count", "sum"),
+            groundball_count=("groundball_count", "sum"),
+            line_drive_count=("line_drive_count", "sum"),
+            flyball_count=("flyball_count", "sum"),
             exit_velocity_sum=("exit_velocity_sum", "sum"),
             xwoba_frontier=(DEPENDENT, "mean"),
         )
@@ -121,6 +130,9 @@ def aggregate_pitch_metrics(df: pd.DataFrame) -> pd.DataFrame:
     grouped["hardhit_pct"] = safe_rate(grouped["hardhit_count"], grouped["batted_ball_count"])
     grouped["barrel_pct"] = safe_rate(grouped["barrel_count"], grouped["batted_ball_count"])
     grouped["sweetspot_pct"] = safe_rate(grouped["sweetspot_count"], grouped["batted_ball_count"])
+    grouped["groundball_pct"] = safe_rate(grouped["groundball_count"], grouped["batted_ball_count"])
+    grouped["line_drive_pct"] = safe_rate(grouped["line_drive_count"], grouped["batted_ball_count"])
+    grouped["flyball_pct"] = safe_rate(grouped["flyball_count"], grouped["batted_ball_count"])
     return grouped
 
 

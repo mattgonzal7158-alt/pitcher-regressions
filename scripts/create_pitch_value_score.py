@@ -25,6 +25,29 @@ PREDICTORS = [
     "sweetspot_pct",
 ]
 
+COMPONENT_SCORES = {
+    "groundball": {
+        "metric": "groundball_pct",
+        "label": "Ground Ball",
+        "higher_is_better": True,
+    },
+    "strikeout": {
+        "metric": "k_pct",
+        "label": "Strikeout",
+        "higher_is_better": True,
+    },
+    "line_drive": {
+        "metric": "line_drive_pct",
+        "label": "Line Drive Suppression",
+        "higher_is_better": False,
+    },
+    "flyball": {
+        "metric": "flyball_pct",
+        "label": "Fly Ball Suppression",
+        "higher_is_better": False,
+    },
+}
+
 # Frozen score weights from the original xwOBA calibration.
 # Positive weights raise expected damage, so Pitch Value Score uses the
 # negative weighted sum: higher score means lower expected damage.
@@ -50,6 +73,36 @@ LEADERBOARD_GROUPS = {
 
 def percentile_rank(values: pd.Series) -> pd.Series:
     return values.rank(method="average", pct=True).mul(100)
+
+
+def add_component_score(
+    df: pd.DataFrame,
+    *,
+    prefix: str,
+    metric: str,
+    higher_is_better: bool,
+) -> pd.DataFrame:
+    metric_values = pd.to_numeric(df[metric], errors="coerce")
+    mean = metric_values.mean()
+    std = metric_values.std(ddof=0)
+    if std and not np.isclose(std, 0):
+        metric_z = (metric_values - mean) / std
+    else:
+        metric_z = pd.Series(0.0, index=df.index)
+
+    score_raw = metric_z if higher_is_better else -metric_z
+    df[f"{prefix}_score_raw"] = score_raw
+    df[f"{prefix}_score_20_80"] = (50 + 10 * score_raw).clip(20, 80)
+    df[f"{prefix}_score_0_100"] = percentile_rank(score_raw)
+    df[f"{prefix}_score_rank"] = (
+        score_raw.rank(method="first", ascending=False).astype(int)
+    )
+    df[f"{prefix}_score_pitch_type_rank"] = (
+        df.groupby("pitch_type")[f"{prefix}_score_raw"]
+        .rank(method="first", ascending=False)
+        .astype(int)
+    )
+    return df
 
 
 def add_pitch_value_scores(df: pd.DataFrame) -> pd.DataFrame:
@@ -84,6 +137,13 @@ def add_pitch_value_scores(df: pd.DataFrame) -> pd.DataFrame:
         .rank(method="first", ascending=False)
         .astype(int)
     )
+    for prefix, config in COMPONENT_SCORES.items():
+        model_df = add_component_score(
+            model_df,
+            prefix=prefix,
+            metric=config["metric"],
+            higher_is_better=config["higher_is_better"],
+        )
 
     return model_df.sort_values("overall_rank")
 
@@ -108,6 +168,10 @@ def leaderboard_table(df: pd.DataFrame, rows: int = 25) -> list[str]:
         "K%",
         "HardHit%",
         "SweetSpot%",
+        "GB Score",
+        "K Score",
+        "LD Supp",
+        "FB Supp",
         "Pitch Type Rank",
     ]
     lines = ["| " + " | ".join(columns) + " |", "|" + "|".join(["---"] * len(columns)) + "|"]
@@ -130,6 +194,10 @@ def leaderboard_table(df: pd.DataFrame, rows: int = 25) -> list[str]:
                     format_rate(row.k_pct),
                     format_rate(row.hardhit_pct),
                     format_rate(row.sweetspot_pct),
+                    f"{row.groundball_score_20_80:.1f}",
+                    f"{row.strikeout_score_20_80:.1f}",
+                    f"{row.line_drive_score_20_80:.1f}",
+                    f"{row.flyball_score_20_80:.1f}",
                     str(row.pitch_type_rank),
                 ]
             )
@@ -179,6 +247,9 @@ def write_report(scored: pd.DataFrame, output_path: Path) -> None:
         "| HardHit% | Share of batted balls at least 95 mph. | Lower is better. |",
         "| Barrel% | Share of batted balls in an approximate barrel launch/EV zone. | Lower is usually better, but the multivariate coefficient is conditional on EV/HardHit/SweetSpot. |",
         "| SweetSpot% | Share of batted balls launched from 8 to 32 degrees. | Lower is better for pitchers because this is a productive launch window. |",
+        "| GroundBall% | Share of tracked batted balls launched below 10 degrees. | Higher is better in the Ground Ball component score. |",
+        "| LineDrive% | Share of tracked batted balls launched from 10 to 25 degrees. | Lower is better in the Line Drive Suppression component score. |",
+        "| FlyBall% | Share of tracked batted balls launched above 25 degrees. | Lower is better in the Fly Ball Suppression component score. |",
         "",
         "## Score Method",
         "",
@@ -194,6 +265,22 @@ def write_report(scored: pd.DataFrame, output_path: Path) -> None:
         "- `pitch_type_rank`: rank within that exact pitch type label.",
         "",
         "Because the sign is reversed, a metric with a positive damage weight hurts the Pitch Value Score when it is high. A metric with a negative damage weight helps the score when it is high.",
+        "",
+        "## Component Scores",
+        "",
+        "The output also includes standalone component scores for ground-ball tendency, strikeout ability, line-drive suppression, and fly-ball suppression. Each component has a raw score, a 20-80 score, a percentile, an overall rank, and a pitch-type rank.",
+        "",
+        "| Component | Metric | Direction |",
+        "|---|---|---|",
+        *[
+            (
+                f"| `{prefix}_score` | `{config['metric']}` | "
+                f"{'higher metric scores better' if config['higher_is_better'] else 'lower metric scores better'} |"
+            )
+            for prefix, config in COMPONENT_SCORES.items()
+        ],
+        "",
+        "A component score of `50` is league average among qualified pitcher-pitch types; `60` is one standard deviation better. Component ranks sort highest score first.",
         "",
         "## Methodology Notes",
         "",
@@ -246,6 +333,7 @@ def main() -> None:
             "batted_ball_count",
             "xwoba_frontier",
             *PREDICTORS,
+            *(config["metric"] for config in COMPONENT_SCORES.values()),
         }.difference(df.columns)
     )
     if missing:

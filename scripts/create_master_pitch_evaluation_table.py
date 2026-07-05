@@ -31,6 +31,25 @@ FINAL_COLUMNS = [
     "batted_ball_count",
     "raw_pitch_score_20_80",
     "raw_pitch_score_0_100",
+    "groundball_pct",
+    "line_drive_pct",
+    "flyball_pct",
+    "groundball_score_20_80",
+    "groundball_score_0_100",
+    "groundball_score_rank",
+    "groundball_score_pitch_type_rank",
+    "strikeout_score_20_80",
+    "strikeout_score_0_100",
+    "strikeout_score_rank",
+    "strikeout_score_pitch_type_rank",
+    "line_drive_score_20_80",
+    "line_drive_score_0_100",
+    "line_drive_score_rank",
+    "line_drive_score_pitch_type_rank",
+    "flyball_score_20_80",
+    "flyball_score_0_100",
+    "flyball_score_rank",
+    "flyball_score_pitch_type_rank",
     "location_score_20_80",
     "location_score_0_100",
     "final_pitch_score_20_80",
@@ -130,6 +149,25 @@ def create_spine(frames: dict[str, pd.DataFrame], warnings: list[str]) -> pd.Dat
             "pitch_value_pitch_count",
             "pitch_value_20_80",
             "pitch_value_0_100",
+            "groundball_pct",
+            "line_drive_pct",
+            "flyball_pct",
+            "groundball_score_20_80",
+            "groundball_score_0_100",
+            "groundball_score_rank",
+            "groundball_score_pitch_type_rank",
+            "strikeout_score_20_80",
+            "strikeout_score_0_100",
+            "strikeout_score_rank",
+            "strikeout_score_pitch_type_rank",
+            "line_drive_score_20_80",
+            "line_drive_score_0_100",
+            "line_drive_score_rank",
+            "line_drive_score_pitch_type_rank",
+            "flyball_score_20_80",
+            "flyball_score_0_100",
+            "flyball_score_rank",
+            "flyball_score_pitch_type_rank",
             "location_score_20_80",
             "location_score_0_100",
             "final_pitch_score",
@@ -187,6 +225,25 @@ def create_spine(frames: dict[str, pd.DataFrame], warnings: list[str]) -> pd.Dat
             "pitch_count",
             "pitch_value_20_80",
             "pitch_value_0_100",
+            "groundball_pct",
+            "line_drive_pct",
+            "flyball_pct",
+            "groundball_score_20_80",
+            "groundball_score_0_100",
+            "groundball_score_rank",
+            "groundball_score_pitch_type_rank",
+            "strikeout_score_20_80",
+            "strikeout_score_0_100",
+            "strikeout_score_rank",
+            "strikeout_score_pitch_type_rank",
+            "line_drive_score_20_80",
+            "line_drive_score_0_100",
+            "line_drive_score_rank",
+            "line_drive_score_pitch_type_rank",
+            "flyball_score_20_80",
+            "flyball_score_0_100",
+            "flyball_score_rank",
+            "flyball_score_pitch_type_rank",
             "overall_rank",
             "pitch_type_rank",
         ]
@@ -219,6 +276,31 @@ def merge_pitch_value(
         "batted_ball_count",
         "pitch_value_20_80",
         "pitch_value_0_100",
+        "groundball_pct",
+        "line_drive_pct",
+        "flyball_pct",
+        "groundball_score_20_80",
+        "groundball_score_0_100",
+        "groundball_score_rank",
+        "groundball_score_pitch_type_rank",
+        "strikeout_score_20_80",
+        "strikeout_score_0_100",
+        "strikeout_score_rank",
+        "strikeout_score_pitch_type_rank",
+        "line_drive_score_20_80",
+        "line_drive_score_0_100",
+        "line_drive_score_rank",
+        "line_drive_score_pitch_type_rank",
+        "flyball_score_20_80",
+        "flyball_score_0_100",
+        "flyball_score_rank",
+        "flyball_score_pitch_type_rank",
+    ]
+    columns = [
+        column
+        for column in columns
+        if column in {"pitcher_name", "pitcher_id_key", "pitcher_team", "pitch_type"}
+        or column not in master.columns
     ]
     pitch_value = select_if_available(pitch_value, columns, "pitch_value", warnings)
     pitch_value = pitch_value.rename(
@@ -233,9 +315,10 @@ def merge_pitch_value(
         on=["pitcher_name", "pitcher_id_key", "pitcher_team", "pitch_type"],
         how="left",
     )
-    merged["pitch_count"] = merged.get("pitch_count", pd.Series(dtype="float64")).fillna(
-        merged.get("pitch_value_pitch_count_total")
-    )
+    if "pitch_value_pitch_count_total" in merged.columns:
+        merged["pitch_count"] = merged.get(
+            "pitch_count", pd.Series(dtype="float64")
+        ).fillna(merged["pitch_value_pitch_count_total"])
     for target, source in [
         ("raw_pitch_score_20_80", "raw_pitch_score_20_80_from_pitch_value"),
         ("raw_pitch_score_0_100", "raw_pitch_score_0_100_from_pitch_value"),
