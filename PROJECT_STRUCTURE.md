@@ -118,6 +118,7 @@ The Pitch Value output also includes standalone component scores and rankings:
 - `flyball_score_*`: higher scores mean better fly-ball suppression.
 
 Each component includes a raw score, 20-80 score, percentile, overall rank, and pitch-type rank.
+In `pitch_value_scores.csv`, these are overall all-batter component scores. In the handedness split, master, and final scouting outputs, the same component fields are recalculated by pitcher + pitch type + batter side, so LHH and RHH rows use their own strikeout and batted-ball samples.
 
 Outputs:
 

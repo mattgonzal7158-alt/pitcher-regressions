@@ -14,6 +14,13 @@
 - `batted_ball_count`
 - `raw_pitch_score_20_80`
 - `raw_pitch_score_0_100`
+- `split_batted_ball_count`
+- `split_terminal_pa_count`
+- `split_strikeout_count`
+- `split_groundball_count`
+- `split_line_drive_count`
+- `split_flyball_count`
+- `k_pct`
 - `groundball_pct`
 - `line_drive_pct`
 - `flyball_pct`

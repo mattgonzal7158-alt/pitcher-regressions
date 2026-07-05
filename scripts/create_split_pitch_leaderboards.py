@@ -2,9 +2,11 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 
+PITCH_DATA_PATH = Path("data/processed/2026-data-with-woba-xwoba.parquet")
 PITCH_VALUE_PATH = Path("data/processed/pitch_value_scores_with_type_rank.csv")
 LOCATION_SCORE_PATH = Path("data/processed/location_scores.csv")
 OUTPUT_PATH = Path("data/processed/pitch_leaderboard_splits.csv")
@@ -32,6 +34,7 @@ PITCH_VALUE_COLUMNS = {
     "pitch_type_rank",
 }
 COMPONENT_SCORE_COLUMNS = [
+    "k_pct",
     "groundball_pct",
     "line_drive_pct",
     "flyball_pct",
@@ -52,6 +55,12 @@ COMPONENT_SCORE_COLUMNS = [
     "flyball_score_rank",
     "flyball_score_pitch_type_rank",
 ]
+COMPONENT_SCORE_CONFIG = {
+    "groundball": ("groundball_pct", True),
+    "strikeout": ("k_pct", True),
+    "line_drive": ("line_drive_pct", False),
+    "flyball": ("flyball_pct", False),
+}
 
 LOCATION_SCORE_COLUMNS = {
     "pitcher_name",
@@ -86,13 +95,140 @@ def percentile_rank(values: pd.Series) -> pd.Series:
     return values.rank(method="average", pct=True).mul(100)
 
 
+def safe_rate(numerator: pd.Series, denominator: pd.Series) -> pd.Series:
+    return numerator.div(denominator.replace(0, np.nan))
+
+
+def clean_bool(series: pd.Series) -> pd.Series:
+    return series.fillna(False).astype(bool)
+
+
+def add_component_score(
+    df: pd.DataFrame,
+    *,
+    prefix: str,
+    metric: str,
+    higher_is_better: bool,
+) -> pd.DataFrame:
+    metric_values = pd.to_numeric(df[metric], errors="coerce")
+    mean = metric_values.mean()
+    std = metric_values.std(ddof=0)
+    if std and not np.isclose(std, 0):
+        metric_z = (metric_values - mean) / std
+    else:
+        metric_z = pd.Series(0.0, index=df.index)
+
+    score_raw = metric_z if higher_is_better else -metric_z
+    df[f"{prefix}_score_raw"] = score_raw
+    df[f"{prefix}_score_20_80"] = (50 + 10 * score_raw).clip(20, 80)
+    df[f"{prefix}_score_0_100"] = percentile_rank(score_raw)
+    df[f"{prefix}_score_rank"] = (
+        score_raw.rank(method="first", ascending=False).astype("Int64")
+    )
+    df[f"{prefix}_score_pitch_type_rank"] = (
+        df.groupby(["pitch_type", "batter_side"])[f"{prefix}_score_raw"]
+        .rank(method="first", ascending=False)
+        .astype("Int64")
+    )
+    return df
+
+
+def prepare_split_components(df: pd.DataFrame) -> pd.DataFrame:
+    required = {
+        "pitcher_name",
+        "pitcher_id",
+        "pitcher_team",
+        "pitch_type",
+        "batter_side_canonical",
+        "pitch_call",
+        "kor_bb",
+        "play_result",
+        "hit_launch_angle_y",
+        "xwoba_frontier",
+    }
+    missing = sorted(required.difference(df.columns))
+    if missing:
+        raise ValueError(f"Missing required split component columns: {missing}")
+
+    pitch_call = df["pitch_call"].astype("string")
+    kor_bb = df["kor_bb"].astype("string")
+    play_result = df["play_result"].astype("string")
+    launch_angle = pd.to_numeric(df["hit_launch_angle_y"], errors="coerce")
+
+    strikeout = clean_bool(kor_bb.eq("Strikeout"))
+    terminal_pa = (
+        strikeout
+        | clean_bool(kor_bb.eq("Walk"))
+        | play_result.notna()
+        | clean_bool(pitch_call.eq("Hit By Pitch"))
+    )
+    batted_ball = df["xwoba_frontier"].notna()
+    ground_ball = launch_angle.lt(10)
+    line_drive = launch_angle.between(10, 25, inclusive="both")
+    fly_ball = launch_angle.gt(25)
+
+    work = df[
+        [
+            "pitcher_name",
+            "pitcher_id",
+            "pitcher_team",
+            "pitch_type",
+            "batter_side_canonical",
+        ]
+    ].copy()
+    work = work.rename(columns={"batter_side_canonical": "batter_side"})
+    work["pitch_type"] = normalize_pitch_type(work["pitch_type"])
+    work["batter_side"] = normalize_batter_side(work["batter_side"])
+    work["pitcher_id_key"] = normalize_pitcher_id(work["pitcher_id"])
+    work["strikeout_count"] = strikeout.astype(int)
+    work["terminal_pa_count"] = terminal_pa.astype(int)
+    work["batted_ball_count"] = batted_ball.astype(int)
+    work["groundball_count"] = (ground_ball & batted_ball).astype(int)
+    work["line_drive_count"] = (line_drive & batted_ball).astype(int)
+    work["flyball_count"] = (fly_ball & batted_ball).astype(int)
+
+    grouped = (
+        work.groupby(
+            [
+                "pitcher_name",
+                "pitcher_id_key",
+                "pitcher_team",
+                "pitch_type",
+                "batter_side",
+            ],
+            dropna=False,
+        )
+        .agg(
+            split_strikeout_count=("strikeout_count", "sum"),
+            split_terminal_pa_count=("terminal_pa_count", "sum"),
+            split_batted_ball_count=("batted_ball_count", "sum"),
+            split_groundball_count=("groundball_count", "sum"),
+            split_line_drive_count=("line_drive_count", "sum"),
+            split_flyball_count=("flyball_count", "sum"),
+        )
+        .reset_index()
+    )
+    grouped["k_pct"] = safe_rate(
+        grouped["split_strikeout_count"], grouped["split_terminal_pa_count"]
+    )
+    grouped["groundball_pct"] = safe_rate(
+        grouped["split_groundball_count"], grouped["split_batted_ball_count"]
+    )
+    grouped["line_drive_pct"] = safe_rate(
+        grouped["split_line_drive_count"], grouped["split_batted_ball_count"]
+    )
+    grouped["flyball_pct"] = safe_rate(
+        grouped["split_flyball_count"], grouped["split_batted_ball_count"]
+    )
+    return grouped
+
+
 def prepare_pitch_value(df: pd.DataFrame) -> pd.DataFrame:
     missing = sorted(PITCH_VALUE_COLUMNS.difference(df.columns))
     if missing:
         raise ValueError(f"Missing required Pitch Value columns: {missing}")
 
-    columns = [*PITCH_VALUE_COLUMNS, *[column for column in COMPONENT_SCORE_COLUMNS if column in df.columns]]
-    work = df[columns].copy()
+    work = df[list(PITCH_VALUE_COLUMNS)].copy()
     work["pitch_type"] = normalize_pitch_type(work["pitch_type"])
     work["pitcher_id_key"] = normalize_pitcher_id(work["pitcher_id"])
     work = work.rename(
@@ -120,7 +256,9 @@ def prepare_location_score(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def create_split_leaderboard(
-    pitch_value: pd.DataFrame, location_score: pd.DataFrame
+    pitch_value: pd.DataFrame,
+    location_score: pd.DataFrame,
+    split_components: pd.DataFrame,
 ) -> pd.DataFrame:
     merge_keys = ["pitcher_name", "pitcher_id_key", "pitcher_team", "pitch_type"]
     joined = location_score.merge(
@@ -130,6 +268,12 @@ def create_split_leaderboard(
         suffixes=("", "_pitch_value"),
     )
     joined = joined.rename(columns={"pitcher_id": "pitcher_id"})
+    joined = joined.merge(
+        split_components,
+        on=[*merge_keys, "batter_side"],
+        how="left",
+        validate="one_to_one",
+    )
     joined["final_pitch_score_raw"] = (
         PITCH_VALUE_WEIGHT * joined["pitch_value_20_80"]
         + LOCATION_SCORE_WEIGHT * joined["location_score_20_80"]
@@ -151,6 +295,13 @@ def create_split_leaderboard(
         .rank(method="first", ascending=False)
         .astype(int)
     )
+    for prefix, (metric, higher_is_better) in COMPONENT_SCORE_CONFIG.items():
+        joined = add_component_score(
+            joined,
+            prefix=prefix,
+            metric=metric,
+            higher_is_better=higher_is_better,
+        )
 
     columns = [
         "overall_rank",
@@ -177,6 +328,12 @@ def create_split_leaderboard(
         "pitch_value_xwoba_frontier",
         "pitch_value_overall_rank",
         "pitch_value_pitch_type_rank",
+        "split_batted_ball_count",
+        "split_terminal_pa_count",
+        "split_strikeout_count",
+        "split_groundball_count",
+        "split_line_drive_count",
+        "split_flyball_count",
         *[column for column in COMPONENT_SCORE_COLUMNS if column in joined.columns],
     ]
     return joined[columns].sort_values("overall_rank")
@@ -241,6 +398,7 @@ def write_report(leaderboard: pd.DataFrame, pitch_value_rows: int, location_rows
         "",
         f"- Pitch Value input: `{PITCH_VALUE_PATH}` ({pitch_value_rows:,} rows)",
         f"- Location Score input: `{LOCATION_SCORE_PATH}` ({location_rows:,} rows)",
+        f"- Split component input: `{PITCH_DATA_PATH}`",
         f"- Output file: `{OUTPUT_PATH}`",
         f"- Joined leaderboard rows: {len(leaderboard):,}",
         f"- Formula: `{PITCH_VALUE_WEIGHT:.2f} * pitch_value_20_80 + {LOCATION_SCORE_WEIGHT:.2f} * location_score_20_80`",
@@ -250,6 +408,8 @@ def write_report(leaderboard: pd.DataFrame, pitch_value_rows: int, location_rows
         "## Method",
         "",
         "The leaderboard joins Pitch Value to Location Score by pitcher, team, and normalized pitch type. Because the Pitch Value table is not handedness-specific, each pitcher-pitch Pitch Value is paired with its available LHH and/or RHH Location Score rows.",
+        "",
+        "Ground-ball, strikeout, line-drive, and fly-ball component scores are calculated separately for each pitcher + pitch type + batter side row, then ranked within the split leaderboard. Higher strikeout and ground-ball rates score better; lower line-drive and fly-ball rates score better.",
         "",
         "`final_pitch_score_raw` and `final_pitch_score` are the weighted 20-80 blend. `final_pitch_score_0_100` is the percentile rank of that blended score among all split rows.",
         "",
@@ -277,10 +437,14 @@ def write_report(leaderboard: pd.DataFrame, pitch_value_rows: int, location_rows
 def main() -> None:
     pitch_value_df = pd.read_csv(PITCH_VALUE_PATH)
     location_score_df = pd.read_csv(LOCATION_SCORE_PATH)
+    pitch_df = pd.read_parquet(PITCH_DATA_PATH)
 
     pitch_value = prepare_pitch_value(pitch_value_df)
     location_score = prepare_location_score(location_score_df)
-    leaderboard = create_split_leaderboard(pitch_value, location_score)
+    split_components = prepare_split_components(pitch_df)
+    leaderboard = create_split_leaderboard(
+        pitch_value, location_score, split_components
+    )
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)

@@ -2,6 +2,7 @@
 
 - Pitch Value input: `data\processed\pitch_value_scores_with_type_rank.csv` (744 rows)
 - Location Score input: `data\processed\location_scores.csv` (1,558 rows)
+- Split component input: `data\processed\2026-data-with-woba-xwoba.parquet`
 - Output file: `data\processed\pitch_leaderboard_splits.csv`
 - Joined leaderboard rows: 1,323
 - Formula: `0.70 * pitch_value_20_80 + 0.30 * location_score_20_80`
@@ -11,6 +12,8 @@
 ## Method
 
 The leaderboard joins Pitch Value to Location Score by pitcher, team, and normalized pitch type. Because the Pitch Value table is not handedness-specific, each pitcher-pitch Pitch Value is paired with its available LHH and/or RHH Location Score rows.
+
+Ground-ball, strikeout, line-drive, and fly-ball component scores are calculated separately for each pitcher + pitch type + batter side row, then ranked within the split leaderboard. Higher strikeout and ground-ball rates score better; lower line-drive and fly-ball rates score better.
 
 `final_pitch_score_raw` and `final_pitch_score` are the weighted 20-80 blend. `final_pitch_score_0_100` is the percentile rank of that blended score among all split rows.
 
