@@ -2,7 +2,7 @@
 
 - Input file: `data\raw\2026-data.parquet`
 - Output file: `data\processed\2026-data-with-woba.parquet`
-- Rows saved: 131,151
+- Rows saved: 155,981
 - Columns saved: 243
 
 ## Event/Result Columns Identified
@@ -38,14 +38,14 @@
 
 | Event | Count |
 |---|---:|
-| `OTHER_ZERO` | 98,593 |
-| `OUT` | 20,107 |
-| `1B` | 5,310 |
-| `BB` | 3,881 |
-| `2B` | 1,417 |
-| `HR` | 895 |
-| `HBP` | 824 |
-| `3B` | 124 |
+| `OTHER_ZERO` | 117,113 |
+| `OUT` | 24,064 |
+| `1B` | 6,326 |
+| `BB` | 4,611 |
+| `2B` | 1,693 |
+| `HR` | 1,049 |
+| `HBP` | 981 |
+| `3B` | 144 |
 
 ## Raw Event Column Counts
 
@@ -53,40 +53,40 @@
 
 | Value | Count |
 |---|---:|
-| `<NA>` | 109,183 |
-| `Out` | 12,564 |
-| `Single` | 5,310 |
-| `Double` | 1,417 |
-| `Home Run` | 895 |
-| `Fielder's Choice` | 636 |
-| `Error` | 479 |
-| `Sacrifice` | 441 |
-| `Triple` | 124 |
-| `Stolen Base` | 91 |
-| `Caught Stealing` | 11 |
+| `<NA>` | 129,622 |
+| `Out` | 15,156 |
+| `Single` | 6,326 |
+| `Double` | 1,693 |
+| `Home Run` | 1,049 |
+| `Fielder's Choice` | 750 |
+| `Error` | 561 |
+| `Sacrifice` | 539 |
+| `Triple` | 144 |
+| `Stolen Base` | 126 |
+| `Caught Stealing` | 15 |
 
 ### `kor_bb`
 
 | Value | Count |
 |---|---:|
-| `Undefined` | 120,814 |
-| `Strikeout` | 6,456 |
-| `Walk` | 3,881 |
+| `Undefined` | 143,764 |
+| `Strikeout` | 7,606 |
+| `Walk` | 4,611 |
 
 ### `pitch_call`
 
 | Value | Count |
 |---|---:|
-| `Ball Called` | 48,650 |
-| `Strike Called` | 22,151 |
-| `In Play` | 21,870 |
-| `Foul Ball Not Fieldable` | 19,867 |
-| `Strike Swinging` | 13,343 |
-| `<NA>` | 2,473 |
-| `Ball In Dirt` | 1,102 |
-| `Hit By Pitch` | 824 |
-| `Foul Ball Fieldable` | 768 |
-| `Intentional Ball` | 100 |
+| `Ball Called` | 58,022 |
+| `Strike Called` | 26,282 |
+| `In Play` | 26,222 |
+| `Foul Ball Not Fieldable` | 23,829 |
+| `Strike Swinging` | 15,796 |
+| `<NA>` | 2,501 |
+| `Ball In Dirt` | 1,294 |
+| `Hit By Pitch` | 981 |
+| `Foul Ball Fieldable` | 928 |
+| `Intentional Ball` | 123 |
 | `Automatic Strike` | 2 |
 | `Automatic Ball` | 1 |
 
@@ -94,9 +94,9 @@
 
 | Statistic | Value |
 |---|---:|
-| `count` | 131151.000000 |
-| `mean` | 0.090710 |
-| `std` | 0.300877 |
+| `count` | 155981.000000 |
+| `mean` | 0.090578 |
+| `std` | 0.300329 |
 | `min` | 0.000000 |
 | `25%` | 0.000000 |
 | `50%` | 0.000000 |
@@ -108,16 +108,16 @@
 | Pitch Type | Count | Average woba_value | Sum woba_value |
 |---|---:|---:|---:|
 | `One Seam Fast Ball` | 2 | 0.350500 | 0.701000 |
-| `Sinker` | 18,890 | 0.109191 | 2062.626000 |
-| `<NA>` | 971 | 0.108138 | 105.002000 |
-| `Fastball` | 24,345 | 0.101648 | 2474.622000 |
-| `Four-Seam` | 22,214 | 0.097901 | 2174.783000 |
-| `Cutter` | 5,275 | 0.091286 | 481.532000 |
-| `Two-Seam` | 368 | 0.090565 | 33.328000 |
-| `Other` | 98 | 0.089755 | 8.796000 |
-| `Changeup` | 19,974 | 0.085361 | 1705.000000 |
-| `Splitter` | 1,888 | 0.082551 | 155.857000 |
-| `Slider` | 23,672 | 0.073885 | 1749.007000 |
-| `Sweeper` | 381 | 0.072320 | 27.554000 |
-| `Curveball` | 13,059 | 0.070222 | 917.027000 |
-| `Knuckleball` | 14 | 0.063786 | 0.893000 |
+| `Sinker` | 22,343 | 0.107875 | 2410.250000 |
+| `<NA>` | 1,118 | 0.104355 | 116.669000 |
+| `Fastball` | 28,507 | 0.101029 | 2880.037000 |
+| `Four-Seam` | 27,240 | 0.098610 | 2686.123000 |
+| `Two-Seam` | 420 | 0.095093 | 39.939000 |
+| `Cutter` | 6,120 | 0.090381 | 553.133000 |
+| `Changeup` | 23,914 | 0.086180 | 2060.916000 |
+| `Splitter` | 2,258 | 0.081915 | 184.963000 |
+| `Other` | 119 | 0.079807 | 9.497000 |
+| `Slider` | 28,093 | 0.073957 | 2077.683000 |
+| `Sweeper` | 426 | 0.073561 | 31.337000 |
+| `Curveball` | 15,406 | 0.069863 | 1076.313000 |
+| `Knuckleball` | 15 | 0.059533 | 0.893000 |
