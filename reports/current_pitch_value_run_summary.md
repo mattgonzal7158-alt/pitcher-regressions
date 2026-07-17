@@ -1,6 +1,10 @@
 # Current Pitch Value Run Summary
 
+<<<<<<< HEAD
 - Run time: 2026-07-17 16:57:15
+=======
+- Run time: 2026-07-14 15:24:48
+>>>>>>> e22702d2b0a2fb2fddf972fbe426f33b608347ad
 - Raw input: `data\raw\2026-data.parquet`
 - Qualified raw Pitch Value rows: 853
 - Final scouting leaderboard rows: 15,486

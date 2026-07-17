@@ -1693,8 +1693,13 @@
 | 150 | Parsons, Billy | SUS_COU1 | Slider | RHH | 130 | 45.4 | 40.3 | 47.8 | 52.5 | 51.0 | 47.1 | 57.3 | 62.8 | 39.0 | 65.2 | Tight High-Spin Breakers | Balanced Weapon | Development Target |
 | 151 | Williams, Brian | MIS_MUD | Slider | LHH | 87 | 50.4 | 51.2 | 50.8 | 41.7 | 45.3 | 54.0 | 48.7 | 62.8 | 46.0 | 65.3 | Tight High-Spin Breakers | Balanced Weapon | Development Target |
 | 152 | Williams, Brian | MIS_MUD | Slider | RHH | 156 | 53.1 | 51.2 | 51.1 | 54.3 | 55.4 | 47.5 | 57.6 | 62.8 | 49.8 | 65.3 | Tight High-Spin Breakers | Balanced Weapon | Development Target |
+<<<<<<< HEAD
 | 153 | Miranda, Kevin | OTT_TIT | Slider | LHH | 32 | 33.6 | 31.6 | 57.0 | 50.1 | 33.6 | 68.2 | 38.5 | 62.7 | 22.6 | 65.8 | Tight High-Spin Breakers | Right-Handed Killer | Development Target |
 | 154 | Miranda, Kevin | OTT_TIT | Slider | RHH | 46 | 39.6 | 31.6 | 38.5 | 36.5 | 31.2 | 50.8 | 58.3 | 62.7 | 30.9 | 65.8 | Tight High-Spin Breakers | Right-Handed Killer | Development Target |
+=======
+| 153 | Miranda, Kevin | OTT_TIT | Slider | RHH | 46 | 39.6 | 31.6 | 38.5 | 36.5 | 31.2 | 50.8 | 58.3 | 62.7 | 30.9 | 65.8 | Tight High-Spin Breakers | Right-Handed Killer | Development Target |
+| 154 | Miranda, Kevin | OTT_TIT | Slider | LHH | 32 | 33.6 | 31.6 | 57.0 | 50.1 | 33.6 | 68.2 | 38.5 | 62.7 | 22.6 | 65.8 | Tight High-Spin Breakers | Right-Handed Killer | Development Target |
+>>>>>>> e22702d2b0a2fb2fddf972fbe426f33b608347ad
 | 155 | Delaney, Carter | WIN_CIT29 | Slider | RHH | 45 | 51.5 | 41.7 | 51.9 | 36.5 | 37.5 | 60.3 | 74.4 | 62.5 | 47.7 | 69.8 | Tight High-Spin Breakers | Right-Handed Killer | Development Target |
 | 156 | Delaney, Carter | WIN_CIT29 | Slider | LHH | 28 | 40.2 | 41.7 | 63.2 | 70.6 | 68.8 | 50.8 | 36.8 | 62.5 | 31.9 | 69.8 | Tight High-Spin Breakers | Right-Handed Killer | Development Target |
 | 157 | Misla, Luis | TRI_VAL | Slider | LHH | 44 | 50.7 | 48.6 | 26.1 | 53.5 | 45.3 | 28.7 | 55.5 | 62.5 | 46.5 | 73.3 | Tight High-Spin Breakers | Left-Handed Killer | Development Target |
