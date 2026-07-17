@@ -153,11 +153,7 @@ Scores are aggregated by pitcher, normalized pitch type, and batter side:
 | 1153 | Parsons, Billy | SUS_COU1 | Cutter | LHH | 39 | 0.0019 | 0.0000 | 0.2246 | 0.2264 | 45.1 | 34.5 | 7 |
 | 1196 | Sechrist, Zander | WAS_WIL3 | Cutter | LHH | 41 | 0.0016 | 0.0000 | 0.2249 | 0.2264 | 44.5 | 32.0 | 8 |
 | 1203 | Campbell, Tyler | MIS_MUD | Cutter | LHH | 56 | 0.0015 | 0.0000 | 0.2249 | 0.2264 | 44.5 | 31.6 | 9 |
-<<<<<<< HEAD
 | 1216 | Moore, Kyle | SCH_BOO | Cutter | LHH | 35 | 0.0015 | 0.0000 | 0.2250 | 0.2264 | 44.3 | 30.9 | 10 |
-=======
-| 1216 | Moore, Kyle | SCH_BOO | Cutter | LHH | 35 | 0.0015 | -0.0000 | 0.2250 | 0.2264 | 44.3 | 30.9 | 10 |
->>>>>>> e22702d2b0a2fb2fddf972fbe426f33b608347ad
 | 1260 | Webster, Evan | FLO_Y'A | Cutter | LHH | 95 | 0.0012 | 0.0000 | 0.2253 | 0.2264 | 43.8 | 28.4 | 11 |
 | 1279 | Campbell, AJ | WIN_CIT29 | Cutter | LHH | 31 | 0.0011 | 0.0000 | 0.2254 | 0.2264 | 43.6 | 27.3 | 12 |
 | 1305 | Langrell, Connor | MIS_MUD | Cutter | LHH | 111 | 0.0009 | 0.0000 | 0.2255 | 0.2264 | 43.4 | 25.8 | 13 |
