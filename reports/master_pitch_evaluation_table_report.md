@@ -1,7 +1,7 @@
 # Master Pitch Evaluation Table
 
 - Output file: `data\processed\master_pitch_evaluation_table.csv`
-- Row count: 1,581
+- Row count: 1,783
 
 ## Available Columns
 
@@ -70,31 +70,31 @@
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Ryan, Dillon | NEW_ENG23 | Slider | RHH | 61 | 79.9 | 72.2 | 77.6 | 100.0 | Tight High-Spin Breakers | Right-Handed Killer |
-| 2 | Vecerka, Boris | QUE_CAP | Slider | RHH | 62 | 80.0 | 60.9 | 74.3 | 99.9 | Tight High-Spin Breakers |  |
-| 3 | Kirby, Zach | WAS_WIL3 | Slider | RHH | 126 | 71.6 | 80.0 | 74.2 | 99.9 | Tight High-Spin Breakers |  |
-| 4 | Bargo, Casey | NEW_ENG23 | Slider | RHH | 29 | 73.5 | 75.0 | 73.9 | 99.8 | Tight High-Spin Breakers | Right-Handed Killer |
-| 5 | Grounds, Jackson | DOW_EAS1 | Curveball | RHH | 43 | 80.0 | 57.6 | 73.3 | 99.7 | Tight High-Spin Breakers | Balanced Weapon |
-| 6 | Grounds, Jackson | DOW_EAS1 | Four-Seam | RHH | 48 | 74.3 | 67.0 | 72.1 | 99.7 | Soft-Speed Separation | Balanced Weapon |
-| 7 | Harper, Scott | NEW_YOR13 | Slider | RHH | 169 | 73.6 | 68.3 | 72.1 | 99.6 | Tight High-Spin Breakers | Right-Handed Killer |
-| 8 | Zentko, Dylan | EVA_OTT | Changeup | RHH | 57 | 78.5 | 56.4 | 71.9 | 99.6 | Tight High-Spin Breakers |  |
-| 9 | Ryan, Dillon | NEW_ENG23 | Slider | LHH | 64 | 79.9 | 51.6 | 71.4 | 99.5 | Tight High-Spin Breakers | Right-Handed Killer |
-| 10 | Alpern, Liam | FLO_Y'A | Slider | LHH | 38 | 76.3 | 59.5 | 71.3 | 99.4 | Tight High-Spin Breakers | Reverse Split Weapon |
-| 11 | Davis, Tyler | WIN_CIT29 | Four-Seam | RHH | 33 | 74.3 | 63.9 | 71.2 | 99.4 | Soft-Speed Separation | Balanced Weapon |
-| 12 | Peyton, Blake | GAT_GRI | Changeup | RHH | 90 | 77.2 | 56.3 | 70.9 | 99.3 | Tight High-Spin Breakers |  |
-| 13 | Bauer, Patrick | QUE_CAP | Slider | RHH | 45 | 74.4 | 62.8 | 70.9 | 99.2 | Tight High-Spin Breakers |  |
-| 14 | Carroll, Jake | JOL_SLA | Slider | LHH | 55 | 80.0 | 48.1 | 70.4 | 99.2 | Tight High-Spin Breakers |  |
-| 15 | Morgan, Cooper | QUE_CAP | Curveball | LHH | 66 | 78.0 | 50.0 | 69.6 | 99.1 | Tight High-Spin Breakers |  |
-| 16 | Serrano, Elio | NEW_JER6 | Changeup | LHH | 56 | 75.9 | 54.7 | 69.5 | 99.1 | Soft-Speed Separation |  |
-| 17 | McEvoy, Aidan | FLO_Y'A | Slider | LHH | 76 | 72.5 | 62.0 | 69.4 | 99.0 | Tight High-Spin Breakers | Reverse Split Weapon |
-| 18 | Duncan, Tanner | DOW_EAS1 | Slider | RHH | 38 | 68.9 | 69.9 | 69.2 | 98.9 | Soft-Speed Separation | Right-Handed Killer |
-| 19 | Hickey, Matt | GAT_GRI | Slider | RHH | 72 | 70.5 | 65.7 | 69.1 | 98.9 | Tight High-Spin Breakers |  |
-| 20 | Grounds, Jackson | DOW_EAS1 | Curveball | LHH | 39 | 80.0 | 43.3 | 69.0 | 98.8 | Tight High-Spin Breakers | Balanced Weapon |
-| 21 | Debban, Caleb | NEW_JER6 | Four-Seam | RHH | 37 | 73.7 | 57.3 | 68.8 | 98.7 | Soft-Speed Separation |  |
-| 22 | Nakata, Yuto | QUE_CAP | Slider | RHH | 99 | 68.9 | 68.2 | 68.7 | 98.7 | Tight High-Spin Breakers |  |
-| 23 | Cameron, Zach | WIN_CIT29 | Four-Seam | RHH | 65 | 71.9 | 60.7 | 68.6 | 98.6 | Soft-Speed Separation | Right-Handed Killer |
-| 24 | Lawson, Nathan | FLO_Y'A | Changeup | LHH | 45 | 72.4 | 59.2 | 68.4 | 98.5 | Soft-Speed Separation |  |
-| 25 | Morrissey, Joe | EVA_OTT | Slider | RHH | 47 | 62.8 | 80.0 | 67.9 | 98.5 | Tight High-Spin Breakers |  |
+| 1 | Sanders, Brayden | MIS_MUD | Slider | RHH | 44 | 76.6 | 72.2 | 75.3 | 100.0 | Tight High-Spin Breakers |  |
+| 2 | Bargo, Casey | NEW_ENG23 | Slider | RHH | 29 | 73.6 | 78.9 | 75.2 | 99.9 | Tight High-Spin Breakers | Right-Handed Killer |
+| 3 | Harley, Tristan | SUS_COU1 | Slider | RHH | 44 | 77.0 | 70.0 | 74.9 | 99.9 | Tight High-Spin Breakers | Right-Handed Killer |
+| 4 | Ryan, Dillon | NEW_ENG23 | Slider | RHH | 76 | 79.6 | 64.0 | 74.9 | 99.8 | Tight High-Spin Breakers | Balanced Weapon |
+| 5 | Bauer, Patrick | QUE_CAP | Slider | RHH | 65 | 76.5 | 70.9 | 74.8 | 99.8 | Tight High-Spin Breakers |  |
+| 6 | Vecerka, Boris | QUE_CAP | Slider | RHH | 62 | 80.0 | 62.6 | 74.8 | 99.7 | Tight High-Spin Breakers |  |
+| 7 | Grounds, Jackson | DOW_EAS1 | Curveball | RHH | 43 | 80.0 | 60.6 | 74.2 | 99.7 | Tight High-Spin Breakers | Balanced Weapon |
+| 8 | Kirby, Zach | WAS_WIL3 | Slider | RHH | 126 | 71.6 | 79.8 | 74.1 | 99.6 | Tight High-Spin Breakers |  |
+| 9 | Carroll, Jake | JOL_SLA | Slider | LHH | 55 | 80.0 | 52.7 | 71.8 | 99.6 | Tight High-Spin Breakers |  |
+| 10 | Grounds, Jackson | DOW_EAS1 | Four-Seam | RHH | 48 | 74.1 | 64.6 | 71.2 | 99.5 | Soft-Speed Separation | Balanced Weapon |
+| 11 | Harper, Scott | NEW_YOR13 | Slider | RHH | 193 | 72.8 | 66.3 | 70.8 | 99.4 | Tight High-Spin Breakers | Right-Handed Killer |
+| 12 | Ryan, Dillon | NEW_ENG23 | Slider | LHH | 73 | 79.6 | 50.3 | 70.8 | 99.4 | Tight High-Spin Breakers | Balanced Weapon |
+| 13 | Morgan, Cooper | QUE_CAP | Curveball | LHH | 77 | 78.8 | 51.0 | 70.4 | 99.3 | Tight High-Spin Breakers |  |
+| 14 | Flontek, Zac | DOW_EAS1 | Slider | RHH | 35 | 80.0 | 47.9 | 70.4 | 99.3 | Tight High-Spin Breakers | Balanced Weapon |
+| 15 | Duncan, Tanner | DOW_EAS1 | Slider | RHH | 58 | 67.9 | 76.1 | 70.3 | 99.2 | Soft-Speed Separation | Right-Handed Killer |
+| 16 | Flontek, Zac | DOW_EAS1 | Slider | LHH | 41 | 80.0 | 47.1 | 70.1 | 99.2 | Tight High-Spin Breakers | Balanced Weapon |
+| 17 | Morrissey, Joe | EVA_OTT | Cutter | RHH | 38 | 80.0 | 47.0 | 70.1 | 99.1 | Tight High-Spin Breakers |  |
+| 18 | Davis, Tyler | WIN_CIT29 | Four-Seam | RHH | 33 | 74.4 | 59.9 | 70.1 | 99.0 | Soft-Speed Separation | Balanced Weapon |
+| 19 | Alpern, Liam | FLO_Y'A | Slider | LHH | 38 | 76.1 | 55.8 | 70.0 | 99.0 | Tight High-Spin Breakers | Balanced Weapon |
+| 20 | Heintz, Danny | FLO_Y'A | Four-Seam | RHH | 36 | 75.8 | 54.9 | 69.6 | 98.9 | Soft-Speed Separation |  |
+| 21 | Grounds, Jackson | DOW_EAS1 | Curveball | LHH | 39 | 80.0 | 45.2 | 69.6 | 98.9 | Tight High-Spin Breakers | Balanced Weapon |
+| 22 | McEvoy, Aidan | FLO_Y'A | Slider | LHH | 88 | 71.9 | 62.1 | 69.0 | 98.8 | Tight High-Spin Breakers | Reverse Split Weapon |
+| 23 | Nakata, Yuto | QUE_CAP | Slider | RHH | 99 | 69.0 | 68.6 | 68.9 | 98.8 | Tight High-Spin Breakers |  |
+| 24 | O'Dell, Casey | JOL_SLA | Slider | RHH | 41 | 66.1 | 74.7 | 68.7 | 98.7 | Tight High-Spin Breakers |  |
+| 25 | Sparks, Alec | GAT_GRI | Curveball | LHH | 51 | 76.0 | 51.6 | 68.7 | 98.7 | Tight High-Spin Breakers | Balanced Weapon |
 
 ## Top 10 by Pitch Type and Batter Side
 
@@ -102,214 +102,220 @@
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 16 | Serrano, Elio | NEW_JER6 | Changeup | LHH | 56 | 75.9 | 54.7 | 69.5 | 99.1 | Soft-Speed Separation |  |
-| 24 | Lawson, Nathan | FLO_Y'A | Changeup | LHH | 45 | 72.4 | 59.2 | 68.4 | 98.5 | Soft-Speed Separation |  |
-| 30 | Escobar, Anthony | TRO_AIG | Changeup | LHH | 157 | 69.2 | 61.6 | 66.9 | 98.2 | Soft-Speed Separation |  |
-| 48 | Rodriguez, Joe Joe | NEW_JER6 | Changeup | LHH | 111 | 68.2 | 55.6 | 64.4 | 97.0 | Soft-Speed Separation | Balanced Weapon |
-| 59 | Harris, Everette | TRI_VAL | Changeup | LHH | 56 | 69.6 | 49.8 | 63.7 | 96.3 | Soft-Speed Separation | Balanced Weapon |
-| 67 | Leak, Anthony | NEW_YOR13 | Changeup | LHH | 64 | 66.0 | 56.8 | 63.2 | 95.8 | Soft-Speed Separation |  |
-| 76 | Parsons, Billy | SUS_COU1 | Changeup | LHH | 43 | 68.4 | 49.6 | 62.8 | 95.3 | Tight High-Spin Breakers |  |
-| 81 | Maietta, Dante | WIN_CIT29 | Changeup | LHH | 158 | 62.1 | 63.9 | 62.6 | 94.9 | Soft-Speed Separation | Left-Handed Killer |
-| 104 | Wiltse, Ryan | EVA_OTT | Changeup | LHH | 110 | 68.1 | 45.9 | 61.5 | 93.5 | Soft-Speed Separation | Balanced Weapon |
-| 106 | Sesar, Jorden | SUS_COU1 | Changeup | LHH | 60 | 63.2 | 57.2 | 61.4 | 93.4 | Soft-Speed Separation |  |
+| 42 | Lawson, Nathan | FLO_Y'A | Changeup | LHH | 74 | 68.9 | 58.5 | 65.8 | 97.7 | Soft-Speed Separation | Balanced Weapon |
+| 45 | Rodriguez, Joe Joe | NEW_JER6 | Changeup | LHH | 140 | 69.1 | 56.8 | 65.4 | 97.5 | Soft-Speed Separation | Balanced Weapon |
+| 47 | Escobar, Anthony | TRO_AIG | Changeup | LHH | 187 | 67.6 | 60.1 | 65.4 | 97.4 | Soft-Speed Separation |  |
+| 65 | Perdomo, Rafael | QUE_CAP | Changeup | LHH | 52 | 69.1 | 52.0 | 64.0 | 96.4 | Soft-Speed Separation |  |
+| 73 | O'Hanlon, Michael | WAS_WIL3 | Changeup | LHH | 60 | 66.4 | 56.7 | 63.5 | 96.0 | Soft-Speed Separation |  |
+| 77 | Parsons, Billy | SUS_COU1 | Changeup | LHH | 43 | 68.4 | 51.1 | 63.2 | 95.7 | Tight High-Spin Breakers |  |
+| 86 | Harris, Everette | TRI_VAL | Changeup | LHH | 71 | 66.3 | 54.7 | 62.8 | 95.2 | Soft-Speed Separation | Balanced Weapon |
+| 96 | Good, Ty | GAT_GRI | Changeup | LHH | 59 | 70.7 | 43.4 | 62.5 | 94.7 | Soft-Speed Separation |  |
+| 100 | Maietta, Dante | WIN_CIT29 | Changeup | LHH | 193 | 61.5 | 63.9 | 62.2 | 94.4 | Soft-Speed Separation | Left-Handed Killer |
+| 106 | Leak, Anthony | NEW_YOR13 | Changeup | LHH | 77 | 64.3 | 56.6 | 62.0 | 94.1 | Soft-Speed Separation |  |
 
 ### Changeup vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 8 | Zentko, Dylan | EVA_OTT | Changeup | RHH | 57 | 78.5 | 56.4 | 71.9 | 99.6 | Tight High-Spin Breakers |  |
-| 12 | Peyton, Blake | GAT_GRI | Changeup | RHH | 90 | 77.2 | 56.3 | 70.9 | 99.3 | Tight High-Spin Breakers |  |
-| 33 | Smith, Ben | NEW_ENG23 | Changeup | RHH | 43 | 67.4 | 64.1 | 66.4 | 98.0 | Tight High-Spin Breakers |  |
-| 70 | Rodriguez, Joe Joe | NEW_JER6 | Changeup | RHH | 33 | 68.2 | 51.0 | 63.1 | 95.6 | Soft-Speed Separation | Balanced Weapon |
-| 73 | Wiltse, Ryan | EVA_OTT | Changeup | RHH | 55 | 68.1 | 50.8 | 62.9 | 95.4 | Soft-Speed Separation | Balanced Weapon |
-| 91 | Harris, Everette | TRI_VAL | Changeup | RHH | 40 | 69.6 | 44.7 | 62.1 | 94.3 | Soft-Speed Separation | Balanced Weapon |
-| 123 | Messina, Chris | FDU_KNI | Changeup | RHH | 52 | 66.3 | 47.4 | 60.6 | 92.3 | Tight High-Spin Breakers |  |
-| 128 | Campbell, Tyler | MIS_MUD | Changeup | RHH | 90 | 63.6 | 52.7 | 60.3 | 92.0 | Tight High-Spin Breakers | Balanced Weapon |
-| 131 | Earwood, Micah | SUS_COU1 | Changeup | RHH | 197 | 63.7 | 52.3 | 60.3 | 91.8 | Soft-Speed Separation |  |
-| 209 | Miner, Jace | DOW_EAS1 | Changeup | RHH | 89 | 63.2 | 46.9 | 58.3 | 86.8 | Tight High-Spin Breakers | Balanced Weapon |
+| 35 | Peyton, Blake | GAT_GRI | Changeup | RHH | 104 | 70.8 | 56.1 | 66.4 | 98.1 | Tight High-Spin Breakers |  |
+| 68 | Smith, Ben | NEW_ENG23 | Changeup | RHH | 60 | 62.9 | 65.7 | 63.8 | 96.2 | Tight High-Spin Breakers |  |
+| 69 | Rodriguez, Joe Joe | NEW_JER6 | Changeup | RHH | 47 | 69.1 | 51.3 | 63.7 | 96.2 | Soft-Speed Separation | Balanced Weapon |
+| 84 | Wiltse, Ryan | EVA_OTT | Changeup | RHH | 65 | 67.4 | 52.3 | 62.8 | 95.3 | Soft-Speed Separation | Balanced Weapon |
+| 120 | Lawson, Nathan | FLO_Y'A | Changeup | RHH | 33 | 68.9 | 44.1 | 61.5 | 93.3 | Soft-Speed Separation | Balanced Weapon |
+| 127 | Campbell, Tyler | MIS_MUD | Changeup | RHH | 113 | 65.6 | 51.1 | 61.3 | 92.9 | Tight High-Spin Breakers | Balanced Weapon |
+| 142 | Zentko, Dylan | EVA_OTT | Changeup | RHH | 90 | 61.6 | 58.1 | 60.5 | 92.1 | Soft-Speed Separation |  |
+| 144 | Messina, Chris | FDU_KNI | Changeup | RHH | 52 | 66.4 | 46.7 | 60.5 | 92.0 | Tight High-Spin Breakers |  |
+| 162 | Harris, Everette | TRI_VAL | Changeup | RHH | 47 | 66.3 | 45.3 | 60.0 | 91.0 | Soft-Speed Separation | Balanced Weapon |
+| 168 | Earwood, Micah | SUS_COU1 | Changeup | RHH | 199 | 63.3 | 51.9 | 59.8 | 90.6 | Soft-Speed Separation |  |
 
 ### Curveball vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 15 | Morgan, Cooper | QUE_CAP | Curveball | LHH | 66 | 78.0 | 50.0 | 69.6 | 99.1 | Tight High-Spin Breakers |  |
-| 20 | Grounds, Jackson | DOW_EAS1 | Curveball | LHH | 39 | 80.0 | 43.3 | 69.0 | 98.8 | Tight High-Spin Breakers | Balanced Weapon |
-| 50 | Bohnert, Matthew | WIN_CIT29 | Curveball | LHH | 46 | 71.8 | 46.4 | 64.1 | 96.9 | Tight High-Spin Breakers | Balanced Weapon |
-| 130 | Binns, Malik | NEW_JER6 | Curveball | LHH | 27 | 66.2 | 46.3 | 60.3 | 91.8 | Tight High-Spin Breakers | Balanced Weapon |
-| 147 | Salata, Derek | SCH_BOO | Curveball | LHH | 50 | 66.3 | 44.4 | 59.8 | 90.8 | Tight High-Spin Breakers | Balanced Weapon |
-| 154 | Hohenstein, Liam | WIN_CIT29 | Curveball | LHH | 46 | 67.1 | 42.3 | 59.7 | 90.3 | Tight High-Spin Breakers | Balanced Weapon |
-| 157 | Garcia, Brett | OTT_TIT | Curveball | LHH | 51 | 67.2 | 41.8 | 59.6 | 90.1 | Tight High-Spin Breakers | Balanced Weapon |
-| 173 | Eisenbarger, Jack | QUE_CAP | Curveball | LHH | 66 | 64.7 | 46.6 | 59.3 | 89.1 | Tight High-Spin Breakers | Balanced Weapon |
-| 180 | Heredia-Bustos, Rolando | DOW_EAS1 | Curveball | LHH | 35 | 66.2 | 42.8 | 59.2 | 88.7 | Tight High-Spin Breakers | Balanced Weapon |
-| 196 | Hickey, Matt | GAT_GRI | Curveball | LHH | 29 | 68.1 | 36.5 | 58.6 | 87.7 | Tight High-Spin Breakers | Balanced Weapon |
+| 13 | Morgan, Cooper | QUE_CAP | Curveball | LHH | 77 | 78.8 | 51.0 | 70.4 | 99.3 | Tight High-Spin Breakers |  |
+| 21 | Grounds, Jackson | DOW_EAS1 | Curveball | LHH | 39 | 80.0 | 45.2 | 69.6 | 98.9 | Tight High-Spin Breakers | Balanced Weapon |
+| 25 | Sparks, Alec | GAT_GRI | Curveball | LHH | 51 | 76.0 | 51.6 | 68.7 | 98.7 | Tight High-Spin Breakers | Balanced Weapon |
+| 87 | Bohnert, Matthew | WIN_CIT29 | Curveball | LHH | 62 | 69.9 | 46.3 | 62.8 | 95.2 | Tight High-Spin Breakers | Balanced Weapon |
+| 104 | Pierson, Kenny | LAK_ERI24 | Curveball | LHH | 67 | 69.3 | 45.1 | 62.1 | 94.2 | Tight High-Spin Breakers |  |
+| 116 | Binns, Malik | NEW_JER6 | Curveball | LHH | 27 | 66.2 | 51.0 | 61.6 | 93.6 | Tight High-Spin Breakers | Balanced Weapon |
+| 129 | Rodriguez, Ramon | WIN_CIT29 | Curveball | LHH | 55 | 69.9 | 40.6 | 61.1 | 92.8 | Tight High-Spin Breakers | Balanced Weapon |
+| 169 | Heredia-Bustos, Rolando | DOW_EAS1 | Curveball | LHH | 35 | 66.0 | 45.2 | 59.8 | 90.6 | Tight High-Spin Breakers | Balanced Weapon |
+| 185 | Hohenstein, Liam | WIN_CIT29 | Curveball | LHH | 48 | 67.0 | 40.8 | 59.2 | 89.7 | Tight High-Spin Breakers | Right-Handed Killer |
+| 203 | Eisenbarger, Jack | QUE_CAP | Curveball | LHH | 68 | 63.9 | 45.6 | 58.4 | 88.7 | Tight High-Spin Breakers | Balanced Weapon |
 
 ### Curveball vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 5 | Grounds, Jackson | DOW_EAS1 | Curveball | RHH | 43 | 80.0 | 57.6 | 73.3 | 99.7 | Tight High-Spin Breakers | Balanced Weapon |
-| 46 | Hohenstein, Liam | WIN_CIT29 | Curveball | RHH | 60 | 67.1 | 58.2 | 64.5 | 97.2 | Tight High-Spin Breakers | Balanced Weapon |
-| 58 | Jones, Breyln | NEW_JER6 | Curveball | RHH | 37 | 68.4 | 52.7 | 63.7 | 96.4 | Tight High-Spin Breakers |  |
-| 65 | Garcia, Brett | OTT_TIT | Curveball | RHH | 70 | 67.2 | 54.0 | 63.2 | 96.0 | Tight High-Spin Breakers | Balanced Weapon |
-| 68 | Heredia-Bustos, Rolando | DOW_EAS1 | Curveball | RHH | 40 | 66.2 | 56.3 | 63.2 | 95.8 | Tight High-Spin Breakers | Balanced Weapon |
-| 72 | Hickey, Matt | GAT_GRI | Curveball | RHH | 36 | 68.1 | 51.2 | 63.0 | 95.5 | Tight High-Spin Breakers | Balanced Weapon |
-| 80 | Binns, Malik | NEW_JER6 | Curveball | RHH | 28 | 66.2 | 54.2 | 62.6 | 95.0 | Tight High-Spin Breakers | Balanced Weapon |
-| 82 | Bohnert, Matthew | WIN_CIT29 | Curveball | RHH | 52 | 71.8 | 41.1 | 62.6 | 94.9 | Tight High-Spin Breakers | Balanced Weapon |
-| 94 | Gregory, Ben | GAT_GRI | Curveball | RHH | 29 | 66.5 | 50.8 | 61.8 | 94.1 | Tight High-Spin Breakers |  |
-| 95 | Salata, Derek | SCH_BOO | Curveball | RHH | 72 | 66.3 | 51.0 | 61.7 | 94.1 | Tight High-Spin Breakers | Balanced Weapon |
+| 7 | Grounds, Jackson | DOW_EAS1 | Curveball | RHH | 43 | 80.0 | 60.6 | 74.2 | 99.7 | Tight High-Spin Breakers | Balanced Weapon |
+| 46 | Sparks, Alec | GAT_GRI | Curveball | RHH | 38 | 76.0 | 40.6 | 65.4 | 97.5 | Tight High-Spin Breakers | Balanced Weapon |
+| 55 | Hohenstein, Liam | WIN_CIT29 | Curveball | RHH | 61 | 67.0 | 59.6 | 64.8 | 97.0 | Tight High-Spin Breakers | Right-Handed Killer |
+| 72 | Jones, Breyln | NEW_JER6 | Curveball | RHH | 37 | 68.5 | 52.3 | 63.6 | 96.0 | Tight High-Spin Breakers |  |
+| 85 | Heredia-Bustos, Rolando | DOW_EAS1 | Curveball | RHH | 40 | 66.0 | 55.3 | 62.8 | 95.3 | Tight High-Spin Breakers | Balanced Weapon |
+| 97 | Binns, Malik | NEW_JER6 | Curveball | RHH | 28 | 66.2 | 53.6 | 62.4 | 94.6 | Tight High-Spin Breakers | Balanced Weapon |
+| 109 | Rodriguez, Ramon | WIN_CIT29 | Curveball | RHH | 64 | 69.9 | 43.0 | 61.9 | 93.9 | Tight High-Spin Breakers | Balanced Weapon |
+| 112 | Hampton, Ky | OTT_TIT | Curveball | RHH | 61 | 61.3 | 62.8 | 61.8 | 93.8 | Tight High-Spin Breakers |  |
+| 113 | Salata, Derek | SCH_BOO | Curveball | RHH | 131 | 63.1 | 58.5 | 61.7 | 93.7 | Tight High-Spin Breakers | Balanced Weapon |
+| 148 | Bohnert, Matthew | WIN_CIT29 | Curveball | RHH | 62 | 69.9 | 38.4 | 60.4 | 91.8 | Tight High-Spin Breakers | Balanced Weapon |
 
 ### Cutter vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 85 | Webster, Evan | FLO_Y'A | Cutter | LHH | 99 | 70.4 | 43.9 | 62.4 | 94.7 | Soft-Speed Separation | Balanced Weapon |
-| 126 | Majick, Eli | NEW_ENG23 | Cutter | LHH | 28 | 66.4 | 46.3 | 60.4 | 92.1 | Tight High-Spin Breakers | Balanced Weapon |
-| 137 | Correa, Nelvin | QUE_CAP | Cutter | LHH | 63 | 67.9 | 41.6 | 60.0 | 91.4 | Soft-Speed Separation | Balanced Weapon |
-| 214 | Parsons, Billy | SUS_COU1 | Cutter | LHH | 40 | 64.0 | 44.5 | 58.2 | 86.5 | Tight High-Spin Breakers |  |
-| 297 | Lockhart, Gauge | LAK_ERI24 | Cutter | LHH | 68 | 62.7 | 41.3 | 56.3 | 81.3 | Soft-Speed Separation | Balanced Weapon |
-| 344 | Morgan, Marcus | JOL_SLA | Cutter | LHH | 40 | 61.0 | 42.5 | 55.5 | 78.3 | Tight High-Spin Breakers |  |
-| 410 | McEvoy, Aidan | FLO_Y'A | Cutter | LHH | 36 | 56.4 | 49.2 | 54.2 | 74.1 | Soft-Speed Separation | Balanced Weapon |
-| 425 | Bell, Brendan | NEW_ENG23 | Cutter | LHH | 52 | 59.1 | 41.8 | 53.9 | 73.2 | Soft-Speed Separation | Balanced Weapon |
-| 465 | Flontek, Zac | DOW_EAS1 | Cutter | LHH | 27 | 57.7 | 43.0 | 53.3 | 70.7 | Soft-Speed Separation | Balanced Weapon |
-| 575 | Debban, Caleb | NEW_JER6 | Cutter | LHH | 60 | 56.5 | 41.4 | 51.9 | 63.7 | Soft-Speed Separation | Balanced Weapon |
+| 57 | Scafidi, Christian | LAK_ERI24 | Cutter | LHH | 25 | 74.4 | 41.3 | 64.5 | 96.9 | Tight High-Spin Breakers | Balanced Weapon |
+| 90 | Barreto, Brayhans | TRI_VAL | Cutter | LHH | 33 | 72.4 | 39.8 | 62.6 | 95.0 | Soft-Speed Separation |  |
+| 108 | Majick, Eli | NEW_ENG23 | Cutter | LHH | 34 | 70.8 | 41.2 | 61.9 | 94.0 | Tight High-Spin Breakers | Balanced Weapon |
+| 111 | Webster, Evan | FLO_Y'A | Cutter | LHH | 104 | 70.3 | 42.0 | 61.8 | 93.8 | Soft-Speed Separation | Balanced Weapon |
+| 176 | Correa, Nelvin | QUE_CAP | Cutter | LHH | 73 | 67.8 | 40.2 | 59.5 | 90.2 | Soft-Speed Separation | Balanced Weapon |
+| 235 | Parsons, Billy | SUS_COU1 | Cutter | LHH | 45 | 64.1 | 42.6 | 57.7 | 86.9 | Tight High-Spin Breakers |  |
+| 366 | Morgan, Marcus | JOL_SLA | Cutter | LHH | 40 | 61.0 | 42.6 | 55.5 | 79.5 | Tight High-Spin Breakers |  |
+| 371 | Lockhart, Gauge | LAK_ERI24 | Cutter | LHH | 74 | 62.6 | 38.7 | 55.4 | 79.2 | Soft-Speed Separation | Balanced Weapon |
+| 388 | Garcia, Jorge | SUS_COU1 | Cutter | LHH | 30 | 60.5 | 42.6 | 55.1 | 78.3 | Soft-Speed Separation | Balanced Weapon |
+| 580 | Flontek, Zac | DOW_EAS1 | Cutter | LHH | 31 | 57.9 | 40.5 | 52.7 | 67.5 | Soft-Speed Separation | Balanced Weapon |
 
 ### Cutter vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 101 | Correa, Nelvin | QUE_CAP | Cutter | RHH | 55 | 67.9 | 47.0 | 61.6 | 93.7 | Soft-Speed Separation | Balanced Weapon |
-| 114 | Majick, Eli | NEW_ENG23 | Cutter | RHH | 60 | 66.4 | 48.4 | 61.0 | 92.9 | Tight High-Spin Breakers | Balanced Weapon |
-| 122 | Webster, Evan | FLO_Y'A | Cutter | RHH | 39 | 70.4 | 38.1 | 60.7 | 92.3 | Soft-Speed Separation | Balanced Weapon |
-| 185 | Lockhart, Gauge | LAK_ERI24 | Cutter | RHH | 71 | 62.7 | 50.1 | 58.9 | 88.4 | Soft-Speed Separation | Balanced Weapon |
-| 234 | Bell, Brendan | NEW_ENG23 | Cutter | RHH | 41 | 59.1 | 53.8 | 57.5 | 85.3 | Soft-Speed Separation | Balanced Weapon |
-| 265 | Good, Ty | GAT_GRI | Cutter | RHH | 40 | 58.4 | 53.4 | 56.9 | 83.3 | Soft-Speed Separation |  |
-| 402 | Valdez, Alex | EVA_OTT | Cutter | RHH | 65 | 57.3 | 47.8 | 54.5 | 74.6 | Tight High-Spin Breakers | Balanced Weapon |
-| 495 | Saturria, Michael | NEW_ENG23 | Cutter | RHH | 128 | 56.8 | 43.7 | 52.9 | 68.8 | Soft-Speed Separation | Balanced Weapon |
-| 501 | Campbell, AJ | WIN_CIT29 | Cutter | RHH | 50 | 54.7 | 48.5 | 52.8 | 68.4 | Tight High-Spin Breakers | Balanced Weapon |
-| 584 | Debban, Caleb | NEW_JER6 | Cutter | RHH | 81 | 56.5 | 41.1 | 51.8 | 63.1 | Soft-Speed Separation | Balanced Weapon |
+| 17 | Morrissey, Joe | EVA_OTT | Cutter | RHH | 38 | 80.0 | 47.0 | 70.1 | 99.1 | Tight High-Spin Breakers |  |
+| 33 | Scafidi, Christian | LAK_ERI24 | Cutter | RHH | 27 | 74.4 | 50.1 | 67.1 | 98.2 | Tight High-Spin Breakers | Balanced Weapon |
+| 63 | Majick, Eli | NEW_ENG23 | Cutter | RHH | 83 | 70.8 | 48.8 | 64.2 | 96.5 | Tight High-Spin Breakers | Balanced Weapon |
+| 135 | Webster, Evan | FLO_Y'A | Cutter | RHH | 47 | 70.3 | 38.5 | 60.8 | 92.5 | Soft-Speed Separation | Balanced Weapon |
+| 145 | Correa, Nelvin | QUE_CAP | Cutter | RHH | 66 | 67.8 | 43.4 | 60.5 | 91.9 | Soft-Speed Separation | Balanced Weapon |
+| 171 | Leak, Anthony | NEW_YOR13 | Cutter | RHH | 44 | 68.6 | 39.2 | 59.8 | 90.5 | Soft-Speed Separation |  |
+| 224 | Lockhart, Gauge | LAK_ERI24 | Cutter | RHH | 74 | 62.6 | 46.9 | 57.9 | 87.5 | Soft-Speed Separation | Balanced Weapon |
+| 348 | Garcia, Jorge | SUS_COU1 | Cutter | RHH | 28 | 60.5 | 44.5 | 55.7 | 80.5 | Soft-Speed Separation | Balanced Weapon |
+| 412 | Good, Ty | GAT_GRI | Cutter | RHH | 44 | 56.4 | 51.1 | 54.8 | 76.9 | Soft-Speed Separation |  |
+| 420 | Valdez, Alex | EVA_OTT | Cutter | RHH | 78 | 57.6 | 48.0 | 54.7 | 76.5 | Tight High-Spin Breakers | Balanced Weapon |
 
 ### Four-Seam vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 26 | Grounds, Jackson | DOW_EAS1 | Four-Seam | LHH | 59 | 74.3 | 52.8 | 67.9 | 98.4 | Soft-Speed Separation | Balanced Weapon |
-| 34 | Davis, Tyler | WIN_CIT29 | Four-Seam | LHH | 43 | 74.3 | 48.1 | 66.4 | 97.9 | Soft-Speed Separation | Balanced Weapon |
-| 60 | Wehrle, Tyler | WIN_CIT29 | Four-Seam | LHH | 80 | 59.6 | 72.6 | 63.5 | 96.3 | Soft-Speed Separation | Balanced Weapon |
-| 78 | Cameron, Zach | WIN_CIT29 | Four-Seam | LHH | 55 | 71.9 | 41.3 | 62.8 | 95.1 | Soft-Speed Separation | Right-Handed Killer |
-| 100 | Morgan, Cooper | QUE_CAP | Four-Seam | LHH | 43 | 61.6 | 61.8 | 61.6 | 93.7 | Soft-Speed Separation | Left-Handed Killer |
-| 129 | Foster, Kobe | WAS_WIL3 | Four-Seam | LHH | 180 | 58.6 | 64.3 | 60.3 | 91.9 | Soft-Speed Separation | Balanced Weapon |
-| 138 | Cartwright, Eli | GAT_GRI | Four-Seam | LHH | 61 | 61.4 | 56.8 | 60.0 | 91.3 | Soft-Speed Separation | Balanced Weapon |
-| 140 | Shears, Tanner | SCH_BOO | Four-Seam | LHH | 97 | 62.8 | 53.2 | 59.9 | 91.2 | Soft-Speed Separation | Balanced Weapon |
-| 163 | Mercado, Nelson | OTT_TIT | Four-Seam | LHH | 39 | 60.6 | 56.7 | 59.5 | 89.8 | Soft-Speed Separation | Right-Handed Killer |
-| 166 | Herbert, Andrew | WAS_WIL3 | Four-Seam | LHH | 35 | 57.4 | 64.3 | 59.4 | 89.6 | Soft-Speed Separation |  |
+| 31 | Grounds, Jackson | DOW_EAS1 | Four-Seam | LHH | 59 | 74.1 | 51.1 | 67.2 | 98.3 | Soft-Speed Separation | Balanced Weapon |
+| 37 | Davis, Tyler | WIN_CIT29 | Four-Seam | LHH | 43 | 74.4 | 47.5 | 66.3 | 98.0 | Soft-Speed Separation | Balanced Weapon |
+| 124 | Morgan, Cooper | QUE_CAP | Four-Seam | LHH | 45 | 61.9 | 60.1 | 61.3 | 93.1 | Soft-Speed Separation | Left-Handed Killer |
+| 143 | Cameron, Zach | WIN_CIT29 | Four-Seam | LHH | 69 | 68.7 | 41.3 | 60.5 | 92.0 | Soft-Speed Separation | Balanced Weapon |
+| 146 | Cartwright, Eli | GAT_GRI | Four-Seam | LHH | 61 | 61.4 | 58.4 | 60.5 | 91.9 | Soft-Speed Separation | Balanced Weapon |
+| 147 | Foster, Kobe | WAS_WIL3 | Four-Seam | LHH | 186 | 58.4 | 65.2 | 60.4 | 91.8 | Soft-Speed Separation | Balanced Weapon |
+| 151 | Mercado, Nelson | OTT_TIT | Four-Seam | LHH | 39 | 60.6 | 59.8 | 60.4 | 91.6 | Soft-Speed Separation | Right-Handed Killer |
+| 192 | Herbert, Andrew | WAS_WIL3 | Four-Seam | LHH | 35 | 57.5 | 62.3 | 58.9 | 89.3 | Soft-Speed Separation |  |
+| 195 | Correa, Nelvin | QUE_CAP | Four-Seam | LHH | 47 | 67.7 | 37.9 | 58.8 | 89.1 | Soft-Speed Separation | Balanced Weapon |
+| 212 | Foy, Corbin | LAK_ERI24 | Four-Seam | LHH | 48 | 65.5 | 40.8 | 58.1 | 88.2 | Soft-Speed Separation | Balanced Weapon |
 
 ### Four-Seam vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 6 | Grounds, Jackson | DOW_EAS1 | Four-Seam | RHH | 48 | 74.3 | 67.0 | 72.1 | 99.7 | Soft-Speed Separation | Balanced Weapon |
-| 11 | Davis, Tyler | WIN_CIT29 | Four-Seam | RHH | 33 | 74.3 | 63.9 | 71.2 | 99.4 | Soft-Speed Separation | Balanced Weapon |
-| 21 | Debban, Caleb | NEW_JER6 | Four-Seam | RHH | 37 | 73.7 | 57.3 | 68.8 | 98.7 | Soft-Speed Separation |  |
-| 23 | Cameron, Zach | WIN_CIT29 | Four-Seam | RHH | 65 | 71.9 | 60.7 | 68.6 | 98.6 | Soft-Speed Separation | Right-Handed Killer |
-| 36 | Mercado, Nelson | OTT_TIT | Four-Seam | RHH | 42 | 60.6 | 79.2 | 66.2 | 97.8 | Soft-Speed Separation | Right-Handed Killer |
-| 62 | Gregory, Ben | GAT_GRI | Four-Seam | RHH | 74 | 64.0 | 61.7 | 63.3 | 96.1 | Soft-Speed Separation |  |
-| 86 | Correa, Nelvin | QUE_CAP | Four-Seam | RHH | 53 | 67.3 | 50.9 | 62.4 | 94.6 | Soft-Speed Separation | Balanced Weapon |
-| 90 | Grounds, Jackson | TRO_AIG | Four-Seam | RHH | 45 | 66.9 | 51.0 | 62.1 | 94.4 | Soft-Speed Separation | Balanced Weapon |
-| 99 | Wehrle, Tyler | WIN_CIT29 | Four-Seam | RHH | 156 | 59.6 | 66.4 | 61.7 | 93.8 | Soft-Speed Separation | Balanced Weapon |
-| 107 | Langhorne, Miles | SUS_COU1 | Four-Seam | RHH | 40 | 58.9 | 67.2 | 61.4 | 93.3 | Soft-Speed Separation | Balanced Weapon |
+| 10 | Grounds, Jackson | DOW_EAS1 | Four-Seam | RHH | 48 | 74.1 | 64.6 | 71.2 | 99.5 | Soft-Speed Separation | Balanced Weapon |
+| 18 | Davis, Tyler | WIN_CIT29 | Four-Seam | RHH | 33 | 74.4 | 59.9 | 70.1 | 99.0 | Soft-Speed Separation | Balanced Weapon |
+| 20 | Heintz, Danny | FLO_Y'A | Four-Seam | RHH | 36 | 75.8 | 54.9 | 69.6 | 98.9 | Soft-Speed Separation |  |
+| 28 | Debban, Caleb | NEW_JER6 | Four-Seam | RHH | 37 | 73.5 | 55.8 | 68.2 | 98.5 | Soft-Speed Separation |  |
+| 36 | Mercado, Nelson | OTT_TIT | Four-Seam | RHH | 42 | 60.6 | 79.8 | 66.4 | 98.0 | Soft-Speed Separation | Right-Handed Killer |
+| 39 | Earwood, Micah | SUS_COU1 | Four-Seam | RHH | 96 | 73.3 | 49.6 | 66.2 | 97.9 | Soft-Speed Separation |  |
+| 44 | Cameron, Zach | WIN_CIT29 | Four-Seam | RHH | 75 | 68.7 | 57.8 | 65.5 | 97.6 | Soft-Speed Separation | Balanced Weapon |
+| 66 | Kemlage, Joe | NEW_ENG23 | Four-Seam | RHH | 28 | 57.8 | 78.0 | 63.8 | 96.4 | Soft-Speed Separation | Right-Handed Killer |
+| 92 | Correa, Nelvin | QUE_CAP | Four-Seam | RHH | 61 | 67.7 | 50.5 | 62.6 | 94.9 | Soft-Speed Separation | Balanced Weapon |
+| 93 | Foy, Corbin | LAK_ERI24 | Four-Seam | RHH | 47 | 65.5 | 55.5 | 62.5 | 94.8 | Soft-Speed Separation | Balanced Weapon |
 
 ### Sinker vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 69 | Riedel, Caleb | SCH_BOO | Sinker | LHH | 33 | 70.0 | 47.0 | 63.1 | 95.7 | Soft-Speed Separation | Balanced Weapon |
-| 112 | Mannering, Shawn | DOW_EAS1 | Sinker | LHH | 27 | 63.1 | 56.7 | 61.2 | 93.0 | Soft-Speed Separation | Balanced Weapon |
-| 124 | Glickstein, Aaron | SCH_BOO | Sinker | LHH | 30 | 66.2 | 47.3 | 60.5 | 92.2 | Soft-Speed Separation | Balanced Weapon |
-| 148 | Colon, Jeffrey | TRO_AIG | Sinker | LHH | 30 | 64.7 | 48.3 | 59.8 | 90.7 | Soft-Speed Separation | Balanced Weapon |
-| 170 | Widener, Jacob | SUS_COU1 | Sinker | LHH | 58 | 63.6 | 49.4 | 59.4 | 89.3 | Soft-Speed Separation | Balanced Weapon |
-| 203 | Sabatine, Gino | TRI_VAL | Sinker | LHH | 36 | 59.5 | 55.9 | 58.4 | 87.2 | Soft-Speed Separation |  |
-| 218 | Odonnell, Brendan | NEW_ENG23 | Sinker | LHH | 37 | 65.9 | 39.4 | 57.9 | 86.3 | Soft-Speed Separation | Balanced Weapon |
-| 262 | McCartney, Seth | MIS_MUD | Sinker | LHH | 67 | 56.5 | 58.0 | 57.0 | 83.5 | Soft-Speed Separation | Balanced Weapon |
-| 275 | Morgan, Marcus | JOL_SLA | Sinker | LHH | 60 | 57.9 | 53.8 | 56.7 | 82.7 | Soft-Speed Separation | Balanced Weapon |
-| 281 | Aldeano, Austin | TRO_AIG | Sinker | LHH | 45 | 54.1 | 61.9 | 56.5 | 82.3 | Soft-Speed Separation | Balanced Weapon |
+| 89 | Riedel, Caleb | SCH_BOO | Sinker | LHH | 33 | 70.6 | 43.8 | 62.6 | 95.1 | Soft-Speed Separation | Balanced Weapon |
+| 136 | Glickstein, Aaron | SCH_BOO | Sinker | LHH | 41 | 66.6 | 47.3 | 60.8 | 92.4 | Soft-Speed Separation | Balanced Weapon |
+| 139 | Widener, Jacob | SUS_COU1 | Sinker | LHH | 87 | 64.0 | 52.6 | 60.6 | 92.3 | Soft-Speed Separation | Balanced Weapon |
+| 149 | Mannering, Shawn | DOW_EAS1 | Sinker | LHH | 27 | 63.1 | 54.2 | 60.4 | 91.7 | Soft-Speed Separation | Balanced Weapon |
+| 172 | Colon, Jeffrey | TRO_AIG | Sinker | LHH | 30 | 64.6 | 48.3 | 59.7 | 90.4 | Soft-Speed Separation | Balanced Weapon |
+| 202 | Sabatine, Gino | TRI_VAL | Sinker | LHH | 36 | 59.4 | 56.3 | 58.5 | 88.7 | Soft-Speed Separation |  |
+| 211 | Grills, Evan | OTT_TIT | Sinker | LHH | 26 | 61.4 | 50.7 | 58.2 | 88.2 | Soft-Speed Separation | Left-Handed Killer |
+| 221 | McCartney, Seth | MIS_MUD | Sinker | LHH | 67 | 56.6 | 61.1 | 58.0 | 87.7 | Soft-Speed Separation | Balanced Weapon |
+| 260 | Lovell, Justin | WIN_CIT29 | Sinker | LHH | 106 | 61.8 | 46.7 | 57.3 | 85.5 | Soft-Speed Separation | Balanced Weapon |
+| 289 | Plumadore, Carson | WIN_CIT29 | Sinker | LHH | 96 | 61.4 | 46.2 | 56.8 | 83.8 | Soft-Speed Separation | Balanced Weapon |
 
 ### Sinker vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 51 | Still, Stephen | TRI_VAL | Sinker | RHH | 50 | 69.4 | 51.7 | 64.1 | 96.8 | Soft-Speed Separation |  |
-| 53 | Glickstein, Aaron | SCH_BOO | Sinker | RHH | 75 | 66.2 | 59.0 | 64.0 | 96.7 | Soft-Speed Separation | Balanced Weapon |
-| 74 | Riedel, Caleb | SCH_BOO | Sinker | RHH | 48 | 70.0 | 46.4 | 62.9 | 95.4 | Soft-Speed Separation | Balanced Weapon |
-| 89 | Colon, Jeffrey | TRO_AIG | Sinker | RHH | 26 | 64.7 | 56.5 | 62.2 | 94.4 | Soft-Speed Separation | Balanced Weapon |
-| 96 | Garcia, Andrew | EVA_OTT | Sinker | RHH | 29 | 62.7 | 59.3 | 61.7 | 94.0 | Soft-Speed Separation |  |
-| 117 | Mannering, Shawn | DOW_EAS1 | Sinker | RHH | 32 | 63.1 | 55.8 | 60.9 | 92.7 | Soft-Speed Separation | Balanced Weapon |
-| 132 | Petschke, Ben | EVA_OTT | Sinker | RHH | 42 | 60.4 | 60.0 | 60.3 | 91.7 | Soft-Speed Separation |  |
-| 183 | Odonnell, Brendan | NEW_ENG23 | Sinker | RHH | 72 | 65.9 | 43.1 | 59.1 | 88.5 | Soft-Speed Separation | Balanced Weapon |
-| 273 | Aldeano, Austin | TRO_AIG | Sinker | RHH | 25 | 54.1 | 62.6 | 56.7 | 82.8 | Soft-Speed Separation | Balanced Weapon |
-| 286 | Plumadore, Carson | WIN_CIT29 | Sinker | RHH | 59 | 58.4 | 51.6 | 56.4 | 82.0 | Soft-Speed Separation | Balanced Weapon |
+| 58 | Glickstein, Aaron | SCH_BOO | Sinker | RHH | 84 | 66.6 | 59.4 | 64.4 | 96.8 | Soft-Speed Separation | Balanced Weapon |
+| 76 | Riedel, Caleb | SCH_BOO | Sinker | RHH | 58 | 70.6 | 46.0 | 63.3 | 95.8 | Soft-Speed Separation | Balanced Weapon |
+| 78 | Colon, Jeffrey | TRO_AIG | Sinker | RHH | 26 | 64.6 | 59.8 | 63.1 | 95.7 | Soft-Speed Separation | Balanced Weapon |
+| 83 | Still, Stephen | TRI_VAL | Sinker | RHH | 50 | 69.4 | 47.7 | 62.8 | 95.4 | Soft-Speed Separation |  |
+| 118 | Garcia, Andrew | EVA_OTT | Sinker | RHH | 29 | 62.7 | 58.8 | 61.6 | 93.4 | Soft-Speed Separation |  |
+| 138 | Mannering, Shawn | DOW_EAS1 | Sinker | RHH | 32 | 63.1 | 54.8 | 60.6 | 92.3 | Soft-Speed Separation | Balanced Weapon |
+| 154 | Petschke, Ben | EVA_OTT | Sinker | RHH | 44 | 60.6 | 59.4 | 60.3 | 91.4 | Soft-Speed Separation |  |
+| 206 | Plumadore, Carson | WIN_CIT29 | Sinker | RHH | 66 | 61.4 | 51.4 | 58.4 | 88.5 | Soft-Speed Separation | Balanced Weapon |
+| 215 | Aldeano, Austin | TRO_AIG | Sinker | RHH | 25 | 54.1 | 67.3 | 58.1 | 88.0 | Soft-Speed Separation | Balanced Weapon |
+| 249 | Widener, Jacob | SUS_COU1 | Sinker | RHH | 105 | 64.0 | 42.1 | 57.5 | 86.1 | Soft-Speed Separation | Balanced Weapon |
 
 ### Slider vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 9 | Ryan, Dillon | NEW_ENG23 | Slider | LHH | 64 | 79.9 | 51.6 | 71.4 | 99.5 | Tight High-Spin Breakers | Right-Handed Killer |
-| 10 | Alpern, Liam | FLO_Y'A | Slider | LHH | 38 | 76.3 | 59.5 | 71.3 | 99.4 | Tight High-Spin Breakers | Reverse Split Weapon |
-| 14 | Carroll, Jake | JOL_SLA | Slider | LHH | 55 | 80.0 | 48.1 | 70.4 | 99.2 | Tight High-Spin Breakers |  |
-| 17 | McEvoy, Aidan | FLO_Y'A | Slider | LHH | 76 | 72.5 | 62.0 | 69.4 | 99.0 | Tight High-Spin Breakers | Reverse Split Weapon |
-| 27 | Jones, Logan | TRI_VAL | Slider | LHH | 33 | 74.7 | 51.4 | 67.7 | 98.4 | Tight High-Spin Breakers | Balanced Weapon |
-| 32 | Harper, Scott | NEW_YOR13 | Slider | LHH | 48 | 73.6 | 50.8 | 66.8 | 98.0 | Tight High-Spin Breakers | Right-Handed Killer |
-| 42 | Balzan, Jackson | SUS_COU1 | Slider | LHH | 77 | 67.3 | 60.0 | 65.1 | 97.4 | Tight High-Spin Breakers |  |
-| 54 | Leduc, Zachary | TRO_AIG | Slider | LHH | 38 | 71.7 | 46.1 | 64.0 | 96.6 | Tight High-Spin Breakers | Balanced Weapon |
-| 75 | Bargo, Casey | NEW_ENG23 | Slider | LHH | 27 | 73.5 | 38.2 | 62.9 | 95.3 | Tight High-Spin Breakers | Right-Handed Killer |
-| 87 | MacMillan, Blake | TRO_AIG | Slider | LHH | 63 | 63.9 | 58.7 | 62.3 | 94.6 | Tight High-Spin Breakers | Balanced Weapon |
+| 9 | Carroll, Jake | JOL_SLA | Slider | LHH | 55 | 80.0 | 52.7 | 71.8 | 99.6 | Tight High-Spin Breakers |  |
+| 12 | Ryan, Dillon | NEW_ENG23 | Slider | LHH | 73 | 79.6 | 50.3 | 70.8 | 99.4 | Tight High-Spin Breakers | Balanced Weapon |
+| 16 | Flontek, Zac | DOW_EAS1 | Slider | LHH | 41 | 80.0 | 47.1 | 70.1 | 99.2 | Tight High-Spin Breakers | Balanced Weapon |
+| 19 | Alpern, Liam | FLO_Y'A | Slider | LHH | 38 | 76.1 | 55.8 | 70.0 | 99.0 | Tight High-Spin Breakers | Balanced Weapon |
+| 22 | McEvoy, Aidan | FLO_Y'A | Slider | LHH | 88 | 71.9 | 62.1 | 69.0 | 98.8 | Tight High-Spin Breakers | Reverse Split Weapon |
+| 27 | Jones, Logan | TRI_VAL | Slider | LHH | 33 | 74.3 | 54.3 | 68.3 | 98.5 | Tight High-Spin Breakers | Balanced Weapon |
+| 38 | MacMillan, Blake | TRO_AIG | Slider | LHH | 64 | 68.1 | 61.9 | 66.2 | 97.9 | Tight High-Spin Breakers | Balanced Weapon |
+| 48 | Harper, Scott | NEW_YOR13 | Slider | LHH | 50 | 72.8 | 48.0 | 65.3 | 97.4 | Tight High-Spin Breakers | Right-Handed Killer |
+| 49 | Harley, Tristan | SUS_COU1 | Slider | LHH | 30 | 77.0 | 37.8 | 65.3 | 97.3 | Tight High-Spin Breakers | Right-Handed Killer |
+| 52 | Balzan, Jackson | SUS_COU1 | Slider | LHH | 77 | 67.3 | 59.9 | 65.1 | 97.1 | Tight High-Spin Breakers |  |
 
 ### Slider vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Ryan, Dillon | NEW_ENG23 | Slider | RHH | 61 | 79.9 | 72.2 | 77.6 | 100.0 | Tight High-Spin Breakers | Right-Handed Killer |
-| 2 | Vecerka, Boris | QUE_CAP | Slider | RHH | 62 | 80.0 | 60.9 | 74.3 | 99.9 | Tight High-Spin Breakers |  |
-| 3 | Kirby, Zach | WAS_WIL3 | Slider | RHH | 126 | 71.6 | 80.0 | 74.2 | 99.9 | Tight High-Spin Breakers |  |
-| 4 | Bargo, Casey | NEW_ENG23 | Slider | RHH | 29 | 73.5 | 75.0 | 73.9 | 99.8 | Tight High-Spin Breakers | Right-Handed Killer |
-| 7 | Harper, Scott | NEW_YOR13 | Slider | RHH | 169 | 73.6 | 68.3 | 72.1 | 99.6 | Tight High-Spin Breakers | Right-Handed Killer |
-| 13 | Bauer, Patrick | QUE_CAP | Slider | RHH | 45 | 74.4 | 62.8 | 70.9 | 99.2 | Tight High-Spin Breakers |  |
-| 18 | Duncan, Tanner | DOW_EAS1 | Slider | RHH | 38 | 68.9 | 69.9 | 69.2 | 98.9 | Soft-Speed Separation | Right-Handed Killer |
-| 19 | Hickey, Matt | GAT_GRI | Slider | RHH | 72 | 70.5 | 65.7 | 69.1 | 98.9 | Tight High-Spin Breakers |  |
-| 22 | Nakata, Yuto | QUE_CAP | Slider | RHH | 99 | 68.9 | 68.2 | 68.7 | 98.7 | Tight High-Spin Breakers |  |
-| 25 | Morrissey, Joe | EVA_OTT | Slider | RHH | 47 | 62.8 | 80.0 | 67.9 | 98.5 | Tight High-Spin Breakers |  |
+| 1 | Sanders, Brayden | MIS_MUD | Slider | RHH | 44 | 76.6 | 72.2 | 75.3 | 100.0 | Tight High-Spin Breakers |  |
+| 2 | Bargo, Casey | NEW_ENG23 | Slider | RHH | 29 | 73.6 | 78.9 | 75.2 | 99.9 | Tight High-Spin Breakers | Right-Handed Killer |
+| 3 | Harley, Tristan | SUS_COU1 | Slider | RHH | 44 | 77.0 | 70.0 | 74.9 | 99.9 | Tight High-Spin Breakers | Right-Handed Killer |
+| 4 | Ryan, Dillon | NEW_ENG23 | Slider | RHH | 76 | 79.6 | 64.0 | 74.9 | 99.8 | Tight High-Spin Breakers | Balanced Weapon |
+| 5 | Bauer, Patrick | QUE_CAP | Slider | RHH | 65 | 76.5 | 70.9 | 74.8 | 99.8 | Tight High-Spin Breakers |  |
+| 6 | Vecerka, Boris | QUE_CAP | Slider | RHH | 62 | 80.0 | 62.6 | 74.8 | 99.7 | Tight High-Spin Breakers |  |
+| 8 | Kirby, Zach | WAS_WIL3 | Slider | RHH | 126 | 71.6 | 79.8 | 74.1 | 99.6 | Tight High-Spin Breakers |  |
+| 11 | Harper, Scott | NEW_YOR13 | Slider | RHH | 193 | 72.8 | 66.3 | 70.8 | 99.4 | Tight High-Spin Breakers | Right-Handed Killer |
+| 14 | Flontek, Zac | DOW_EAS1 | Slider | RHH | 35 | 80.0 | 47.9 | 70.4 | 99.3 | Tight High-Spin Breakers | Balanced Weapon |
+| 15 | Duncan, Tanner | DOW_EAS1 | Slider | RHH | 58 | 67.9 | 76.1 | 70.3 | 99.2 | Soft-Speed Separation | Right-Handed Killer |
 
 ### Splitter vs LHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 45 | Garcia, Hector | WAS_WIL3 | Splitter | LHH | 59 | 73.6 | 43.3 | 64.5 | 97.2 | Soft-Speed Separation |  |
-| 66 | Soto, Carlos | JOL_SLA | Splitter | LHH | 31 | 71.0 | 45.2 | 63.2 | 95.9 | Tight High-Spin Breakers |  |
-| 110 | Coles, Chad | WAS_WIL3 | Splitter | LHH | 38 | 67.5 | 46.6 | 61.3 | 93.1 | Soft-Speed Separation | Balanced Weapon |
-| 193 | Pindel, Buddie | SCH_BOO | Splitter | LHH | 58 | 65.1 | 43.8 | 58.7 | 87.9 | Soft-Speed Separation | Balanced Weapon |
-| 195 | Shears, Tanner | SCH_BOO | Splitter | LHH | 37 | 66.0 | 41.5 | 58.7 | 87.7 | Tight High-Spin Breakers | Balanced Weapon |
-| 210 | Villers, Ian | QUE_CAP | Splitter | LHH | 39 | 65.1 | 42.3 | 58.3 | 86.8 | Soft-Speed Separation | Balanced Weapon |
-| 220 | Vitas, Ben | JOL_SLA | Splitter | LHH | 91 | 63.7 | 44.1 | 57.8 | 86.1 | Tight High-Spin Breakers | Balanced Weapon |
-| 414 | Williams, Brian | MIS_MUD | Splitter | LHH | 57 | 58.2 | 44.6 | 54.1 | 73.9 | Tight High-Spin Breakers | Balanced Weapon |
-| 447 | Thornton, Tyler | NEW_ENG23 | Splitter | LHH | 69 | 57.0 | 45.3 | 53.5 | 71.8 | Tight High-Spin Breakers | Balanced Weapon |
-| 579 | Salata, Derek | SCH_BOO | Splitter | LHH | 90 | 55.3 | 44.1 | 51.9 | 63.4 | Soft-Speed Separation |  |
+| 61 | Garcia, Hector | WAS_WIL3 | Splitter | LHH | 59 | 73.4 | 43.3 | 64.4 | 96.6 | Soft-Speed Separation |  |
+| 152 | Coles, Chad | WAS_WIL3 | Splitter | LHH | 38 | 67.5 | 43.7 | 60.4 | 91.5 | Soft-Speed Separation | Balanced Weapon |
+| 213 | Villers, Ian | QUE_CAP | Splitter | LHH | 39 | 65.2 | 41.6 | 58.1 | 88.1 | Soft-Speed Separation | Balanced Weapon |
+| 217 | Shears, Tanner | SCH_BOO | Splitter | LHH | 39 | 65.2 | 41.5 | 58.0 | 87.9 | Tight High-Spin Breakers | Balanced Weapon |
+| 288 | Pindel, Buddie | SCH_BOO | Splitter | LHH | 61 | 63.6 | 41.2 | 56.9 | 83.9 | Soft-Speed Separation | Balanced Weapon |
+| 295 | Soto, Carlos | JOL_SLA | Splitter | LHH | 46 | 61.9 | 44.6 | 56.7 | 83.5 | Tight High-Spin Breakers | Balanced Weapon |
+| 571 | Williams, Brian | MIS_MUD | Splitter | LHH | 72 | 56.8 | 43.6 | 52.8 | 68.0 | Tight High-Spin Breakers | Balanced Weapon |
+| 659 | Vitas, Ben | JOL_SLA | Splitter | LHH | 116 | 55.2 | 44.2 | 51.9 | 63.1 | Tight High-Spin Breakers | Balanced Weapon |
+| 675 | Thornton, Tyler | NEW_ENG23 | Splitter | LHH | 80 | 54.9 | 44.3 | 51.7 | 62.2 | Tight High-Spin Breakers | Balanced Weapon |
+| 685 | Thompson, Ross | SCH_BOO | Splitter | LHH | 183 | 55.6 | 42.0 | 51.5 | 61.6 | Soft-Speed Separation | Balanced Weapon |
 
 ### Splitter vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 156 | Coles, Chad | WAS_WIL3 | Splitter | RHH | 25 | 67.5 | 41.2 | 59.6 | 90.2 | Soft-Speed Separation | Balanced Weapon |
-| 175 | Villers, Ian | QUE_CAP | Splitter | RHH | 25 | 65.1 | 45.6 | 59.3 | 89.0 | Soft-Speed Separation | Balanced Weapon |
-| 189 | Pindel, Buddie | SCH_BOO | Splitter | RHH | 32 | 65.1 | 44.2 | 58.8 | 88.1 | Soft-Speed Separation | Balanced Weapon |
-| 198 | Shears, Tanner | SCH_BOO | Splitter | RHH | 37 | 66.0 | 41.0 | 58.5 | 87.5 | Tight High-Spin Breakers | Balanced Weapon |
-| 285 | Vitas, Ben | JOL_SLA | Splitter | RHH | 36 | 63.7 | 39.3 | 56.4 | 82.0 | Tight High-Spin Breakers | Balanced Weapon |
-| 468 | Williams, Brian | MIS_MUD | Splitter | RHH | 44 | 58.2 | 41.7 | 53.2 | 70.5 | Tight High-Spin Breakers | Balanced Weapon |
-| 576 | Thornton, Tyler | NEW_ENG23 | Splitter | RHH | 50 | 57.0 | 40.0 | 51.9 | 63.6 | Tight High-Spin Breakers | Balanced Weapon |
-| 824 | Thompson, Ross | SCH_BOO | Splitter | RHH | 30 | 55.1 | 34.7 | 49.0 | 47.9 | Soft-Speed Separation | Balanced Weapon |
-| 1393 | Nakata, Yuto | QUE_CAP | Splitter | RHH | 32 | 42.6 | 38.1 | 41.2 | 12.0 | Soft-Speed Separation | Balanced Weapon |
-| 1500 | Eldred, Zach | NEW_ENG23 | Splitter | RHH | 35 | 37.3 | 41.1 | 38.4 | 5.2 | Soft-Speed Separation | Balanced Weapon |
+| 188 | Villers, Ian | QUE_CAP | Splitter | RHH | 25 | 65.2 | 44.6 | 59.0 | 89.5 | Soft-Speed Separation | Balanced Weapon |
+| 191 | Coles, Chad | WAS_WIL3 | Splitter | RHH | 25 | 67.5 | 38.9 | 58.9 | 89.3 | Soft-Speed Separation | Balanced Weapon |
+| 230 | Shears, Tanner | SCH_BOO | Splitter | RHH | 39 | 65.2 | 40.6 | 57.8 | 87.2 | Tight High-Spin Breakers | Balanced Weapon |
+| 248 | Pindel, Buddie | SCH_BOO | Splitter | RHH | 35 | 63.6 | 43.2 | 57.5 | 86.1 | Soft-Speed Separation | Balanced Weapon |
+| 389 | Soto, Carlos | JOL_SLA | Splitter | RHH | 25 | 61.9 | 39.4 | 55.1 | 78.2 | Tight High-Spin Breakers | Balanced Weapon |
+| 664 | Williams, Brian | MIS_MUD | Splitter | RHH | 54 | 56.8 | 40.2 | 51.8 | 62.8 | Tight High-Spin Breakers | Balanced Weapon |
+| 815 | Vitas, Ben | JOL_SLA | Splitter | RHH | 45 | 55.2 | 38.4 | 50.2 | 54.3 | Tight High-Spin Breakers | Balanced Weapon |
+| 826 | Thornton, Tyler | NEW_ENG23 | Splitter | RHH | 66 | 54.9 | 38.7 | 50.0 | 53.7 | Tight High-Spin Breakers | Balanced Weapon |
+| 859 | Thompson, Ross | SCH_BOO | Splitter | RHH | 38 | 55.6 | 35.8 | 49.7 | 51.9 | Soft-Speed Separation | Balanced Weapon |
+| 1581 | Eldred, Zach | NEW_ENG23 | Splitter | RHH | 41 | 41.6 | 39.4 | 41.0 | 11.4 | Soft-Speed Separation | Balanced Weapon |
+
+### Sweeper vs LHH
+
+| Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 686 | Petschke, Ben | EVA_OTT | Sweeper | LHH | 40 | 55.8 | 41.5 | 51.5 | 61.6 | Tight High-Spin Breakers |  |
 
 ### Sweeper vs RHH
 
 | Rank | Pitcher | Team | Pitch Type | Side | Pitches | Raw | Loc | Final | Final % | Archetype | Platoon |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 245 | Cerda, Junior | EVA_OTT | Sweeper | RHH | 41 | 64.2 | 41.4 | 57.4 | 84.6 | Tight High-Spin Breakers |  |
+| 261 | Cerda, Junior | EVA_OTT | Sweeper | RHH | 41 | 64.2 | 40.9 | 57.3 | 85.4 | Tight High-Spin Breakers |  |

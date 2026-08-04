@@ -1,9 +1,9 @@
 # Current Pitch Value Run Summary
 
-- Run time: 2026-07-21 10:17:58
+- Run time: 2026-08-04 08:58:12
 - Raw input: `data\raw\2026-data.parquet`
-- Qualified raw Pitch Value rows: 889
-- Final scouting leaderboard rows: 16,001
+- Qualified raw Pitch Value rows: 1,002
+- Final scouting leaderboard rows: 18,025
 
 ## Start Here
 
@@ -23,36 +23,36 @@
 
 | leaderboard_rank | pitcher_name | pitcher_team | pitch_type | batter_side | pitch_count | final_pitch_score_20_80 | raw_pitch_score_20_80 | location_score_20_80 | stuff_plus_20_80 | execution_plus_20_80 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Ryan, Dillon | NEW_ENG23 | Slider | R | 61 | 77.6 | 79.9 | 72.2 | 64.9 | 80.0 |
-| 2 | Vecerka, Boris | QUE_CAP | Slider | R | 62 | 74.3 | 80.0 | 60.9 | 70.6 | 76.8 |
-| 3 | Kirby, Zach | WAS_WIL3 | Slider | R | 126 | 74.2 | 71.6 | 80.0 | 71.2 | 76.4 |
-| 4 | Bargo, Casey | NEW_ENG23 | Slider | R | 29 | 73.9 | 73.5 | 75.0 | 62.4 | 79.5 |
-| 5 | Grounds, Jackson | DOW_EAS1 | Curveball | R | 43 | 73.3 | 80.0 | 57.6 | 56.2 | 80.0 |
-| 6 | Grounds, Jackson | DOW_EAS1 | Four-Seam | R | 48 | 72.1 | 74.3 | 67.0 | 49.8 | 80.0 |
-| 7 | Harper, Scott | NEW_YOR13 | Slider | R | 169 | 72.1 | 73.6 | 68.3 | 80.0 | 69.6 |
-| 8 | Zentko, Dylan | EVA_OTT | Changeup | R | 57 | 71.9 | 78.5 | 56.4 | 56.7 | 78.8 |
-| 9 | Ryan, Dillon | NEW_ENG23 | Slider | L | 64 | 71.4 | 79.9 | 51.6 | 64.9 | 74.9 |
-| 10 | Alpern, Liam | FLO_Y'A | Slider | L | 38 | 71.3 | 76.3 | 59.5 | 58.4 | 77.3 |
-| 11 | Davis, Tyler | WIN_CIT29 | Four-Seam | R | 33 | 71.2 | 74.3 | 63.9 | 53.1 | 79.2 |
-| 12 | Peyton, Blake | GAT_GRI | Changeup | R | 90 | 70.9 | 77.2 | 56.3 | 48.7 | 80.0 |
-| 13 | Bauer, Patrick | QUE_CAP | Slider | R | 45 | 70.9 | 74.4 | 62.8 | 73.6 | 70.8 |
-| 14 | Carroll, Jake | JOL_SLA | Slider | L | 55 | 70.4 | 80.0 | 48.1 | 60.5 | 75.3 |
-| 15 | Morgan, Cooper | QUE_CAP | Curveball | L | 66 | 69.6 | 78.0 | 50.0 | 44.4 | 80.0 |
-| 16 | Serrano, Elio | NEW_JER6 | Changeup | L | 56 | 69.5 | 75.9 | 54.7 | 52.8 | 77.0 |
-| 17 | McEvoy, Aidan | FLO_Y'A | Slider | L | 76 | 69.4 | 72.5 | 62.0 | 66.8 | 71.3 |
-| 18 | Duncan, Tanner | DOW_EAS1 | Slider | R | 38 | 69.2 | 68.9 | 69.9 | 56.7 | 75.1 |
-| 19 | Hickey, Matt | GAT_GRI | Slider | R | 72 | 69.1 | 70.5 | 65.7 | 63.2 | 72.3 |
-| 20 | Grounds, Jackson | DOW_EAS1 | Curveball | L | 39 | 69.0 | 80.0 | 43.3 | 56.2 | 74.9 |
+| 1 | Sanders, Brayden | MIS_MUD | Slider | R | 44 | 75.3 | 76.6 | 72.2 | 48.8 | 80.0 |
+| 2 | Bargo, Casey | NEW_ENG23 | Slider | R | 29 | 75.2 | 73.6 | 78.9 | 63.4 | 80.0 |
+| 3 | Harley, Tristan | SUS_COU1 | Slider | R | 44 | 74.9 | 77.0 | 70.0 | 67.2 | 79.3 |
+| 4 | Ryan, Dillon | NEW_ENG23 | Slider | R | 76 | 74.9 | 79.6 | 64.0 | 62.9 | 80.0 |
+| 5 | Bauer, Patrick | QUE_CAP | Slider | R | 65 | 74.8 | 76.5 | 70.9 | 74.8 | 76.1 |
+| 6 | Vecerka, Boris | QUE_CAP | Slider | R | 62 | 74.8 | 80.0 | 62.6 | 68.1 | 78.7 |
+| 7 | Grounds, Jackson | DOW_EAS1 | Curveball | R | 43 | 74.2 | 80.0 | 60.6 | 47.5 | 80.0 |
+| 8 | Kirby, Zach | WAS_WIL3 | Slider | R | 126 | 74.1 | 71.6 | 79.8 | 71.6 | 76.3 |
+| 9 | Carroll, Jake | JOL_SLA | Slider | L | 55 | 71.8 | 80.0 | 52.7 | 59.9 | 77.8 |
+| 10 | Grounds, Jackson | DOW_EAS1 | Four-Seam | R | 48 | 71.2 | 74.1 | 64.6 | 47.0 | 80.0 |
+| 11 | Harper, Scott | NEW_YOR13 | Slider | R | 193 | 70.8 | 72.8 | 66.3 | 76.6 | 69.5 |
+| 12 | Ryan, Dillon | NEW_ENG23 | Slider | L | 73 | 70.8 | 79.6 | 50.3 | 62.9 | 75.2 |
+| 13 | Morgan, Cooper | QUE_CAP | Curveball | L | 77 | 70.4 | 78.8 | 51.0 | 48.5 | 80.0 |
+| 14 | Flontek, Zac | DOW_EAS1 | Slider | R | 35 | 70.4 | 80.0 | 47.9 | 66.2 | 73.1 |
+| 15 | Duncan, Tanner | DOW_EAS1 | Slider | R | 58 | 70.3 | 67.9 | 76.1 | 58.4 | 76.4 |
+| 16 | Flontek, Zac | DOW_EAS1 | Slider | L | 41 | 70.1 | 80.0 | 47.1 | 66.2 | 72.8 |
+| 17 | Morrissey, Joe | EVA_OTT | Cutter | R | 38 | 70.1 | 80.0 | 47.0 | 53.0 | 78.3 |
+| 18 | Davis, Tyler | WIN_CIT29 | Four-Seam | R | 33 | 70.1 | 74.4 | 59.9 | 52.6 | 78.4 |
+| 19 | Alpern, Liam | FLO_Y'A | Slider | L | 38 | 70.0 | 76.1 | 55.8 | 55.3 | 77.2 |
+| 20 | Heintz, Danny | FLO_Y'A | Four-Seam | R | 36 | 69.6 | 75.8 | 54.9 | 46.3 | 80.0 |
 
 ## Qualified Pitch Value Rows by Pitch Type
 
 | Pitch Type | Rows |
 |---|---:|
-| `Changeup` | 128 |
-| `Curveball` | 96 |
-| `Cutter` | 39 |
-| `Four-Seam` | 272 |
-| `Sinker` | 146 |
-| `Slider` | 191 |
+| `Changeup` | 150 |
+| `Curveball` | 113 |
+| `Cutter` | 46 |
+| `Four-Seam` | 295 |
+| `Sinker` | 164 |
+| `Slider` | 216 |
 | `Splitter` | 16 |
-| `Sweeper` | 1 |
+| `Sweeper` | 2 |

@@ -1,9 +1,9 @@
 # Frontier League TrackMan Parquet Data Audit
 
 - File: `data\raw\2026-data.parquet`
-- Rows: 165,724
+- Rows: 199,368
 - Columns: 242
-- Memory usage in pandas: 1,041.51 MB
+- Memory usage in pandas: 1,253.28 MB
 
 ## 1. All Column Names
 1. `session_id`
@@ -502,28 +502,28 @@
 | `source_endpoint` | 0 | 0.00% |
 | `source_file` | 0 | 0.00% |
 | `play_id` | 0 | 0.00% |
-| `track_id` | 165,724 | 100.00% |
+| `track_id` | 199,368 | 100.00% |
 | `play_match_key` | 0 | 0.00% |
-| `ball_match_key` | 165,724 | 100.00% |
+| `ball_match_key` | 199,368 | 100.00% |
 | `version` | 0 | 0.00% |
 | `pitch_uid` | 0 | 0.00% |
-| `local_date_time` | 245 | 0.15% |
-| `utc_date_time` | 242 | 0.15% |
+| `local_date_time` | 254 | 0.13% |
+| `utc_date_time` | 251 | 0.13% |
 | `kor_bb` | 0 | 0.00% |
-| `notes` | 165,186 | 99.68% |
+| `notes` | 198,678 | 99.65% |
 | `tagger_behavior_pitch_no` | 0 | 0.00% |
-| `tagger_behavior_p_aofinning` | 1,347 | 0.81% |
-| `tagger_behavior_pitchof_pa` | 1,347 | 0.81% |
-| `pitcher_name` | 25 | 0.02% |
-| `pitcher_id` | 1,371 | 0.83% |
+| `tagger_behavior_p_aofinning` | 1,347 | 0.68% |
+| `tagger_behavior_pitchof_pa` | 1,347 | 0.68% |
+| `pitcher_name` | 25 | 0.01% |
+| `pitcher_id` | 1,532 | 0.77% |
 | `pitcher_throws` | 0 | 0.00% |
 | `pitcher_team` | 0 | 0.00% |
 | `batter_name` | 4 | 0.00% |
-| `batter_id` | 689 | 0.42% |
+| `batter_id` | 730 | 0.37% |
 | `batter_side` | 7 | 0.00% |
 | `batter_team` | 0 | 0.00% |
-| `catcher_name` | 647 | 0.39% |
-| `catcher_id` | 1,543 | 0.93% |
+| `catcher_name` | 647 | 0.32% |
+| `catcher_id` | 1,543 | 0.77% |
 | `catcher_throws` | 0 | 0.00% |
 | `catcher_team` | 0 | 0.00% |
 | `game_state_inning` | 0 | 0.00% |
@@ -533,213 +533,213 @@
 | `game_state_strikes` | 0 | 0.00% |
 | `pitch_tag_tagged_pitch_type` | 0 | 0.00% |
 | `pitch_tag_pitch_call` | 0 | 0.00% |
-| `pitch_tag_auto_pitch_type` | 1,371 | 0.83% |
+| `pitch_tag_auto_pitch_type` | 1,677 | 0.84% |
 | `hit_tag_tagged_hit_type` | 0 | 0.00% |
 | `play_result_play_result` | 0 | 0.00% |
 | `play_result_outs_on_play` | 0 | 0.00% |
 | `play_result_runs_scored` | 0 | 0.00% |
-| `hit_tag_auto_hit_type` | 126,445 | 76.30% |
-| `strike_zone_top` | 54,185 | 32.70% |
-| `strike_zone_bottom` | 54,185 | 32.70% |
-| `strike_zone_right` | 54,185 | 32.70% |
-| `strike_zone_left` | 54,185 | 32.70% |
-| `strike_zone_type` | 54,185 | 32.70% |
-| `strike_zone_decision` | 54,185 | 32.70% |
-| `pitch_tracking_session_id` | 1,345 | 0.81% |
-| `pitch_tracking_source_endpoint` | 1,345 | 0.81% |
-| `pitch_tracking_source_file` | 1,345 | 0.81% |
-| `pitch_tracking_play_id` | 1,345 | 0.81% |
-| `pitch_tracking_track_id` | 1,345 | 0.81% |
-| `pitch_tracking_ball_match_key` | 1,345 | 0.81% |
-| `pitch_tracking_version` | 1,345 | 0.81% |
-| `play_id_x` | 1,345 | 0.81% |
-| `track_id_x` | 1,345 | 0.81% |
-| `pitch_tracking_track_start_time` | 1,345 | 0.81% |
-| `pitch_tracking_kind` | 1,345 | 0.81% |
-| `pitch_release_rel_speed_x` | 1,345 | 0.81% |
-| `pitch_release_spin_rate_x` | 1,345 | 0.81% |
-| `pitch_release_extension_x` | 1,359 | 0.82% |
-| `pitch_release_vert_rel_angle_x` | 1,345 | 0.81% |
-| `pitch_release_horz_rel_angle_x` | 1,345 | 0.81% |
-| `pitch_release_rel_height_x` | 1,345 | 0.81% |
-| `pitch_release_rel_side_x` | 1,345 | 0.81% |
-| `pitch_release_confidence_x` | 1,345 | 0.81% |
-| `pitch_movement_horz_break_x` | 1,366 | 0.82% |
-| `pitch_movement_vert_break_x` | 1,366 | 0.82% |
-| `pitch_movement_induced_vert_break_x` | 1,366 | 0.82% |
-| `pitch_movement_spin_axis_x` | 1,366 | 0.82% |
-| `pitch_movement_tilt_x` | 1,366 | 0.82% |
-| `pitch_movement_confidence_x` | 1,366 | 0.82% |
-| `pitch_location_zone_time_x` | 1,345 | 0.81% |
-| `pitch_location_plate_loc_height_x` | 1,345 | 0.81% |
-| `pitch_location_plate_loc_side_x` | 1,345 | 0.81% |
-| `pitch_location_zone_speed_x` | 1,345 | 0.81% |
-| `pitch_location_vert_appr_angle_x` | 1,345 | 0.81% |
-| `pitch_location_horz_appr_angle_x` | 1,345 | 0.81% |
-| `pitch_location_confidence_x` | 1,345 | 0.81% |
-| `pitch_nine_p_x0_x_x` | 1,345 | 0.81% |
-| `pitch_nine_p_x0_y_x` | 1,345 | 0.81% |
-| `pitch_nine_p_x0_z_x` | 1,345 | 0.81% |
-| `pitch_nine_p_v0_x_x` | 1,345 | 0.81% |
-| `pitch_nine_p_v0_y_x` | 1,345 | 0.81% |
-| `pitch_nine_p_v0_z_x` | 1,345 | 0.81% |
-| `pitch_nine_p_a0_x_x` | 1,345 | 0.81% |
-| `pitch_nine_p_a0_y_x` | 1,345 | 0.81% |
-| `pitch_nine_p_a0_z_x` | 1,345 | 0.81% |
-| `pitch_nine_p_pfxx_x` | 1,345 | 0.81% |
-| `pitch_nine_p_pfxz_x` | 1,345 | 0.81% |
-| `pitch_speed_drop_x` | 1,345 | 0.81% |
-| `pitch_flight_poly_fit_pitch_trajectory_x_x` | 1,345 | 0.81% |
-| `pitch_flight_poly_fit_pitch_trajectory_y_x` | 1,345 | 0.81% |
-| `pitch_flight_poly_fit_pitch_trajectory_z_x` | 1,345 | 0.81% |
-| `pitch_effective_velo_x` | 1,345 | 0.81% |
-| `catcher_throw_pop_time_x` | 165,724 | 100.00% |
-| `catcher_throw_exchange_time_x` | 165,724 | 100.00% |
-| `catcher_throw_catch_catch_position_x_x` | 165,724 | 100.00% |
-| `catcher_throw_catch_catch_position_y_x` | 165,724 | 100.00% |
-| `catcher_throw_catch_catch_position_z_x` | 165,724 | 100.00% |
-| `catcher_throw_catch_confidence_x` | 165,724 | 100.00% |
-| `catcher_throw_throw_throw_speed_x` | 165,724 | 100.00% |
-| `catcher_throw_throw_throw_position_x_x` | 165,724 | 100.00% |
-| `catcher_throw_throw_throw_position_y_x` | 165,724 | 100.00% |
-| `catcher_throw_throw_throw_position_z_x` | 165,724 | 100.00% |
-| `catcher_throw_location_time_to_base_x` | 165,724 | 100.00% |
-| `catcher_throw_location_base_position_x_x` | 165,724 | 100.00% |
-| `catcher_throw_location_base_position_y_x` | 165,724 | 100.00% |
-| `catcher_throw_location_base_position_z_x` | 165,724 | 100.00% |
-| `catcher_throw_location_confidence_x` | 165,724 | 100.00% |
-| `catcher_throw_flight_poly_fit_throw_trajectory_x_x` | 165,724 | 100.00% |
-| `catcher_throw_flight_poly_fit_throw_trajectory_y_x` | 165,724 | 100.00% |
-| `catcher_throw_flight_poly_fit_throw_trajectory_z_x` | 165,724 | 100.00% |
-| `hit_launch_exit_speed_x` | 165,724 | 100.00% |
-| `hit_launch_contact_position_x_x` | 165,724 | 100.00% |
-| `hit_launch_contact_position_y_x` | 165,724 | 100.00% |
-| `hit_launch_contact_position_z_x` | 165,724 | 100.00% |
-| `hit_launch_angle_x` | 165,724 | 100.00% |
-| `hit_launch_direction_x` | 165,724 | 100.00% |
-| `hit_launch_confidence_x` | 165,724 | 100.00% |
-| `hit_landing_flat_distance_x` | 165,724 | 100.00% |
-| `hit_landing_flat_bearing_x` | 165,724 | 100.00% |
-| `hit_landing_flat_hang_time_x` | 165,724 | 100.00% |
-| `hit_landing_flat_confidence_x` | 165,724 | 100.00% |
-| `hit_last_tracked_distance_x` | 165,724 | 100.00% |
-| `hit_max_height_x` | 165,724 | 100.00% |
-| `hit_flight_poly_fit_hit_trajectory_x_x` | 165,724 | 100.00% |
-| `hit_flight_poly_fit_hit_trajectory_y_x` | 165,724 | 100.00% |
-| `hit_flight_poly_fit_hit_trajectory_z_x` | 165,724 | 100.00% |
-| `hit_launch_hit_spin_axis_x` | 165,724 | 100.00% |
-| `hit_launch_hit_spin_rate_x` | 165,724 | 100.00% |
-| `hit_position_at110_feet_x_x` | 165,724 | 100.00% |
-| `hit_position_at110_feet_y_x` | 165,724 | 100.00% |
-| `hit_position_at110_feet_z_x` | 165,724 | 100.00% |
-| `hit_tracking_session_id` | 119,328 | 72.00% |
-| `hit_tracking_source_endpoint` | 119,328 | 72.00% |
-| `hit_tracking_source_file` | 119,328 | 72.00% |
-| `hit_tracking_play_id` | 119,328 | 72.00% |
-| `hit_tracking_track_id` | 119,328 | 72.00% |
-| `hit_tracking_ball_match_key` | 119,328 | 72.00% |
-| `hit_tracking_version` | 119,328 | 72.00% |
-| `play_id_y` | 119,328 | 72.00% |
-| `track_id_y` | 119,328 | 72.00% |
-| `hit_tracking_track_start_time` | 119,328 | 72.00% |
-| `hit_tracking_kind` | 119,328 | 72.00% |
-| `pitch_release_rel_speed_y` | 165,724 | 100.00% |
-| `pitch_release_spin_rate_y` | 165,724 | 100.00% |
-| `pitch_release_extension_y` | 165,724 | 100.00% |
-| `pitch_release_vert_rel_angle_y` | 165,724 | 100.00% |
-| `pitch_release_horz_rel_angle_y` | 165,724 | 100.00% |
-| `pitch_release_rel_height_y` | 165,724 | 100.00% |
-| `pitch_release_rel_side_y` | 165,724 | 100.00% |
-| `pitch_release_confidence_y` | 165,724 | 100.00% |
-| `pitch_movement_horz_break_y` | 165,724 | 100.00% |
-| `pitch_movement_vert_break_y` | 165,724 | 100.00% |
-| `pitch_movement_induced_vert_break_y` | 165,724 | 100.00% |
-| `pitch_movement_spin_axis_y` | 165,724 | 100.00% |
-| `pitch_movement_tilt_y` | 165,724 | 100.00% |
-| `pitch_movement_confidence_y` | 165,724 | 100.00% |
-| `pitch_location_zone_time_y` | 165,724 | 100.00% |
-| `pitch_location_plate_loc_height_y` | 165,724 | 100.00% |
-| `pitch_location_plate_loc_side_y` | 165,724 | 100.00% |
-| `pitch_location_zone_speed_y` | 165,724 | 100.00% |
-| `pitch_location_vert_appr_angle_y` | 165,724 | 100.00% |
-| `pitch_location_horz_appr_angle_y` | 165,724 | 100.00% |
-| `pitch_location_confidence_y` | 165,724 | 100.00% |
-| `pitch_nine_p_x0_x_y` | 165,724 | 100.00% |
-| `pitch_nine_p_x0_y_y` | 165,724 | 100.00% |
-| `pitch_nine_p_x0_z_y` | 165,724 | 100.00% |
-| `pitch_nine_p_v0_x_y` | 165,724 | 100.00% |
-| `pitch_nine_p_v0_y_y` | 165,724 | 100.00% |
-| `pitch_nine_p_v0_z_y` | 165,724 | 100.00% |
-| `pitch_nine_p_a0_x_y` | 165,724 | 100.00% |
-| `pitch_nine_p_a0_y_y` | 165,724 | 100.00% |
-| `pitch_nine_p_a0_z_y` | 165,724 | 100.00% |
-| `pitch_nine_p_pfxx_y` | 165,724 | 100.00% |
-| `pitch_nine_p_pfxz_y` | 165,724 | 100.00% |
-| `pitch_speed_drop_y` | 165,724 | 100.00% |
-| `pitch_flight_poly_fit_pitch_trajectory_x_y` | 165,724 | 100.00% |
-| `pitch_flight_poly_fit_pitch_trajectory_y_y` | 165,724 | 100.00% |
-| `pitch_flight_poly_fit_pitch_trajectory_z_y` | 165,724 | 100.00% |
-| `pitch_effective_velo_y` | 165,724 | 100.00% |
-| `catcher_throw_pop_time_y` | 165,724 | 100.00% |
-| `catcher_throw_exchange_time_y` | 165,724 | 100.00% |
-| `catcher_throw_catch_catch_position_x_y` | 165,724 | 100.00% |
-| `catcher_throw_catch_catch_position_y_y` | 165,724 | 100.00% |
-| `catcher_throw_catch_catch_position_z_y` | 165,724 | 100.00% |
-| `catcher_throw_catch_confidence_y` | 165,724 | 100.00% |
-| `catcher_throw_throw_throw_speed_y` | 165,724 | 100.00% |
-| `catcher_throw_throw_throw_position_x_y` | 165,724 | 100.00% |
-| `catcher_throw_throw_throw_position_y_y` | 165,724 | 100.00% |
-| `catcher_throw_throw_throw_position_z_y` | 165,724 | 100.00% |
-| `catcher_throw_location_time_to_base_y` | 165,724 | 100.00% |
-| `catcher_throw_location_base_position_x_y` | 165,724 | 100.00% |
-| `catcher_throw_location_base_position_y_y` | 165,724 | 100.00% |
-| `catcher_throw_location_base_position_z_y` | 165,724 | 100.00% |
-| `catcher_throw_location_confidence_y` | 165,724 | 100.00% |
-| `catcher_throw_flight_poly_fit_throw_trajectory_x_y` | 165,724 | 100.00% |
-| `catcher_throw_flight_poly_fit_throw_trajectory_y_y` | 165,724 | 100.00% |
-| `catcher_throw_flight_poly_fit_throw_trajectory_z_y` | 165,724 | 100.00% |
-| `hit_launch_exit_speed_y` | 119,328 | 72.00% |
-| `hit_launch_contact_position_x_y` | 119,832 | 72.31% |
-| `hit_launch_contact_position_y_y` | 119,832 | 72.31% |
-| `hit_launch_contact_position_z_y` | 119,832 | 72.31% |
-| `hit_launch_angle_y` | 119,328 | 72.00% |
-| `hit_launch_direction_y` | 119,328 | 72.00% |
-| `hit_launch_confidence_y` | 119,328 | 72.00% |
-| `hit_landing_flat_distance_y` | 126,443 | 76.30% |
-| `hit_landing_flat_bearing_y` | 126,443 | 76.30% |
-| `hit_landing_flat_hang_time_y` | 126,443 | 76.30% |
-| `hit_landing_flat_confidence_y` | 126,443 | 76.30% |
-| `hit_last_tracked_distance_y` | 119,328 | 72.00% |
-| `hit_max_height_y` | 119,328 | 72.00% |
-| `hit_flight_poly_fit_hit_trajectory_x_y` | 119,328 | 72.00% |
-| `hit_flight_poly_fit_hit_trajectory_y_y` | 119,328 | 72.00% |
-| `hit_flight_poly_fit_hit_trajectory_z_y` | 119,328 | 72.00% |
-| `hit_launch_hit_spin_axis_y` | 131,394 | 79.28% |
-| `hit_launch_hit_spin_rate_y` | 132,444 | 79.92% |
-| `hit_position_at110_feet_x_y` | 144,794 | 87.37% |
-| `hit_position_at110_feet_y_y` | 144,794 | 87.37% |
-| `hit_position_at110_feet_z_y` | 144,794 | 87.37% |
+| `hit_tag_auto_hit_type` | 151,848 | 76.16% |
+| `strike_zone_top` | 63,926 | 32.06% |
+| `strike_zone_bottom` | 63,926 | 32.06% |
+| `strike_zone_right` | 63,926 | 32.06% |
+| `strike_zone_left` | 63,926 | 32.06% |
+| `strike_zone_type` | 63,926 | 32.06% |
+| `strike_zone_decision` | 63,926 | 32.06% |
+| `pitch_tracking_session_id` | 1,651 | 0.83% |
+| `pitch_tracking_source_endpoint` | 1,651 | 0.83% |
+| `pitch_tracking_source_file` | 1,651 | 0.83% |
+| `pitch_tracking_play_id` | 1,651 | 0.83% |
+| `pitch_tracking_track_id` | 1,651 | 0.83% |
+| `pitch_tracking_ball_match_key` | 1,651 | 0.83% |
+| `pitch_tracking_version` | 1,651 | 0.83% |
+| `play_id_x` | 1,651 | 0.83% |
+| `track_id_x` | 1,651 | 0.83% |
+| `pitch_tracking_track_start_time` | 1,651 | 0.83% |
+| `pitch_tracking_kind` | 1,651 | 0.83% |
+| `pitch_release_rel_speed_x` | 1,651 | 0.83% |
+| `pitch_release_spin_rate_x` | 1,651 | 0.83% |
+| `pitch_release_extension_x` | 1,671 | 0.84% |
+| `pitch_release_vert_rel_angle_x` | 1,651 | 0.83% |
+| `pitch_release_horz_rel_angle_x` | 1,651 | 0.83% |
+| `pitch_release_rel_height_x` | 1,651 | 0.83% |
+| `pitch_release_rel_side_x` | 1,651 | 0.83% |
+| `pitch_release_confidence_x` | 1,651 | 0.83% |
+| `pitch_movement_horz_break_x` | 1,672 | 0.84% |
+| `pitch_movement_vert_break_x` | 1,672 | 0.84% |
+| `pitch_movement_induced_vert_break_x` | 1,672 | 0.84% |
+| `pitch_movement_spin_axis_x` | 1,672 | 0.84% |
+| `pitch_movement_tilt_x` | 1,672 | 0.84% |
+| `pitch_movement_confidence_x` | 1,672 | 0.84% |
+| `pitch_location_zone_time_x` | 1,651 | 0.83% |
+| `pitch_location_plate_loc_height_x` | 1,651 | 0.83% |
+| `pitch_location_plate_loc_side_x` | 1,651 | 0.83% |
+| `pitch_location_zone_speed_x` | 1,651 | 0.83% |
+| `pitch_location_vert_appr_angle_x` | 1,651 | 0.83% |
+| `pitch_location_horz_appr_angle_x` | 1,651 | 0.83% |
+| `pitch_location_confidence_x` | 1,651 | 0.83% |
+| `pitch_nine_p_x0_x_x` | 1,651 | 0.83% |
+| `pitch_nine_p_x0_y_x` | 1,651 | 0.83% |
+| `pitch_nine_p_x0_z_x` | 1,651 | 0.83% |
+| `pitch_nine_p_v0_x_x` | 1,651 | 0.83% |
+| `pitch_nine_p_v0_y_x` | 1,651 | 0.83% |
+| `pitch_nine_p_v0_z_x` | 1,651 | 0.83% |
+| `pitch_nine_p_a0_x_x` | 1,651 | 0.83% |
+| `pitch_nine_p_a0_y_x` | 1,651 | 0.83% |
+| `pitch_nine_p_a0_z_x` | 1,651 | 0.83% |
+| `pitch_nine_p_pfxx_x` | 1,651 | 0.83% |
+| `pitch_nine_p_pfxz_x` | 1,651 | 0.83% |
+| `pitch_speed_drop_x` | 1,651 | 0.83% |
+| `pitch_flight_poly_fit_pitch_trajectory_x_x` | 1,651 | 0.83% |
+| `pitch_flight_poly_fit_pitch_trajectory_y_x` | 1,651 | 0.83% |
+| `pitch_flight_poly_fit_pitch_trajectory_z_x` | 1,651 | 0.83% |
+| `pitch_effective_velo_x` | 1,651 | 0.83% |
+| `catcher_throw_pop_time_x` | 199,368 | 100.00% |
+| `catcher_throw_exchange_time_x` | 199,368 | 100.00% |
+| `catcher_throw_catch_catch_position_x_x` | 199,368 | 100.00% |
+| `catcher_throw_catch_catch_position_y_x` | 199,368 | 100.00% |
+| `catcher_throw_catch_catch_position_z_x` | 199,368 | 100.00% |
+| `catcher_throw_catch_confidence_x` | 199,368 | 100.00% |
+| `catcher_throw_throw_throw_speed_x` | 199,368 | 100.00% |
+| `catcher_throw_throw_throw_position_x_x` | 199,368 | 100.00% |
+| `catcher_throw_throw_throw_position_y_x` | 199,368 | 100.00% |
+| `catcher_throw_throw_throw_position_z_x` | 199,368 | 100.00% |
+| `catcher_throw_location_time_to_base_x` | 199,368 | 100.00% |
+| `catcher_throw_location_base_position_x_x` | 199,368 | 100.00% |
+| `catcher_throw_location_base_position_y_x` | 199,368 | 100.00% |
+| `catcher_throw_location_base_position_z_x` | 199,368 | 100.00% |
+| `catcher_throw_location_confidence_x` | 199,368 | 100.00% |
+| `catcher_throw_flight_poly_fit_throw_trajectory_x_x` | 199,368 | 100.00% |
+| `catcher_throw_flight_poly_fit_throw_trajectory_y_x` | 199,368 | 100.00% |
+| `catcher_throw_flight_poly_fit_throw_trajectory_z_x` | 199,368 | 100.00% |
+| `hit_launch_exit_speed_x` | 199,368 | 100.00% |
+| `hit_launch_contact_position_x_x` | 199,368 | 100.00% |
+| `hit_launch_contact_position_y_x` | 199,368 | 100.00% |
+| `hit_launch_contact_position_z_x` | 199,368 | 100.00% |
+| `hit_launch_angle_x` | 199,368 | 100.00% |
+| `hit_launch_direction_x` | 199,368 | 100.00% |
+| `hit_launch_confidence_x` | 199,368 | 100.00% |
+| `hit_landing_flat_distance_x` | 199,368 | 100.00% |
+| `hit_landing_flat_bearing_x` | 199,368 | 100.00% |
+| `hit_landing_flat_hang_time_x` | 199,368 | 100.00% |
+| `hit_landing_flat_confidence_x` | 199,368 | 100.00% |
+| `hit_last_tracked_distance_x` | 199,368 | 100.00% |
+| `hit_max_height_x` | 199,368 | 100.00% |
+| `hit_flight_poly_fit_hit_trajectory_x_x` | 199,368 | 100.00% |
+| `hit_flight_poly_fit_hit_trajectory_y_x` | 199,368 | 100.00% |
+| `hit_flight_poly_fit_hit_trajectory_z_x` | 199,368 | 100.00% |
+| `hit_launch_hit_spin_axis_x` | 199,368 | 100.00% |
+| `hit_launch_hit_spin_rate_x` | 199,368 | 100.00% |
+| `hit_position_at110_feet_x_x` | 199,368 | 100.00% |
+| `hit_position_at110_feet_y_x` | 199,368 | 100.00% |
+| `hit_position_at110_feet_z_x` | 199,368 | 100.00% |
+| `hit_tracking_session_id` | 143,246 | 71.85% |
+| `hit_tracking_source_endpoint` | 143,246 | 71.85% |
+| `hit_tracking_source_file` | 143,246 | 71.85% |
+| `hit_tracking_play_id` | 143,246 | 71.85% |
+| `hit_tracking_track_id` | 143,246 | 71.85% |
+| `hit_tracking_ball_match_key` | 143,246 | 71.85% |
+| `hit_tracking_version` | 143,246 | 71.85% |
+| `play_id_y` | 143,246 | 71.85% |
+| `track_id_y` | 143,246 | 71.85% |
+| `hit_tracking_track_start_time` | 143,246 | 71.85% |
+| `hit_tracking_kind` | 143,246 | 71.85% |
+| `pitch_release_rel_speed_y` | 199,368 | 100.00% |
+| `pitch_release_spin_rate_y` | 199,368 | 100.00% |
+| `pitch_release_extension_y` | 199,368 | 100.00% |
+| `pitch_release_vert_rel_angle_y` | 199,368 | 100.00% |
+| `pitch_release_horz_rel_angle_y` | 199,368 | 100.00% |
+| `pitch_release_rel_height_y` | 199,368 | 100.00% |
+| `pitch_release_rel_side_y` | 199,368 | 100.00% |
+| `pitch_release_confidence_y` | 199,368 | 100.00% |
+| `pitch_movement_horz_break_y` | 199,368 | 100.00% |
+| `pitch_movement_vert_break_y` | 199,368 | 100.00% |
+| `pitch_movement_induced_vert_break_y` | 199,368 | 100.00% |
+| `pitch_movement_spin_axis_y` | 199,368 | 100.00% |
+| `pitch_movement_tilt_y` | 199,368 | 100.00% |
+| `pitch_movement_confidence_y` | 199,368 | 100.00% |
+| `pitch_location_zone_time_y` | 199,368 | 100.00% |
+| `pitch_location_plate_loc_height_y` | 199,368 | 100.00% |
+| `pitch_location_plate_loc_side_y` | 199,368 | 100.00% |
+| `pitch_location_zone_speed_y` | 199,368 | 100.00% |
+| `pitch_location_vert_appr_angle_y` | 199,368 | 100.00% |
+| `pitch_location_horz_appr_angle_y` | 199,368 | 100.00% |
+| `pitch_location_confidence_y` | 199,368 | 100.00% |
+| `pitch_nine_p_x0_x_y` | 199,368 | 100.00% |
+| `pitch_nine_p_x0_y_y` | 199,368 | 100.00% |
+| `pitch_nine_p_x0_z_y` | 199,368 | 100.00% |
+| `pitch_nine_p_v0_x_y` | 199,368 | 100.00% |
+| `pitch_nine_p_v0_y_y` | 199,368 | 100.00% |
+| `pitch_nine_p_v0_z_y` | 199,368 | 100.00% |
+| `pitch_nine_p_a0_x_y` | 199,368 | 100.00% |
+| `pitch_nine_p_a0_y_y` | 199,368 | 100.00% |
+| `pitch_nine_p_a0_z_y` | 199,368 | 100.00% |
+| `pitch_nine_p_pfxx_y` | 199,368 | 100.00% |
+| `pitch_nine_p_pfxz_y` | 199,368 | 100.00% |
+| `pitch_speed_drop_y` | 199,368 | 100.00% |
+| `pitch_flight_poly_fit_pitch_trajectory_x_y` | 199,368 | 100.00% |
+| `pitch_flight_poly_fit_pitch_trajectory_y_y` | 199,368 | 100.00% |
+| `pitch_flight_poly_fit_pitch_trajectory_z_y` | 199,368 | 100.00% |
+| `pitch_effective_velo_y` | 199,368 | 100.00% |
+| `catcher_throw_pop_time_y` | 199,368 | 100.00% |
+| `catcher_throw_exchange_time_y` | 199,368 | 100.00% |
+| `catcher_throw_catch_catch_position_x_y` | 199,368 | 100.00% |
+| `catcher_throw_catch_catch_position_y_y` | 199,368 | 100.00% |
+| `catcher_throw_catch_catch_position_z_y` | 199,368 | 100.00% |
+| `catcher_throw_catch_confidence_y` | 199,368 | 100.00% |
+| `catcher_throw_throw_throw_speed_y` | 199,368 | 100.00% |
+| `catcher_throw_throw_throw_position_x_y` | 199,368 | 100.00% |
+| `catcher_throw_throw_throw_position_y_y` | 199,368 | 100.00% |
+| `catcher_throw_throw_throw_position_z_y` | 199,368 | 100.00% |
+| `catcher_throw_location_time_to_base_y` | 199,368 | 100.00% |
+| `catcher_throw_location_base_position_x_y` | 199,368 | 100.00% |
+| `catcher_throw_location_base_position_y_y` | 199,368 | 100.00% |
+| `catcher_throw_location_base_position_z_y` | 199,368 | 100.00% |
+| `catcher_throw_location_confidence_y` | 199,368 | 100.00% |
+| `catcher_throw_flight_poly_fit_throw_trajectory_x_y` | 199,368 | 100.00% |
+| `catcher_throw_flight_poly_fit_throw_trajectory_y_y` | 199,368 | 100.00% |
+| `catcher_throw_flight_poly_fit_throw_trajectory_z_y` | 199,368 | 100.00% |
+| `hit_launch_exit_speed_y` | 143,246 | 71.85% |
+| `hit_launch_contact_position_x_y` | 143,854 | 72.16% |
+| `hit_launch_contact_position_y_y` | 143,854 | 72.16% |
+| `hit_launch_contact_position_z_y` | 143,854 | 72.16% |
+| `hit_launch_angle_y` | 143,246 | 71.85% |
+| `hit_launch_direction_y` | 143,246 | 71.85% |
+| `hit_launch_confidence_y` | 143,246 | 71.85% |
+| `hit_landing_flat_distance_y` | 151,846 | 76.16% |
+| `hit_landing_flat_bearing_y` | 151,846 | 76.16% |
+| `hit_landing_flat_hang_time_y` | 151,846 | 76.16% |
+| `hit_landing_flat_confidence_y` | 151,846 | 76.16% |
+| `hit_last_tracked_distance_y` | 143,246 | 71.85% |
+| `hit_max_height_y` | 143,246 | 71.85% |
+| `hit_flight_poly_fit_hit_trajectory_x_y` | 143,246 | 71.85% |
+| `hit_flight_poly_fit_hit_trajectory_y_y` | 143,246 | 71.85% |
+| `hit_flight_poly_fit_hit_trajectory_z_y` | 143,246 | 71.85% |
+| `hit_launch_hit_spin_axis_y` | 157,895 | 79.20% |
+| `hit_launch_hit_spin_rate_y` | 159,008 | 79.76% |
+| `hit_position_at110_feet_x_y` | 173,882 | 87.22% |
+| `hit_position_at110_feet_y_y` | 173,882 | 87.22% |
+| `hit_position_at110_feet_z_y` | 173,882 | 87.22% |
 | `has_pitch_tracking` | 0 | 0.00% |
 | `has_hit_tracking` | 0 | 0.00% |
 | `has_any_tracking` | 0 | 0.00% |
-| `pitch_tag_tagged_pitch_type_canonical` | 84,950 | 51.26% |
-| `pitch_tag_auto_pitch_type_canonical` | 1,371 | 0.83% |
-| `pitch_tag_pitch_call_canonical` | 3,146 | 1.90% |
-| `hit_tag_tagged_hit_type_canonical` | 137,955 | 83.24% |
-| `hit_tag_auto_hit_type_canonical` | 126,445 | 76.30% |
-| `play_result_play_result_canonical` | 137,815 | 83.16% |
+| `pitch_tag_tagged_pitch_type_canonical` | 103,147 | 51.74% |
+| `pitch_tag_auto_pitch_type_canonical` | 1,677 | 0.84% |
+| `pitch_tag_pitch_call_canonical` | 3,608 | 1.81% |
+| `hit_tag_tagged_hit_type_canonical` | 165,821 | 83.17% |
+| `hit_tag_auto_hit_type_canonical` | 151,848 | 76.16% |
+| `play_result_play_result_canonical` | 165,636 | 83.08% |
 | `pitcher_throws_canonical` | 41 | 0.02% |
-| `batter_side_canonical` | 172 | 0.10% |
-| `catcher_throws_canonical` | 917 | 0.55% |
-| `pitch_type` | 1,194 | 0.72% |
-| `pitch_type_source` | 1,194 | 0.72% |
-| `hit_type` | 124,504 | 75.13% |
-| `hit_type_source` | 124,504 | 75.13% |
-| `play_result` | 137,815 | 83.16% |
-| `pitch_call` | 3,146 | 1.90% |
+| `batter_side_canonical` | 172 | 0.09% |
+| `catcher_throws_canonical` | 917 | 0.46% |
+| `pitch_type` | 1,461 | 0.73% |
+| `pitch_type_source` | 1,461 | 0.73% |
+| `hit_type` | 149,572 | 75.02% |
+| `hit_type_source` | 149,572 | 75.02% |
+| `play_result` | 165,636 | 83.08% |
+| `pitch_call` | 3,608 | 1.81% |
 | `has_core_context` | 0 | 0.00% |
-| `pitch_tracking_kind_normalized` | 1,345 | 0.81% |
-| `hit_tracking_kind_normalized` | 119,328 | 72.00% |
+| `pitch_tracking_kind_normalized` | 1,651 | 0.83% |
+| `hit_tracking_kind_normalized` | 143,246 | 71.85% |
 
 ## 4. Unique Values for Pitch Type Columns
 ### pitch_tag_tagged_pitch_type
@@ -760,7 +760,7 @@ dtype: `object` | missing: 0 | non-null unique values: 14
 - `Undefined`
 
 ### pitch_tag_auto_pitch_type
-dtype: `object` | missing: 1371 | non-null unique values: 8
+dtype: `object` | missing: 1677 | non-null unique values: 8
 - `Changeup`
 - `Curveball`
 - `Cutter`
@@ -771,7 +771,7 @@ dtype: `object` | missing: 1371 | non-null unique values: 8
 - `Splitter`
 
 ### pitch_tag_tagged_pitch_type_canonical
-dtype: `string` | missing: 84950 | non-null unique values: 13
+dtype: `string` | missing: 103147 | non-null unique values: 13
 - `Changeup`
 - `Curveball`
 - `Cutter`
@@ -787,7 +787,7 @@ dtype: `string` | missing: 84950 | non-null unique values: 13
 - `Two-Seam`
 
 ### pitch_tag_auto_pitch_type_canonical
-dtype: `string` | missing: 1371 | non-null unique values: 8
+dtype: `string` | missing: 1677 | non-null unique values: 8
 - `Changeup`
 - `Curveball`
 - `Cutter`
@@ -798,7 +798,7 @@ dtype: `string` | missing: 1371 | non-null unique values: 8
 - `Splitter`
 
 ### pitch_type
-dtype: `string` | missing: 1194 | non-null unique values: 13
+dtype: `string` | missing: 1461 | non-null unique values: 13
 - `Changeup`
 - `Curveball`
 - `Cutter`
@@ -814,7 +814,7 @@ dtype: `string` | missing: 1194 | non-null unique values: 13
 - `Two-Seam`
 
 ### pitch_type_source
-dtype: `string` | missing: 1194 | non-null unique values: 2
+dtype: `string` | missing: 1461 | non-null unique values: 2
 - `auto`
 - `tagged`
 
@@ -881,19 +881,19 @@ dtype: `Int64` | missing: 0 | non-null unique values: 5
 - `4`
 
 ### hit_tag_auto_hit_type
-dtype: `object` | missing: 126445 | non-null unique values: 4
+dtype: `object` | missing: 151848 | non-null unique values: 4
 - `FlyBall`
 - `GroundBall`
 - `LineDrive`
 - `Popup`
 
 ### strike_zone_decision
-dtype: `object` | missing: 54185 | non-null unique values: 2
+dtype: `object` | missing: 63926 | non-null unique values: 2
 - `False`
 - `True`
 
 ### pitch_tag_pitch_call_canonical
-dtype: `string` | missing: 3146 | non-null unique values: 11
+dtype: `string` | missing: 3608 | non-null unique values: 11
 - `Automatic Ball`
 - `Automatic Strike`
 - `Ball Called`
@@ -907,7 +907,7 @@ dtype: `string` | missing: 3146 | non-null unique values: 11
 - `Strike Swinging`
 
 ### hit_tag_tagged_hit_type_canonical
-dtype: `string` | missing: 137955 | non-null unique values: 5
+dtype: `string` | missing: 165821 | non-null unique values: 5
 - `Bunt`
 - `Fly Ball`
 - `Ground Ball`
@@ -915,14 +915,14 @@ dtype: `string` | missing: 137955 | non-null unique values: 5
 - `Pop Up`
 
 ### hit_tag_auto_hit_type_canonical
-dtype: `string` | missing: 126445 | non-null unique values: 4
+dtype: `string` | missing: 151848 | non-null unique values: 4
 - `Fly Ball`
 - `Ground Ball`
 - `Line Drive`
 - `Pop Up`
 
 ### play_result_play_result_canonical
-dtype: `string` | missing: 137815 | non-null unique values: 10
+dtype: `string` | missing: 165636 | non-null unique values: 10
 - `Caught Stealing`
 - `Double`
 - `Error`
@@ -935,7 +935,7 @@ dtype: `string` | missing: 137815 | non-null unique values: 10
 - `Triple`
 
 ### hit_type
-dtype: `string` | missing: 124504 | non-null unique values: 5
+dtype: `string` | missing: 149572 | non-null unique values: 5
 - `Bunt`
 - `Fly Ball`
 - `Ground Ball`
@@ -943,12 +943,12 @@ dtype: `string` | missing: 124504 | non-null unique values: 5
 - `Pop Up`
 
 ### hit_type_source
-dtype: `string` | missing: 124504 | non-null unique values: 2
+dtype: `string` | missing: 149572 | non-null unique values: 2
 - `auto`
 - `tagged`
 
 ### play_result
-dtype: `string` | missing: 137815 | non-null unique values: 10
+dtype: `string` | missing: 165636 | non-null unique values: 10
 - `Caught Stealing`
 - `Double`
 - `Error`
@@ -961,7 +961,7 @@ dtype: `string` | missing: 137815 | non-null unique values: 10
 - `Triple`
 
 ### pitch_call
-dtype: `string` | missing: 3146 | non-null unique values: 11
+dtype: `string` | missing: 3608 | non-null unique values: 11
 - `Automatic Ball`
 - `Automatic Strike`
 - `Ball Called`
@@ -994,7 +994,7 @@ These are name-based candidate matches using actual column names. They are not a
 | Velocity | `pitch_release_rel_speed_x`, `pitch_effective_velo_x`, `pitch_release_rel_speed_y`, `pitch_effective_velo_y` |
 
 ## 7. Dataset Structure Summary
-The parquet file contains 165,724 rows and 242 columns. Column data types are distributed as follows:
+The parquet file contains 199,368 rows and 242 columns. Column data types are distributed as follows:
 - `Int64`: 8 columns
 - `bool`: 4 columns
 - `datetime64[ns, UTC]`: 1 columns
@@ -1010,26 +1010,26 @@ Columns with all values missing:
 `track_id`, `ball_match_key`, `catcher_throw_pop_time_x`, `catcher_throw_exchange_time_x`, `catcher_throw_catch_catch_position_x_x`, `catcher_throw_catch_catch_position_y_x`, `catcher_throw_catch_catch_position_z_x`, `catcher_throw_catch_confidence_x`, `catcher_throw_throw_throw_speed_x`, `catcher_throw_throw_throw_position_x_x`, `catcher_throw_throw_throw_position_y_x`, `catcher_throw_throw_throw_position_z_x`, `catcher_throw_location_time_to_base_x`, `catcher_throw_location_base_position_x_x`, `catcher_throw_location_base_position_y_x`, `catcher_throw_location_base_position_z_x`, `catcher_throw_location_confidence_x`, `catcher_throw_flight_poly_fit_throw_trajectory_x_x`, `catcher_throw_flight_poly_fit_throw_trajectory_y_x`, `catcher_throw_flight_poly_fit_throw_trajectory_z_x`, `hit_launch_exit_speed_x`, `hit_launch_contact_position_x_x`, `hit_launch_contact_position_y_x`, `hit_launch_contact_position_z_x`, `hit_launch_angle_x`, `hit_launch_direction_x`, `hit_launch_confidence_x`, `hit_landing_flat_distance_x`, `hit_landing_flat_bearing_x`, `hit_landing_flat_hang_time_x`, `hit_landing_flat_confidence_x`, `hit_last_tracked_distance_x`, `hit_max_height_x`, `hit_flight_poly_fit_hit_trajectory_x_x`, `hit_flight_poly_fit_hit_trajectory_y_x`, `hit_flight_poly_fit_hit_trajectory_z_x`, `hit_launch_hit_spin_axis_x`, `hit_launch_hit_spin_rate_x`, `hit_position_at110_feet_x_x`, `hit_position_at110_feet_y_x`, `hit_position_at110_feet_z_x`, `pitch_release_rel_speed_y`, `pitch_release_spin_rate_y`, `pitch_release_extension_y`, `pitch_release_vert_rel_angle_y`, `pitch_release_horz_rel_angle_y`, `pitch_release_rel_height_y`, `pitch_release_rel_side_y`, `pitch_release_confidence_y`, `pitch_movement_horz_break_y`, `pitch_movement_vert_break_y`, `pitch_movement_induced_vert_break_y`, `pitch_movement_spin_axis_y`, `pitch_movement_tilt_y`, `pitch_movement_confidence_y`, `pitch_location_zone_time_y`, `pitch_location_plate_loc_height_y`, `pitch_location_plate_loc_side_y`, `pitch_location_zone_speed_y`, `pitch_location_vert_appr_angle_y`, `pitch_location_horz_appr_angle_y`, `pitch_location_confidence_y`, `pitch_nine_p_x0_x_y`, `pitch_nine_p_x0_y_y`, `pitch_nine_p_x0_z_y`, `pitch_nine_p_v0_x_y`, `pitch_nine_p_v0_y_y`, `pitch_nine_p_v0_z_y`, `pitch_nine_p_a0_x_y`, `pitch_nine_p_a0_y_y`, `pitch_nine_p_a0_z_y`, `pitch_nine_p_pfxx_y`, `pitch_nine_p_pfxz_y`, `pitch_speed_drop_y`, `pitch_flight_poly_fit_pitch_trajectory_x_y`, `pitch_flight_poly_fit_pitch_trajectory_y_y`, `pitch_flight_poly_fit_pitch_trajectory_z_y`, `pitch_effective_velo_y`, `catcher_throw_pop_time_y`, `catcher_throw_exchange_time_y`, `catcher_throw_catch_catch_position_x_y`, `catcher_throw_catch_catch_position_y_y`, `catcher_throw_catch_catch_position_z_y`, `catcher_throw_catch_confidence_y`, `catcher_throw_throw_throw_speed_y`, `catcher_throw_throw_throw_position_x_y`, `catcher_throw_throw_throw_position_y_y`, `catcher_throw_throw_throw_position_z_y`, `catcher_throw_location_time_to_base_y`, `catcher_throw_location_base_position_x_y`, `catcher_throw_location_base_position_y_y`, `catcher_throw_location_base_position_z_y`, `catcher_throw_location_confidence_y`, `catcher_throw_flight_poly_fit_throw_trajectory_x_y`, `catcher_throw_flight_poly_fit_throw_trajectory_y_y`, `catcher_throw_flight_poly_fit_throw_trajectory_z_y`
 
 Highest-missing columns:
-- `ball_match_key`: 165,724 missing (100.00%)
-- `track_id`: 165,724 missing (100.00%)
-- `catcher_throw_flight_poly_fit_throw_trajectory_z_x`: 165,724 missing (100.00%)
-- `catcher_throw_flight_poly_fit_throw_trajectory_y_x`: 165,724 missing (100.00%)
-- `hit_launch_exit_speed_x`: 165,724 missing (100.00%)
-- `catcher_throw_flight_poly_fit_throw_trajectory_x_x`: 165,724 missing (100.00%)
-- `catcher_throw_location_confidence_x`: 165,724 missing (100.00%)
-- `catcher_throw_location_base_position_z_x`: 165,724 missing (100.00%)
-- `catcher_throw_location_base_position_y_x`: 165,724 missing (100.00%)
-- `catcher_throw_location_base_position_x_x`: 165,724 missing (100.00%)
-- `catcher_throw_location_time_to_base_x`: 165,724 missing (100.00%)
-- `catcher_throw_throw_throw_position_z_x`: 165,724 missing (100.00%)
-- `catcher_throw_throw_throw_position_y_x`: 165,724 missing (100.00%)
-- `catcher_throw_throw_throw_position_x_x`: 165,724 missing (100.00%)
-- `catcher_throw_throw_throw_speed_x`: 165,724 missing (100.00%)
-- `catcher_throw_catch_confidence_x`: 165,724 missing (100.00%)
-- `catcher_throw_catch_catch_position_z_x`: 165,724 missing (100.00%)
-- `catcher_throw_catch_catch_position_y_x`: 165,724 missing (100.00%)
-- `catcher_throw_exchange_time_x`: 165,724 missing (100.00%)
-- `catcher_throw_catch_catch_position_x_x`: 165,724 missing (100.00%)
+- `ball_match_key`: 199,368 missing (100.00%)
+- `track_id`: 199,368 missing (100.00%)
+- `catcher_throw_flight_poly_fit_throw_trajectory_z_x`: 199,368 missing (100.00%)
+- `catcher_throw_flight_poly_fit_throw_trajectory_y_x`: 199,368 missing (100.00%)
+- `hit_launch_exit_speed_x`: 199,368 missing (100.00%)
+- `catcher_throw_flight_poly_fit_throw_trajectory_x_x`: 199,368 missing (100.00%)
+- `catcher_throw_location_confidence_x`: 199,368 missing (100.00%)
+- `catcher_throw_location_base_position_z_x`: 199,368 missing (100.00%)
+- `catcher_throw_location_base_position_y_x`: 199,368 missing (100.00%)
+- `catcher_throw_location_base_position_x_x`: 199,368 missing (100.00%)
+- `catcher_throw_location_time_to_base_x`: 199,368 missing (100.00%)
+- `catcher_throw_throw_throw_position_z_x`: 199,368 missing (100.00%)
+- `catcher_throw_throw_throw_position_y_x`: 199,368 missing (100.00%)
+- `catcher_throw_throw_throw_position_x_x`: 199,368 missing (100.00%)
+- `catcher_throw_throw_throw_speed_x`: 199,368 missing (100.00%)
+- `catcher_throw_catch_confidence_x`: 199,368 missing (100.00%)
+- `catcher_throw_catch_catch_position_z_x`: 199,368 missing (100.00%)
+- `catcher_throw_catch_catch_position_y_x`: 199,368 missing (100.00%)
+- `catcher_throw_exchange_time_x`: 199,368 missing (100.00%)
+- `catcher_throw_catch_catch_position_x_x`: 199,368 missing (100.00%)
 
 Lowest-missing columns:
 - `session_id`: 0 missing (0.00%)

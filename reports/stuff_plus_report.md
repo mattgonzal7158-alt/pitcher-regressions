@@ -2,7 +2,7 @@
 
 - Input file: `data\processed\master_pitch_evaluation_table.csv`
 - Output file: `data\processed\stuff_plus_scores.csv`
-- Scored rows: 1,581
+- Scored rows: 1,783
 - Dependent variable: `final_pitch_score_20_80`
 - Predictors: `IVB`, `HB`, `velocity`, `spin_rate`, `extension`, `release_height`, `release_side`
 - Pitch-type-specific model minimum: 30 rows
@@ -16,13 +16,13 @@
 
 | Model | Type | Rows | R-squared | Intercept |
 |---|---|---:|---:|---:|
-| Changeup | pitch_type_specific | 196 | 0.0695 | 50.21 |
-| Curveball | pitch_type_specific | 174 | 0.0260 | 49.45 |
-| Cutter | pitch_type_specific | 71 | 0.2136 | 48.93 |
-| Four-Seam | pitch_type_specific | 512 | 0.0277 | 49.06 |
-| Sinker | pitch_type_specific | 270 | 0.1430 | 46.63 |
-| Slider | pitch_type_specific | 330 | 0.0665 | 53.04 |
-| Pooled | pooled_fixed_effects | 1,581 | 0.0908 | 51.34 |
+| Changeup | pitch_type_specific | 229 | 0.0988 | 50.03 |
+| Curveball | pitch_type_specific | 207 | 0.0572 | 49.27 |
+| Cutter | pitch_type_specific | 80 | 0.1635 | 49.90 |
+| Four-Seam | pitch_type_specific | 558 | 0.0375 | 48.95 |
+| Sinker | pitch_type_specific | 302 | 0.1012 | 46.46 |
+| Slider | pitch_type_specific | 377 | 0.0367 | 53.45 |
+| Pooled | pooled_fixed_effects | 1,783 | 0.1076 | 51.56 |
 
 ## Variable Importance by Pitch Type
 
@@ -30,115 +30,115 @@
 
 | Variable | Standardized Coefficient | Absolute Importance |
 |---|---:|---:|
-| `release_side` | 2.545 | 2.545 |
-| `HB` | -1.763 | 1.763 |
-| `velocity` | -1.542 | 1.542 |
-| `extension` | 0.793 | 0.793 |
-| `release_height` | -0.515 | 0.515 |
-| `IVB` | 0.261 | 0.261 |
-| `spin_rate` | -0.076 | 0.076 |
+| `velocity` | -1.869 | 1.869 |
+| `release_side` | 1.483 | 1.483 |
+| `HB` | -0.572 | 0.572 |
+| `extension` | 0.525 | 0.525 |
+| `spin_rate` | 0.440 | 0.440 |
+| `IVB` | 0.360 | 0.360 |
+| `release_height` | 0.319 | 0.319 |
 
 ### Curveball
 
 | Variable | Standardized Coefficient | Absolute Importance |
 |---|---:|---:|
-| `velocity` | 0.875 | 0.875 |
-| `release_height` | 0.829 | 0.829 |
-| `release_side` | -0.790 | 0.790 |
-| `HB` | -0.789 | 0.789 |
-| `extension` | -0.582 | 0.582 |
-| `IVB` | 0.119 | 0.119 |
-| `spin_rate` | 0.057 | 0.057 |
+| `release_height` | 1.150 | 1.150 |
+| `extension` | -1.015 | 1.015 |
+| `spin_rate` | 0.987 | 0.987 |
+| `IVB` | 0.835 | 0.835 |
+| `velocity` | 0.446 | 0.446 |
+| `release_side` | 0.339 | 0.339 |
+| `HB` | 0.226 | 0.226 |
 
 ### Cutter
 
 | Variable | Standardized Coefficient | Absolute Importance |
 |---|---:|---:|
-| `release_side` | -2.462 | 2.462 |
-| `HB` | 1.488 | 1.488 |
-| `extension` | 1.369 | 1.369 |
-| `spin_rate` | 0.841 | 0.841 |
-| `release_height` | 0.519 | 0.519 |
-| `velocity` | 0.379 | 0.379 |
-| `IVB` | 0.082 | 0.082 |
+| `release_side` | -1.910 | 1.910 |
+| `release_height` | 1.837 | 1.837 |
+| `extension` | 1.639 | 1.639 |
+| `spin_rate` | 1.386 | 1.386 |
+| `velocity` | -1.123 | 1.123 |
+| `HB` | 0.652 | 0.652 |
+| `IVB` | 0.106 | 0.106 |
 
 ### Four-Seam
 
 | Variable | Standardized Coefficient | Absolute Importance |
 |---|---:|---:|
-| `IVB` | 0.988 | 0.988 |
-| `velocity` | 0.495 | 0.495 |
-| `release_height` | -0.216 | 0.216 |
-| `HB` | -0.095 | 0.095 |
-| `release_side` | -0.080 | 0.080 |
-| `spin_rate` | 0.064 | 0.064 |
-| `extension` | -0.037 | 0.037 |
+| `IVB` | 1.146 | 1.146 |
+| `HB` | -0.744 | 0.744 |
+| `velocity` | 0.482 | 0.482 |
+| `release_height` | -0.330 | 0.330 |
+| `release_side` | 0.153 | 0.153 |
+| `extension` | 0.086 | 0.086 |
+| `spin_rate` | 0.044 | 0.044 |
 
 ### Pooled
 
 | Variable | Standardized Coefficient | Absolute Importance |
 |---|---:|---:|
-| `IVB` | 1.291 | 1.291 |
-| `spin_rate` | 1.029 | 1.029 |
-| `extension` | 0.503 | 0.503 |
-| `HB` | -0.354 | 0.354 |
-| `release_height` | -0.330 | 0.330 |
-| `velocity` | -0.216 | 0.216 |
-| `release_side` | 0.191 | 0.191 |
+| `spin_rate` | 1.324 | 1.324 |
+| `IVB` | 1.216 | 1.216 |
+| `velocity` | -0.450 | 0.450 |
+| `HB` | -0.281 | 0.281 |
+| `extension` | 0.279 | 0.279 |
+| `release_side` | 0.090 | 0.090 |
+| `release_height` | -0.006 | 0.006 |
 
 ### Sinker
 
 | Variable | Standardized Coefficient | Absolute Importance |
 |---|---:|---:|
-| `HB` | -2.443 | 2.443 |
-| `spin_rate` | 1.794 | 1.794 |
-| `release_side` | 1.394 | 1.394 |
-| `release_height` | -1.196 | 1.196 |
-| `IVB` | 0.839 | 0.839 |
-| `extension` | 0.492 | 0.492 |
-| `velocity` | -0.068 | 0.068 |
+| `HB` | -1.624 | 1.624 |
+| `spin_rate` | 1.611 | 1.611 |
+| `release_height` | -1.200 | 1.200 |
+| `release_side` | 0.917 | 0.917 |
+| `IVB` | 0.429 | 0.429 |
+| `velocity` | 0.259 | 0.259 |
+| `extension` | 0.065 | 0.065 |
 
 ### Slider
 
 | Variable | Standardized Coefficient | Absolute Importance |
 |---|---:|---:|
-| `extension` | 1.500 | 1.500 |
-| `velocity` | -1.242 | 1.242 |
-| `spin_rate` | 1.156 | 1.156 |
-| `release_side` | 0.510 | 0.510 |
-| `HB` | -0.498 | 0.498 |
-| `IVB` | 0.413 | 0.413 |
-| `release_height` | -0.407 | 0.407 |
+| `spin_rate` | 1.147 | 1.147 |
+| `HB` | -0.917 | 0.917 |
+| `extension` | 0.910 | 0.910 |
+| `velocity` | -0.781 | 0.781 |
+| `IVB` | 0.373 | 0.373 |
+| `release_side` | -0.227 | 0.227 |
+| `release_height` | 0.151 | 0.151 |
 
 ## Top 25 Stuff+ Pitches
 
 | Rank | Pitcher | Team | Pitch Type | Side | Stuff+ | Stuff % | Final | Velo | IVB | HB | Spin | Model |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Harris, Everette | TRI_VAL | Slider | LHH | 80.0 | 100.0 | 58.0 | 80.5 | 1.2 | -8.7 | 2862 | pitch_type_specific |
-| 2 | Vega, Lucas | TRO_AIG | Slider | RHH | 80.0 | 99.9 | 66.8 | 79.2 | 6.6 | -9.3 | 2697 | pitch_type_specific |
-| 3 | Vega, Lucas | TRO_AIG | Slider | LHH | 80.0 | 99.9 | 57.3 | 79.2 | 6.6 | -9.3 | 2697 | pitch_type_specific |
-| 4 | Harper, Scott | NEW_YOR13 | Slider | RHH | 80.0 | 99.8 | 72.1 | 79.8 | 3.3 | -16.7 | 2669 | pitch_type_specific |
-| 5 | Harper, Scott | NEW_YOR13 | Slider | LHH | 80.0 | 99.8 | 66.8 | 79.8 | 3.3 | -16.7 | 2669 | pitch_type_specific |
-| 6 | Plumadore, Carson | WIN_CIT29 | Slider | RHH | 79.2 | 99.7 | 61.5 | 76.0 | 2.6 | -4.8 | 2435 | pitch_type_specific |
-| 7 | Plumadore, Carson | WIN_CIT29 | Slider | LHH | 79.2 | 99.7 | 56.0 | 76.0 | 2.6 | -4.8 | 2435 | pitch_type_specific |
-| 8 | Saturria, Michael | NEW_ENG23 | Slider | RHH | 78.9 | 99.5 | 54.8 | 80.7 | 3.9 | -7.3 | 2705 | pitch_type_specific |
-| 9 | Saturria, Michael | NEW_ENG23 | Slider | LHH | 78.9 | 99.5 | 53.7 | 80.7 | 3.9 | -7.3 | 2705 | pitch_type_specific |
-| 10 | Petery, Dylan | WIN_CIT29 | Slider | RHH | 78.7 | 99.4 | 50.1 | 78.0 | -0.6 | -12.2 | 2611 | pitch_type_specific |
-| 11 | Cerda, Junior | EVA_OTT | Sweeper | RHH | 77.7 | 99.4 | 57.4 | 81.2 | -3.2 | -11.9 | 2677 | pooled_fixed_effects |
-| 12 | Conklin, MacCallan | TRO_AIG | Slider | RHH | 76.4 | 99.3 | 48.5 | 84.5 | 9.1 | 0.6 | 2512 | pitch_type_specific |
-| 13 | Conklin, MacCallan | TRO_AIG | Slider | LHH | 76.4 | 99.3 | 46.1 | 84.5 | 9.1 | 0.6 | 2512 | pitch_type_specific |
-| 14 | Voytko, Fawster | TRO_AIG | Slider | RHH | 75.9 | 99.2 | 41.6 | 78.6 | 0.9 | -11.4 | 2323 | pitch_type_specific |
-| 15 | Morgan, Marcus | JOL_SLA | Slider | LHH | 75.6 | 99.1 | 50.4 | 84.9 | 7.0 | -9.2 | 2844 | pitch_type_specific |
-| 16 | Morin, Jacob | QUE_CAP | Slider | RHH | 75.5 | 99.0 | 64.9 | 77.4 | 7.4 | -6.2 | 2495 | pitch_type_specific |
-| 17 | Morin, Jacob | QUE_CAP | Slider | LHH | 75.5 | 99.0 | 58.3 | 77.4 | 7.4 | -6.2 | 2495 | pitch_type_specific |
-| 18 | Good, Ty | GAT_GRI | Cutter | RHH | 75.4 | 98.9 | 56.9 | 88.4 | 17.0 | 7.6 | 2059 | pitch_type_specific |
-| 19 | Godwin, Connor | NEW_YOR13 | Slider | RHH | 75.2 | 98.8 | 49.9 | 82.4 | 0.0 | -10.2 | 2535 | pitch_type_specific |
-| 20 | Godwin, Connor | NEW_YOR13 | Slider | LHH | 75.2 | 98.8 | 41.5 | 82.4 | 0.0 | -10.2 | 2535 | pitch_type_specific |
-| 21 | Duby, Bill | NEW_JER6 | Slider | RHH | 74.6 | 98.7 | 63.9 | 80.0 | 7.3 | -0.3 | 2066 | pitch_type_specific |
-| 22 | Ronne, Andrew | GAT_GRI | Slider | RHH | 74.3 | 98.6 | 57.6 | 81.4 | 0.0 | -14.6 | 2593 | pitch_type_specific |
-| 23 | Ronne, Andrew | GAT_GRI | Slider | LHH | 74.3 | 98.6 | 52.5 | 81.4 | 0.0 | -14.6 | 2593 | pitch_type_specific |
-| 24 | Widener, Jacob | SUS_COU1 | Slider | RHH | 74.2 | 98.5 | 59.7 | 80.4 | 3.4 | 16.4 | 2855 | pitch_type_specific |
-| 25 | Widener, Jacob | SUS_COU1 | Slider | LHH | 74.2 | 98.5 | 58.4 | 80.4 | 3.4 | 16.4 | 2855 | pitch_type_specific |
+| 1 | Vega, Lucas | TRO_AIG | Slider | RHH | 78.9 | 100.0 | 67.2 | 79.2 | 6.6 | -9.3 | 2697 | pitch_type_specific |
+| 2 | Vega, Lucas | TRO_AIG | Slider | LHH | 78.9 | 100.0 | 59.4 | 79.2 | 6.6 | -9.3 | 2697 | pitch_type_specific |
+| 3 | Harris, Everette | TRI_VAL | Slider | LHH | 77.1 | 99.9 | 59.3 | 80.5 | 1.1 | -8.3 | 2845 | pitch_type_specific |
+| 4 | Harris, Everette | TRI_VAL | Slider | RHH | 77.1 | 99.9 | 51.3 | 80.5 | 1.1 | -8.3 | 2845 | pitch_type_specific |
+| 5 | Morrissey, Joe | EVA_OTT | Slider | RHH | 76.7 | 99.8 | 61.8 | 79.8 | 2.0 | -13.3 | 2768 | pitch_type_specific |
+| 6 | Harper, Scott | NEW_YOR13 | Slider | RHH | 76.6 | 99.7 | 70.8 | 79.7 | 3.2 | -16.7 | 2664 | pitch_type_specific |
+| 7 | Harper, Scott | NEW_YOR13 | Slider | LHH | 76.6 | 99.7 | 65.3 | 79.7 | 3.2 | -16.7 | 2664 | pitch_type_specific |
+| 8 | Petery, Dylan | WIN_CIT29 | Slider | RHH | 75.6 | 99.6 | 54.5 | 78.0 | -0.4 | -12.4 | 2605 | pitch_type_specific |
+| 9 | Petery, Dylan | WIN_CIT29 | Slider | LHH | 75.6 | 99.6 | 50.4 | 78.0 | -0.4 | -12.4 | 2605 | pitch_type_specific |
+| 10 | Ronne, Andrew | GAT_GRI | Slider | RHH | 75.0 | 99.5 | 59.7 | 81.3 | -0.5 | -14.5 | 2602 | pitch_type_specific |
+| 11 | Ronne, Andrew | GAT_GRI | Slider | LHH | 75.0 | 99.5 | 54.3 | 81.3 | -0.5 | -14.5 | 2602 | pitch_type_specific |
+| 12 | Bauer, Patrick | QUE_CAP | Slider | RHH | 74.8 | 99.4 | 74.8 | 78.0 | 0.1 | -10.5 | 2416 | pitch_type_specific |
+| 13 | Saturria, Michael | NEW_ENG23 | Slider | RHH | 74.8 | 99.3 | 55.3 | 80.8 | 4.0 | -7.0 | 2703 | pitch_type_specific |
+| 14 | Saturria, Michael | NEW_ENG23 | Slider | LHH | 74.8 | 99.3 | 53.5 | 80.8 | 4.0 | -7.0 | 2703 | pitch_type_specific |
+| 15 | Morgan, Marcus | JOL_SLA | Slider | LHH | 74.5 | 99.2 | 51.1 | 84.9 | 7.0 | -9.2 | 2844 | pitch_type_specific |
+| 16 | Voytko, Fawster | TRO_AIG | Slider | RHH | 73.9 | 99.1 | 49.5 | 78.8 | 1.6 | -11.3 | 2320 | pitch_type_specific |
+| 17 | Voytko, Fawster | TRO_AIG | Slider | LHH | 73.9 | 99.1 | 40.0 | 78.8 | 1.6 | -11.3 | 2320 | pitch_type_specific |
+| 18 | Marklund, Brandon | OTT_TIT | Slider | RHH | 73.5 | 99.0 | 59.9 | 79.6 | 6.4 | -14.2 | 2707 | pitch_type_specific |
+| 19 | Marklund, Brandon | OTT_TIT | Slider | LHH | 73.5 | 99.0 | 54.7 | 79.6 | 6.4 | -14.2 | 2707 | pitch_type_specific |
+| 20 | Conklin, MacCallan | TRO_AIG | Slider | RHH | 73.2 | 98.9 | 53.3 | 83.8 | 6.1 | -3.8 | 2592 | pitch_type_specific |
+| 21 | Conklin, MacCallan | TRO_AIG | Slider | LHH | 73.2 | 98.9 | 49.7 | 83.8 | 6.1 | -3.8 | 2592 | pitch_type_specific |
+| 22 | Morin, Jacob | QUE_CAP | Slider | RHH | 73.0 | 98.8 | 64.9 | 77.4 | 7.4 | -6.2 | 2495 | pitch_type_specific |
+| 23 | Morin, Jacob | QUE_CAP | Slider | LHH | 73.0 | 98.8 | 57.8 | 77.4 | 7.4 | -6.2 | 2495 | pitch_type_specific |
+| 24 | Blence, Connor | WIN_CIT29 | Slider | RHH | 72.8 | 98.7 | 52.4 | 79.5 | 3.8 | -4.9 | 2552 | pitch_type_specific |
+| 25 | Blence, Connor | WIN_CIT29 | Slider | LHH | 72.8 | 98.7 | 43.3 | 79.5 | 3.8 | -4.9 | 2552 | pitch_type_specific |
 
 ## Top 10 Stuff+ by Pitch Type
 
@@ -146,109 +146,110 @@
 
 | Rank | Pitcher | Team | Pitch Type | Side | Stuff+ | Stuff % | Final | Velo | IVB | HB | Spin | Model |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 70 | Cooper, Garrett | NEW_YOR13 | Changeup | LHH | 67.5 | 95.6 | 51.7 | 77.8 | 9.2 | 8.0 | 1402 | pitch_type_specific |
-| 71 | Cooper, Garrett | NEW_YOR13 | Changeup | RHH | 67.5 | 95.6 | 50.8 | 77.8 | 9.2 | 8.0 | 1402 | pitch_type_specific |
-| 80 | Campbell, Tyler | MIS_MUD | Changeup | RHH | 67.0 | 95.0 | 60.3 | 74.6 | 11.6 | -7.9 | 1847 | pitch_type_specific |
-| 81 | Campbell, Tyler | MIS_MUD | Changeup | LHH | 67.0 | 95.0 | 56.6 | 74.6 | 11.6 | -7.9 | 1847 | pitch_type_specific |
-| 113 | Kines, Gunnar | JOL_SLA | Changeup | LHH | 65.6 | 92.9 | 49.3 | 75.4 | 12.1 | -12.5 | 1907 | pitch_type_specific |
-| 114 | Kines, Gunnar | JOL_SLA | Changeup | RHH | 65.6 | 92.9 | 49.3 | 75.4 | 12.1 | -12.5 | 1907 | pitch_type_specific |
-| 119 | Rohde, Isaac | NEW_YOR13 | Changeup | RHH | 64.9 | 92.5 | 57.5 | 76.3 | 4.0 | -20.4 | 1977 | pitch_type_specific |
-| 120 | Rohde, Isaac | NEW_YOR13 | Changeup | LHH | 64.9 | 92.5 | 53.4 | 76.3 | 4.0 | -20.4 | 1977 | pitch_type_specific |
-| 139 | Harris, Everette | TRI_VAL | Changeup | LHH | 63.9 | 91.2 | 63.7 | 82.6 | 2.1 | 16.6 | 2144 | pitch_type_specific |
-| 140 | Harris, Everette | TRI_VAL | Changeup | RHH | 63.9 | 91.2 | 62.1 | 82.6 | 2.1 | 16.6 | 2144 | pitch_type_specific |
+| 50 | Kines, Gunnar | JOL_SLA | Changeup | LHH | 69.3 | 97.2 | 51.0 | 75.2 | 12.1 | -12.6 | 1900 | pitch_type_specific |
+| 51 | Kines, Gunnar | JOL_SLA | Changeup | RHH | 69.3 | 97.2 | 51.0 | 75.2 | 12.1 | -12.6 | 1900 | pitch_type_specific |
+| 81 | Maietta, Dante | WIN_CIT29 | Changeup | LHH | 67.9 | 95.5 | 62.2 | 77.7 | 15.3 | 13.9 | 1871 | pitch_type_specific |
+| 82 | Maietta, Dante | WIN_CIT29 | Changeup | RHH | 67.9 | 95.5 | 57.1 | 77.7 | 15.3 | 13.9 | 1871 | pitch_type_specific |
+| 101 | VanMarter, Luke | LEM_COL | Changeup | RHH | 66.6 | 94.4 | 57.5 | 77.6 | 12.9 | 11.7 | 1756 | pitch_type_specific |
+| 102 | Wiltse, Ryan | EVA_OTT | Changeup | RHH | 66.5 | 94.3 | 62.8 | 78.1 | 13.6 | 10.2 | 1834 | pitch_type_specific |
+| 103 | Wiltse, Ryan | EVA_OTT | Changeup | LHH | 66.5 | 94.3 | 62.0 | 78.1 | 13.6 | 10.2 | 1834 | pitch_type_specific |
+| 116 | Good, Ty | GAT_GRI | Changeup | LHH | 66.3 | 93.6 | 62.5 | 77.9 | 17.1 | 4.5 | 1773 | pitch_type_specific |
+| 118 | Westcott, Zac | FLO_Y'A | Changeup | LHH | 66.2 | 93.4 | 46.6 | 76.5 | 6.5 | 16.7 | 1915 | pitch_type_specific |
+| 119 | Westcott, Zac | FLO_Y'A | Changeup | RHH | 66.2 | 93.4 | 40.7 | 76.5 | 6.5 | 16.7 | 1915 | pitch_type_specific |
 
 ### Curveball
 
 | Rank | Pitcher | Team | Pitch Type | Side | Stuff+ | Stuff % | Final | Velo | IVB | HB | Spin | Model |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 273 | Maryniak, Connor | NEW_JER6 | Curveball | RHH | 58.7 | 82.8 | 57.7 | 81.3 | -9.6 | -4.5 | 2514 | pitch_type_specific |
-| 274 | Maryniak, Connor | NEW_JER6 | Curveball | LHH | 58.7 | 82.8 | 53.5 | 81.3 | -9.6 | -4.5 | 2514 | pitch_type_specific |
-| 295 | Lovin, Xander | GAT_GRI | Curveball | RHH | 58.2 | 81.4 | 27.8 | 76.9 | -9.3 | -12.3 | 2634 | pitch_type_specific |
-| 296 | Lovin, Xander | GAT_GRI | Curveball | LHH | 58.2 | 81.4 | 26.5 | 76.9 | -9.3 | -12.3 | 2634 | pitch_type_specific |
-| 305 | Moore, Kyle | SCH_BOO | Curveball | RHH | 58.1 | 80.7 | 52.7 | 76.9 | -8.5 | -7.8 | 2531 | pitch_type_specific |
-| 306 | Moore, Kyle | SCH_BOO | Curveball | LHH | 58.1 | 80.7 | 45.5 | 76.9 | -8.5 | -7.8 | 2531 | pitch_type_specific |
-| 327 | Harris, Ben | GAT_GRI | Curveball | RHH | 57.3 | 79.3 | 60.5 | 77.6 | -14.1 | -7.0 | 2163 | pitch_type_specific |
-| 328 | Harris, Ben | GAT_GRI | Curveball | LHH | 57.3 | 79.3 | 57.7 | 77.6 | -14.1 | -7.0 | 2163 | pitch_type_specific |
-| 369 | Grounds, Jackson | DOW_EAS1 | Curveball | RHH | 56.2 | 76.7 | 73.3 | 81.4 | -10.5 | -12.0 | 1946 | pitch_type_specific |
-| 370 | Grounds, Jackson | DOW_EAS1 | Curveball | LHH | 56.2 | 76.7 | 69.0 | 81.4 | -10.5 | -12.0 | 1946 | pitch_type_specific |
+| 106 | Moore, Kyle | SCH_BOO | Curveball | RHH | 66.4 | 94.1 | 54.3 | 76.9 | -8.6 | -7.7 | 2521 | pitch_type_specific |
+| 107 | Moore, Kyle | SCH_BOO | Curveball | LHH | 66.4 | 94.1 | 49.1 | 76.9 | -8.6 | -7.7 | 2521 | pitch_type_specific |
+| 225 | Sparks, Alec | GAT_GRI | Curveball | LHH | 62.8 | 87.4 | 68.7 | 77.6 | -4.4 | -7.0 | 2566 | pitch_type_specific |
+| 226 | Sparks, Alec | GAT_GRI | Curveball | RHH | 62.8 | 87.4 | 65.4 | 77.6 | -4.4 | -7.0 | 2566 | pitch_type_specific |
+| 253 | Campbell, AJ | WIN_CIT29 | Curveball | LHH | 62.0 | 85.8 | 56.1 | 75.2 | -0.9 | -16.1 | 2587 | pitch_type_specific |
+| 254 | Campbell, AJ | WIN_CIT29 | Curveball | RHH | 62.0 | 85.8 | 54.8 | 75.2 | -0.9 | -16.1 | 2587 | pitch_type_specific |
+| 260 | Maryniak, Connor | NEW_JER6 | Curveball | RHH | 61.8 | 85.4 | 57.6 | 81.3 | -9.6 | -4.5 | 2514 | pitch_type_specific |
+| 261 | Maryniak, Connor | NEW_JER6 | Curveball | LHH | 61.8 | 85.4 | 53.0 | 81.3 | -9.6 | -4.5 | 2514 | pitch_type_specific |
+| 266 | Peyton, Blake | GAT_GRI | Curveball | RHH | 61.6 | 85.1 | 50.2 | 77.6 | -7.2 | 9.4 | 2714 | pitch_type_specific |
+| 267 | Peyton, Blake | GAT_GRI | Curveball | LHH | 61.6 | 85.1 | 49.1 | 77.6 | -7.2 | 9.4 | 2714 | pitch_type_specific |
 
 ### Cutter
 
 | Rank | Pitcher | Team | Pitch Type | Side | Stuff+ | Stuff % | Final | Velo | IVB | HB | Spin | Model |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 18 | Good, Ty | GAT_GRI | Cutter | RHH | 75.4 | 98.9 | 56.9 | 88.4 | 17.0 | 7.6 | 2059 | pitch_type_specific |
-| 61 | Webster, Evan | FLO_Y'A | Cutter | LHH | 68.4 | 96.2 | 62.4 | 84.4 | 5.6 | -0.4 | 2039 | pitch_type_specific |
-| 62 | Webster, Evan | FLO_Y'A | Cutter | RHH | 68.4 | 96.2 | 60.7 | 84.4 | 5.6 | -0.4 | 2039 | pitch_type_specific |
-| 66 | Debban, Caleb | NEW_JER6 | Cutter | LHH | 68.1 | 95.9 | 51.9 | 85.9 | 10.7 | -0.4 | 2337 | pitch_type_specific |
-| 67 | Debban, Caleb | NEW_JER6 | Cutter | RHH | 68.1 | 95.9 | 51.8 | 85.9 | 10.7 | -0.4 | 2337 | pitch_type_specific |
-| 115 | Majick, Eli | NEW_ENG23 | Cutter | RHH | 65.4 | 92.8 | 61.0 | 82.8 | 5.8 | -1.1 | 2493 | pitch_type_specific |
-| 116 | Majick, Eli | NEW_ENG23 | Cutter | LHH | 65.4 | 92.8 | 60.4 | 82.8 | 5.8 | -1.1 | 2493 | pitch_type_specific |
-| 159 | Thiels, Brenton | MIS_MUD | Cutter | RHH | 63.2 | 90.0 | 42.3 | 86.3 | 9.4 | 4.5 | 2311 | pitch_type_specific |
-| 189 | McEvoy, Aidan | FLO_Y'A | Cutter | LHH | 62.0 | 88.1 | 54.2 | 83.1 | 7.6 | 1.3 | 2151 | pitch_type_specific |
-| 190 | McEvoy, Aidan | FLO_Y'A | Cutter | RHH | 62.0 | 88.1 | 51.5 | 83.1 | 7.6 | 1.3 | 2151 | pitch_type_specific |
+| 26 | Barreto, Brayhans | TRI_VAL | Cutter | LHH | 72.6 | 98.6 | 62.6 | 83.5 | 9.1 | 0.1 | 1919 | pitch_type_specific |
+| 34 | Majick, Eli | NEW_ENG23 | Cutter | RHH | 71.0 | 98.1 | 64.2 | 83.1 | 5.8 | -1.1 | 2491 | pitch_type_specific |
+| 35 | Majick, Eli | NEW_ENG23 | Cutter | LHH | 71.0 | 98.1 | 61.9 | 83.1 | 5.8 | -1.1 | 2491 | pitch_type_specific |
+| 36 | Good, Ty | GAT_GRI | Cutter | RHH | 70.9 | 98.0 | 54.8 | 88.3 | 17.0 | 7.6 | 2054 | pitch_type_specific |
+| 41 | Webster, Evan | FLO_Y'A | Cutter | LHH | 70.4 | 97.7 | 61.8 | 84.5 | 5.7 | -0.5 | 2031 | pitch_type_specific |
+| 42 | Webster, Evan | FLO_Y'A | Cutter | RHH | 70.4 | 97.7 | 60.8 | 84.5 | 5.7 | -0.5 | 2031 | pitch_type_specific |
+| 58 | Thiels, Brenton | MIS_MUD | Cutter | RHH | 68.7 | 96.8 | 42.5 | 86.3 | 9.4 | 4.5 | 2311 | pitch_type_specific |
+| 133 | Debban, Caleb | NEW_JER6 | Cutter | LHH | 65.7 | 92.6 | 51.4 | 85.9 | 10.7 | -0.5 | 2336 | pitch_type_specific |
+| 134 | Debban, Caleb | NEW_JER6 | Cutter | RHH | 65.7 | 92.6 | 51.3 | 85.9 | 10.7 | -0.5 | 2336 | pitch_type_specific |
+| 235 | Ginn, Landon | WAS_WIL3 | Cutter | RHH | 62.5 | 86.8 | 48.9 | 86.4 | 3.3 | -2.0 | 2836 | pitch_type_specific |
 
 ### Four-Seam
 
 | Rank | Pitcher | Team | Pitch Type | Side | Stuff+ | Stuff % | Final | Velo | IVB | HB | Spin | Model |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 334 | Rodriguez, Luis | TRO_AIG | Four-Seam | LHH | 57.1 | 78.9 | 50.9 | 95.1 | 20.6 | 7.0 | 2360 | pitch_type_specific |
-| 335 | Rodriguez, Luis | TRO_AIG | Four-Seam | RHH | 57.1 | 78.9 | 49.3 | 95.1 | 20.6 | 7.0 | 2360 | pitch_type_specific |
-| 383 | Perozzi, John | SUS_COU1 | Four-Seam | RHH | 55.7 | 75.8 | 51.1 | 91.5 | 21.6 | 9.0 | 2198 | pitch_type_specific |
-| 384 | Perozzi, John | SUS_COU1 | Four-Seam | LHH | 55.7 | 75.8 | 47.4 | 91.5 | 21.6 | 9.0 | 2198 | pitch_type_specific |
-| 398 | Floyd, Conner | QUE_CAP | Four-Seam | RHH | 55.5 | 74.9 | 49.5 | 92.7 | 20.5 | 10.5 | 2401 | pitch_type_specific |
-| 399 | Floyd, Conner | QUE_CAP | Four-Seam | LHH | 55.5 | 74.9 | 48.0 | 92.7 | 20.5 | 10.5 | 2401 | pitch_type_specific |
-| 413 | Barraza, Chris | MIS_MUD | Four-Seam | RHH | 55.0 | 73.9 | 53.5 | 93.2 | 19.9 | 10.3 | 2452 | pitch_type_specific |
-| 414 | Barraza, Chris | MIS_MUD | Four-Seam | LHH | 55.0 | 73.9 | 52.4 | 93.2 | 19.9 | 10.3 | 2452 | pitch_type_specific |
-| 424 | Johnson, Preston | MIS_MUD | Four-Seam | RHH | 54.5 | 73.2 | 57.4 | 92.2 | 20.3 | 6.9 | 2368 | pitch_type_specific |
-| 425 | Johnson, Preston | MIS_MUD | Four-Seam | LHH | 54.5 | 73.2 | 51.0 | 92.2 | 20.3 | 6.9 | 2368 | pitch_type_specific |
+| 414 | Rodriguez, Luis | TRO_AIG | Four-Seam | LHH | 57.2 | 76.8 | 50.5 | 95.1 | 20.6 | 7.0 | 2360 | pitch_type_specific |
+| 415 | Rodriguez, Luis | TRO_AIG | Four-Seam | RHH | 57.2 | 76.8 | 49.1 | 95.1 | 20.6 | 7.0 | 2360 | pitch_type_specific |
+| 438 | Davis, Tyler | WAS_WIL3 | Four-Seam | LHH | 56.6 | 75.5 | 53.2 | 92.6 | 18.5 | -11.2 | 2340 | pitch_type_specific |
+| 439 | Davis, Tyler | WAS_WIL3 | Four-Seam | RHH | 56.6 | 75.5 | 46.6 | 92.6 | 18.5 | -11.2 | 2340 | pitch_type_specific |
+| 453 | Eisenbarger, Jack | QUE_CAP | Four-Seam | LHH | 56.1 | 74.6 | 49.4 | 90.0 | 18.9 | -13.8 | 2545 | pitch_type_specific |
+| 454 | Eisenbarger, Jack | QUE_CAP | Four-Seam | RHH | 56.1 | 74.6 | 48.4 | 90.0 | 18.9 | -13.8 | 2545 | pitch_type_specific |
+| 457 | Maher, Adam | TRI_VAL | Four-Seam | LHH | 56.0 | 74.4 | 49.7 | 87.8 | 20.4 | -9.7 | 2076 | pitch_type_specific |
+| 458 | Maher, Adam | TRI_VAL | Four-Seam | RHH | 56.0 | 74.4 | 49.5 | 87.8 | 20.4 | -9.7 | 2076 | pitch_type_specific |
+| 462 | Cartwright, Eli | GAT_GRI | Four-Seam | LHH | 55.9 | 74.1 | 60.5 | 90.3 | 18.4 | -8.6 | 2100 | pitch_type_specific |
+| 463 | Cartwright, Eli | GAT_GRI | Four-Seam | RHH | 55.9 | 74.1 | 56.6 | 90.3 | 18.4 | -8.6 | 2100 | pitch_type_specific |
 
 ### Sinker
 
 | Rank | Pitcher | Team | Pitch Type | Side | Stuff+ | Stuff % | Final | Velo | IVB | HB | Spin | Model |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 182 | Riedel, Caleb | SCH_BOO | Sinker | LHH | 62.2 | 88.5 | 63.1 | 88.8 | 16.1 | -15.9 | 2309 | pitch_type_specific |
-| 183 | Riedel, Caleb | SCH_BOO | Sinker | RHH | 62.2 | 88.5 | 62.9 | 88.8 | 16.1 | -15.9 | 2309 | pitch_type_specific |
-| 239 | Widener, Jacob | SUS_COU1 | Sinker | LHH | 60.0 | 84.9 | 59.4 | 88.9 | 9.0 | -11.4 | 2364 | pitch_type_specific |
-| 240 | Widener, Jacob | SUS_COU1 | Sinker | RHH | 60.0 | 84.9 | 56.3 | 88.9 | 9.0 | -11.4 | 2364 | pitch_type_specific |
-| 285 | Plumadore, Carson | WIN_CIT29 | Sinker | RHH | 58.4 | 82.0 | 56.4 | 87.1 | 13.7 | 18.6 | 2378 | pitch_type_specific |
-| 286 | Plumadore, Carson | WIN_CIT29 | Sinker | LHH | 58.4 | 82.0 | 55.2 | 87.1 | 13.7 | 18.6 | 2378 | pitch_type_specific |
-| 349 | Kemlage, Joe | NEW_ENG23 | Sinker | LHH | 56.8 | 78.0 | 45.2 | 91.0 | 8.4 | -15.4 | 2429 | pitch_type_specific |
-| 350 | Kemlage, Joe | NEW_ENG23 | Sinker | RHH | 56.8 | 78.0 | 45.1 | 91.0 | 8.4 | -15.4 | 2429 | pitch_type_specific |
-| 376 | Morgan, Marcus | JOL_SLA | Sinker | LHH | 55.9 | 76.2 | 56.7 | 91.9 | 10.3 | 15.2 | 2455 | pitch_type_specific |
-| 377 | Morgan, Marcus | JOL_SLA | Sinker | RHH | 55.9 | 76.2 | 54.8 | 91.9 | 10.3 | 15.2 | 2455 | pitch_type_specific |
+| 493 | Widener, Jacob | SUS_COU1 | Sinker | LHH | 55.0 | 72.4 | 60.6 | 88.7 | 8.2 | -11.0 | 2348 | pitch_type_specific |
+| 494 | Widener, Jacob | SUS_COU1 | Sinker | RHH | 55.0 | 72.4 | 57.5 | 88.7 | 8.2 | -11.0 | 2348 | pitch_type_specific |
+| 495 | Kemlage, Joe | NEW_ENG23 | Sinker | LHH | 55.0 | 72.3 | 47.6 | 91.0 | 8.5 | -15.3 | 2433 | pitch_type_specific |
+| 496 | Kemlage, Joe | NEW_ENG23 | Sinker | RHH | 55.0 | 72.3 | 46.6 | 91.0 | 8.5 | -15.3 | 2433 | pitch_type_specific |
+| 519 | Plumadore, Carson | WIN_CIT29 | Sinker | RHH | 54.7 | 70.9 | 58.4 | 87.3 | 13.9 | 18.4 | 2381 | pitch_type_specific |
+| 520 | Plumadore, Carson | WIN_CIT29 | Sinker | LHH | 54.7 | 70.9 | 56.8 | 87.3 | 13.9 | 18.4 | 2381 | pitch_type_specific |
+| 524 | Riedel, Caleb | SCH_BOO | Sinker | RHH | 54.6 | 70.6 | 63.3 | 88.9 | 15.9 | -15.9 | 2306 | pitch_type_specific |
+| 525 | Riedel, Caleb | SCH_BOO | Sinker | LHH | 54.6 | 70.6 | 62.6 | 88.9 | 15.9 | -15.9 | 2306 | pitch_type_specific |
+| 537 | Morgan, Marcus | JOL_SLA | Sinker | LHH | 54.4 | 69.9 | 56.5 | 91.9 | 10.3 | 15.2 | 2455 | pitch_type_specific |
+| 538 | Morgan, Marcus | JOL_SLA | Sinker | RHH | 54.4 | 69.9 | 54.4 | 91.9 | 10.3 | 15.2 | 2455 | pitch_type_specific |
 
 ### Slider
 
 | Rank | Pitcher | Team | Pitch Type | Side | Stuff+ | Stuff % | Final | Velo | IVB | HB | Spin | Model |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Harris, Everette | TRI_VAL | Slider | LHH | 80.0 | 100.0 | 58.0 | 80.5 | 1.2 | -8.7 | 2862 | pitch_type_specific |
-| 2 | Vega, Lucas | TRO_AIG | Slider | RHH | 80.0 | 99.9 | 66.8 | 79.2 | 6.6 | -9.3 | 2697 | pitch_type_specific |
-| 3 | Vega, Lucas | TRO_AIG | Slider | LHH | 80.0 | 99.9 | 57.3 | 79.2 | 6.6 | -9.3 | 2697 | pitch_type_specific |
-| 4 | Harper, Scott | NEW_YOR13 | Slider | RHH | 80.0 | 99.8 | 72.1 | 79.8 | 3.3 | -16.7 | 2669 | pitch_type_specific |
-| 5 | Harper, Scott | NEW_YOR13 | Slider | LHH | 80.0 | 99.8 | 66.8 | 79.8 | 3.3 | -16.7 | 2669 | pitch_type_specific |
-| 6 | Plumadore, Carson | WIN_CIT29 | Slider | RHH | 79.2 | 99.7 | 61.5 | 76.0 | 2.6 | -4.8 | 2435 | pitch_type_specific |
-| 7 | Plumadore, Carson | WIN_CIT29 | Slider | LHH | 79.2 | 99.7 | 56.0 | 76.0 | 2.6 | -4.8 | 2435 | pitch_type_specific |
-| 8 | Saturria, Michael | NEW_ENG23 | Slider | RHH | 78.9 | 99.5 | 54.8 | 80.7 | 3.9 | -7.3 | 2705 | pitch_type_specific |
-| 9 | Saturria, Michael | NEW_ENG23 | Slider | LHH | 78.9 | 99.5 | 53.7 | 80.7 | 3.9 | -7.3 | 2705 | pitch_type_specific |
-| 10 | Petery, Dylan | WIN_CIT29 | Slider | RHH | 78.7 | 99.4 | 50.1 | 78.0 | -0.6 | -12.2 | 2611 | pitch_type_specific |
+| 1 | Vega, Lucas | TRO_AIG | Slider | RHH | 78.9 | 100.0 | 67.2 | 79.2 | 6.6 | -9.3 | 2697 | pitch_type_specific |
+| 2 | Vega, Lucas | TRO_AIG | Slider | LHH | 78.9 | 100.0 | 59.4 | 79.2 | 6.6 | -9.3 | 2697 | pitch_type_specific |
+| 3 | Harris, Everette | TRI_VAL | Slider | LHH | 77.1 | 99.9 | 59.3 | 80.5 | 1.1 | -8.3 | 2845 | pitch_type_specific |
+| 4 | Harris, Everette | TRI_VAL | Slider | RHH | 77.1 | 99.9 | 51.3 | 80.5 | 1.1 | -8.3 | 2845 | pitch_type_specific |
+| 5 | Morrissey, Joe | EVA_OTT | Slider | RHH | 76.7 | 99.8 | 61.8 | 79.8 | 2.0 | -13.3 | 2768 | pitch_type_specific |
+| 6 | Harper, Scott | NEW_YOR13 | Slider | RHH | 76.6 | 99.7 | 70.8 | 79.7 | 3.2 | -16.7 | 2664 | pitch_type_specific |
+| 7 | Harper, Scott | NEW_YOR13 | Slider | LHH | 76.6 | 99.7 | 65.3 | 79.7 | 3.2 | -16.7 | 2664 | pitch_type_specific |
+| 8 | Petery, Dylan | WIN_CIT29 | Slider | RHH | 75.6 | 99.6 | 54.5 | 78.0 | -0.4 | -12.4 | 2605 | pitch_type_specific |
+| 9 | Petery, Dylan | WIN_CIT29 | Slider | LHH | 75.6 | 99.6 | 50.4 | 78.0 | -0.4 | -12.4 | 2605 | pitch_type_specific |
+| 10 | Ronne, Andrew | GAT_GRI | Slider | RHH | 75.0 | 99.5 | 59.7 | 81.3 | -0.5 | -14.5 | 2602 | pitch_type_specific |
 
 ### Splitter
 
 | Rank | Pitcher | Team | Pitch Type | Side | Stuff+ | Stuff % | Final | Velo | IVB | HB | Spin | Model |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 111 | Williams, Brian | MIS_MUD | Splitter | LHH | 65.8 | 93.0 | 54.1 | 78.6 | 2.5 | 5.0 | 1728 | pooled_fixed_effects |
-| 112 | Williams, Brian | MIS_MUD | Splitter | RHH | 65.8 | 93.0 | 53.2 | 78.6 | 2.5 | 5.0 | 1728 | pooled_fixed_effects |
-| 147 | Garcia, Hector | WAS_WIL3 | Splitter | LHH | 63.6 | 90.8 | 64.5 | 78.2 | 11.7 | 7.6 | 1216 | pooled_fixed_effects |
-| 261 | Duby, Bill | NEW_JER6 | Splitter | LHH | 58.9 | 83.6 | 36.6 | 78.8 | 6.1 | 3.8 | 985 | pooled_fixed_effects |
-| 300 | Gilleran, Jimmy | NEW_ENG23 | Splitter | LHH | 58.2 | 81.1 | 41.9 | 79.0 | -0.1 | 7.8 | 1500 | pooled_fixed_effects |
-| 303 | Pindel, Buddie | SCH_BOO | Splitter | RHH | 58.1 | 80.9 | 58.8 | 80.3 | 5.0 | 7.1 | 1100 | pooled_fixed_effects |
-| 304 | Pindel, Buddie | SCH_BOO | Splitter | LHH | 58.1 | 80.9 | 58.7 | 80.3 | 5.0 | 7.1 | 1100 | pooled_fixed_effects |
-| 311 | Salata, Derek | SCH_BOO | Splitter | LHH | 57.9 | 80.4 | 51.9 | 83.2 | 7.1 | 9.2 | 1133 | pooled_fixed_effects |
-| 332 | Villers, Ian | QUE_CAP | Splitter | RHH | 57.1 | 79.0 | 59.3 | 83.1 | 7.5 | 11.5 | 1086 | pooled_fixed_effects |
-| 333 | Villers, Ian | QUE_CAP | Splitter | LHH | 57.1 | 79.0 | 58.3 | 83.1 | 7.5 | 11.5 | 1086 | pooled_fixed_effects |
+| 124 | Williams, Brian | MIS_MUD | Splitter | LHH | 66.0 | 93.1 | 52.8 | 78.6 | 2.7 | 4.9 | 1775 | pooled_fixed_effects |
+| 125 | Williams, Brian | MIS_MUD | Splitter | RHH | 66.0 | 93.1 | 51.8 | 78.6 | 2.7 | 4.9 | 1775 | pooled_fixed_effects |
+| 293 | Garcia, Hector | WAS_WIL3 | Splitter | LHH | 61.1 | 83.6 | 64.4 | 78.2 | 11.7 | 7.6 | 1216 | pooled_fixed_effects |
+| 382 | Gilleran, Jimmy | NEW_ENG23 | Splitter | LHH | 58.1 | 78.6 | 39.3 | 79.1 | 0.0 | 7.7 | 1520 | pooled_fixed_effects |
+| 474 | Pindel, Buddie | SCH_BOO | Splitter | RHH | 55.5 | 73.4 | 57.5 | 80.4 | 5.3 | 7.2 | 1119 | pooled_fixed_effects |
+| 475 | Pindel, Buddie | SCH_BOO | Splitter | LHH | 55.5 | 73.4 | 56.9 | 80.4 | 5.3 | 7.2 | 1119 | pooled_fixed_effects |
+| 485 | Villers, Ian | QUE_CAP | Splitter | RHH | 55.2 | 72.8 | 59.0 | 83.1 | 7.5 | 11.5 | 1086 | pooled_fixed_effects |
+| 486 | Villers, Ian | QUE_CAP | Splitter | LHH | 55.2 | 72.8 | 58.1 | 83.1 | 7.5 | 11.5 | 1086 | pooled_fixed_effects |
+| 502 | Duby, Bill | NEW_JER6 | Splitter | LHH | 54.8 | 71.9 | 37.6 | 78.9 | 5.9 | 3.5 | 958 | pooled_fixed_effects |
+| 530 | Salata, Derek | SCH_BOO | Splitter | LHH | 54.6 | 70.3 | 50.8 | 83.1 | 5.8 | 8.6 | 1116 | pooled_fixed_effects |
 
 ### Sweeper
 
 | Rank | Pitcher | Team | Pitch Type | Side | Stuff+ | Stuff % | Final | Velo | IVB | HB | Spin | Model |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 11 | Cerda, Junior | EVA_OTT | Sweeper | RHH | 77.7 | 99.4 | 57.4 | 81.2 | -3.2 | -11.9 | 2677 | pooled_fixed_effects |
+| 92 | Petschke, Ben | EVA_OTT | Sweeper | LHH | 67.3 | 94.9 | 51.5 | 79.7 | -2.7 | -17.1 | 2741 | pooled_fixed_effects |
+| 150 | Cerda, Junior | EVA_OTT | Sweeper | RHH | 65.3 | 91.6 | 57.3 | 81.2 | -3.2 | -11.9 | 2677 | pooled_fixed_effects |
